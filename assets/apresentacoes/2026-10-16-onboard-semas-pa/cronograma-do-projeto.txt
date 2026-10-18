@@ -1,0 +1,260 @@
+FEVEREIRO
+05/02/2026
+
+Leitura dos Artigos
+Leitura da Política Organizacional
+Auxílio no projetos de otimização dos projetos cadastrados na plataforma conecta.
+06/02/26
+Seminários as Sextas ( QA apresentando - Jaiane).
+
+26/02/2026 
+Mylena- inicio de manipulação do Plano Organizacional 
+
+MARÇO
+04/03/2026
+Continuação de leituras dos artigos selecionados para o conceito de onboarding.
+Aulas extras de administração da informática.
+
+13/03/2026
+Inicio da equipe de Automatização de Processos (IA)
+-Primeira tentativa de questionário anônimo para medir  a processo de adesão dos novos integrantes sem o projeto de onboarding.
+não foi bem aceito, receio dos integrantes em analisar a DTI
+
+23/03/2026
+Ordenação de pastas no drive(ajustes pedidos e retirada de dúvidas)
+
+ABRIL
+08/04/26
+2 etapa de implementação IA- MPSRobo
+Fim do Guia Pratico de documentos no Rede Conecta
+
+15 /04/ 2026
+
+Alinhamento de desenvolvimento com a Jaiane sobre os projetos abordados. O QUE FOI DETERMINADO:
+
+→ ATE JULHO TEREMOS UMA AUDITORIA INTERNA, ENTÃO TODOS OS PRAZOS DE DESENVOLVIMENTO SÃO ATE NO MÁXIMO ESTE MÊS(JULHO).
+
+- [ ]  observar e continuar a desenvolver o fluxo de pastas e subpastas do DTI/Semas
+- [ ]  começar a entender a rotina da rede conecta - conversar com o sr Eduardo - FEITO
+
+16/04/2026
+resposta de e-mail para a organização de pastas do Drive (ajustes)-Jaiane QA [ anexo1]
+
+17/04/26 
+Reunião Seminário Semanal (QA Jaiane)
+Reunião com a equipe do SICAR, conversei com sr Eduardo sobre o Rede Conecta (cronogramas)
+
+MAIO
+
+08/05/26
+- [ x]  VERIFICAR COM A WENDY SE TODOS OS PROJETOS DA DEMANDA NO EXCEL ESTÃO COM SEUS RESPECTIVOS DESPONSÁVEIS- TODOS VERIFICADOS E CONFIRMADOS
+- [ x]  TESTAR A REDE CONECTA
+- [ x]  CONTINUAÇÃO DE APRENDIZADO DA REDE CONECTA
+
+  12/05/2026
+
+- [x]  Verificar junto a Professora Carla o andamento da Transição das tarefas do Rede Conecta- o pedido foi a criação de tarefas e não anexar arquivos do drive.
+- [x]  Verificação e inicio da criação de projetos.
+- [x]  Reunião dia 11 de maio com a Jaiane e o Coordenador Eduardo- acerca da segurança do rede Conecta - sanado pelo Coordenador Eduardo e apresentado a pauta de nova reunião junto a Ascom acerca das demandas necessárias do Conecta.
+
+13 /05/2026
+
+- [x]  Verificar a disponibilidade da coordenadora Wendy para a verificação de tarefas e subtarefas correlacionadas as demandas conecta
+- [x]  verificar e repassar a Jaiane as demandas de atualização
+
+JUNHO
+11 /06/26
+- [x]  tentativa de implantação 01 - subtarefas da implementação de uma atividade auxiliada Robô MPS BR - FUI REDIRECIONADA PELA SENHORA SOCORRO PARA O TAREFAS CONCLUIDAS- PLANBIO
+- [x]  Apresentação parcial de como estará o final no REDE CONECTA- pedi a senhora Socorro E ME INDICOU A LINHA 115 DA ABA DEMANDAS INTERNAS CONCLUIDAS-  FALA SOBRE O PORTAL PLANBIO
+- [x]  JAIANE ME INDICOU QUE O FIM DA ATUALIZAÇÃO DO PLANO ORGANIZACIONAL SERA FINALIZADO ATE DIA 18 DE JUNHO DE 2026 - PORTANTO É INTERESSANTE A MIM FINALIZAR O DOCUMENTO DE GUIA DO USUÁRIO PARA ALIMENTAÇÃO DO DRIVE DTI/ COM UM MAPA INFOGRÁFICO IGUAL AO DO PLANO ORGANIZACIONAL PARA AJUDAR OS USUÁRIOS DO DRIVE.
+
+ 16 /06/ 2026
+
+- [x]  FOI FEITA A ADOÇÃO DE TAREFAS RELACIONADAS AO PORTAL PLANBIO AONDE FORAM VERIFICADAS DOCUMENTAÇÕES REFERENTES A EQUIPE, TESTES E CHECKLIST ENVOLVIDOS
+
+17 /06/ 2026
+
+Foi apresentado a mim pela QA Jaiane o fluxo de trabalho da Semas ,no quesito desenvolvimento.
+
+estilo adotado: sprint em formato paralelo a outras atividades
+
+fluxo de trabalho: 
+
+TERMO ABERTURA -  CONCLUIDO - SOCORRO
+PLANO DE PROJETO - ELABORAÇÃO EM ANDAMENTO - SOCORRO
+LISTA DE REQUISITO - EM ELABORAÇÃO - ALEXANDRE MICON
+PLANNING COM DEV E QA - ALEXANDR MICON - TAREFA NAO INICIADA
+DESENVOLVIMENTO - WELINGTON
+TESTE(QA) - JAIANE
+HOMOLOGAÇÃO- ALEXANDRE
+
+COLOCAR A LINHA 449
+DEMANDAS INTERNAS - L449- SISFLORA
+
+exemplo de anotação de fluxo de trabalho com base em reunião com a Jaiane, aqui estão os primeiros passos de desenvolvimento na rede conecta: há uma tentativa de padronização de nomes e pastas para passar do drive para a plataforma rede conecta.
+
+fluxo de trabalho encontrado no DTI SEMAS com o gemini:
+Termo de abertura
+Lista de Requisitos
+Plano de Projeto
+Desenvolvimento e Qualidade
+Homologação e Checklist
+
+A EAP é uma relação de muita importância para a validação e execução dos processos
+
+22/06/2026
+
+- [x]  Verificar o projeto de tcc e o quadro resumo - pra isso olhar o zotero
+- [x]  Adição de tarefa ao Rede Conecta relacionada ao catis PAE2026041046 - abertura de nova guia, a greco pertence a Gesis.
+
+29 /06/ 2026
+
+Atividades referentes a verificação de arquivos para o projeto CATIS/CODES - onde haverá aperfeiçoamento de ferramentas e criação de de um novo CATIS.
+
+Modernização da Infraestrutura e Atualização da Plataforma CATIS/GLPI - será um dos projetos a ser verificado no MPSBR e será verificada a sua funcionalidade de configurações junto aos getores utilizando a ferramentra Rede Conecta.
+
+Atualizações dos GLPI´s 10.0.9 para a versão 11.0.6 ( CATIS, CAES, SICOM);
+
+---
+
+
+JULHO
+03/07/2026
+
+1. AJUSTE DE LOGOMARCAS NO SISTEMA REDE CONECTA - DEVIDO A ÉPOCA ELEITORAL
+2. VERIFICAÇÃO DO REDE CONECTA /TAREFAS → COLOCAR O LINK DOS RESPECTIVOS PROJETOS (CATIS-CODES; CATIS-GRECO)
+3. VERIFICAÇÃO DE DOCUMENTOS RELACIONADOS AO APP SEMAS - LOCALIZADO NO DRIVE CODES
+
+## Dia 13 de Julho de 2026
+
+Criação do Anexo 3 que fala sobre Ex-Colaboradores da Semas - Visando a atualização do Plano Organizacional e do Processo de Qualidade MPS-BR - O plano Organizacional precisa estar atualizado e adicionado algummas modificações:
+
+- uso do MPS Robo - Automatizador de Processos- para auxilio e criação de documentos e posterior verificação dos gerentes de projetos.
+- Adição do fluxograma de gestão documental - aonde foram padronizados pastas e arquivos para melhor manipulação e gerenciamento
+
+14/07/26
+
+- verificação do fluxograma de documentos da DTI para posterior anexo ao Plano Organizacional.
+15 /07/2026
+
+- Acompanhamento de produção de documentação com o MPS Robô - aonde são visualizadas as condições seguintes : para produção de documentos curtos;
+
+20 /07/2026
+
+- [x]  verificar o projeto piloto de automação no drive e analisar os 3 documentos para avaliar os itens essenciais para formar um documento único
+- [x]  verificar o que são os itens essenciais que definem um  projetos de acordo com o MPS BR
+- [x]  marcar os itens principais - e passar para a Jaiane a fim de autenticar as escolhas, padronizar os itens e então passar ao Aliandro( programador em IA) para gerar a saída esperada.
+
+De 20 a 22 de Julho houve desenvolvimento em outras áreas
+
+- suporte para desenvolvimento em novo template de documentação - Documento de Planejamento Simplificado - no qual terá o objetivo de apresentar as principais documentações(lista de requisitos, plano de projeto, termo de abertura) e resumi-la em uma página.
+Adicionar aqui o documento de única folha - Modelo.
+
+29/07/2026
+
+- [x]  Organizar o necessário para reunião com o Eduardo sobre a Aplicação do Onboard- consulta para o publico externo e interno.
+- [x]  Verificar os métodos de onboard ja praticados na DTI
+- [x]  Escolher até 3 possibilidades de aplicações
+
+---
+
+30/07/2026
+
+- Verificação do Drive Semas a pedido,para acompanhar e anotar modificações a serem feitas na área de Mídia: Onboarding onde foram inspecionados 13 itens entre mídias digitais como cartoons e produção de vídeos sobre a síntese da política organizacional e Plano organizacional do Departamento.
+- Continuação do levantamento da situação do sistema Catis: relatório produzido com base no assunto Onboard, para o preparo de um novo framework que contemple o público interno da DTI ( novos integrantes e que possibilite integrar vários métodos embasados por artigos científicos) para abarcar este público e otimizar a qualidade e permanência de seus colaboradores no referido departamento.
+
+## Durante o mês de julho as sextas-feiras são facultativas.
+
+
+Sem atividades dias 10,17,24 e 31 de julho
+
+AGOSTO
+04/08/ 2026
+
+- Apresentação de um modelo experimental de Onboard definido entre os gerentes,o publico alvo será o público interno da DTI que participará da primeira fase do processo de integralização de novos membros a equipe(Onboard) - Apresentado para QA Jaiane e o Gerente Eduardo.
+- Aguardando os gerentes aceitarem a versão apresentada ou solicitar modificações que possam agregar ao modelo estabelecido.
+Modelo aceito.
+---
+
+## 05/08/ 2026
+
+- Visualização do modelo de curso CAR estabelecido no rede conecta - observação com o intuito de modelar possibilidade de curso relacionado ao catis(a depender de prévia autorização de gerentes e consultores)
+- Leitura e busca de conceitos de Onboard previstos na Politica da DTI - não encontrado nenhuma referência consolidada
+- Preenchimento de documento relatorio de Onboard para o framework estabelecido. Ainda em alimentação[anexo5]
+
+---
+
+## 17 /08/ 2026
+
+Entre o período 5 e 17 de Agosto eu colaborei com a proposição de um framework de Integração (Onboarding) , com apresentação aos gerentes Eduardo (Gesis) e QA (Jaiane) aonde foram apresentadas as modificações que seguiram para  o desenvolvimento. Posteriormente a este momento, foi introduzido o seu conteúdo e feito as modificações nos documentos: Plano Organizacional 5.0, e Política Organizacional 4.0 aonde estão relatadas este desenvolvimento documental e gerencial.
+
+Em conjunto com estas atividades também foram desenvolvidos cartoons da Política Organizacional da DTI com o intuito de experimentas seu uso com novos integrantes e verificar os resultados posteriormente.[anexo5]
+
+Foi desenvolvido um template documental intitulado (”Documento de Planejamento Simplificado- Semas/PA”) com o objetivo de promover uma agilidade documental. [anexo2]
+
+---
+
+## 26 e 27 de Agosto de 2026
+
+1. Feita a reunião junto com a QA Jaiane ,o consultor Quites, e o gerente Eduardo acerca do material de Onboard Produzido. O rersumo da reunião foi positivo,  tendo algumas modificações recomendadas como termos utilizados no balão de conversa entre os personagens.
+2. A retirada da pirâmide de prioridades representada no tópico 7 do cartoon referente a Cartilha Onboard v2.0 com modificações.
+3. Inserção de dados no plano organizacional em 12/08/2026. E fazendo refinamentos.
+
+---
+
+## 31 de Agosto de 2026
+
+1. Avaliação qualitativa do formulário para averiguação do profesor Quites e da QA Jaiane
+
+
+SETEMBRO
+
+## 02 de Setembro de 2026
+
+                                                                                                                            
+
+1. A reunião com o professor Quites precisou ser adiada.
+2. Revalidação do texto da política Organizacional acerca do Onboard.[anexo3]
+
+---
+
+## Do dia 02 setembro ao dia 30 setembro houve:
+
+2 reuniões acerca da finalização do processo textual de onboarding - foi desenvolvido o questionário para aplicação aos gestores
+
+Foi feita a v_03 da Cartilha de Policia Organizacional da DTI.
+
+Foi feita a atualização documental de manutenção de arquivos base: politica organizacional, terminada a edição do capítulo 6 - Processo de Integração de Novos Colaboradores[anexo_3]
+
+
+OUTUBRO
+
+07/10/26 - Envio de e-mail para a Diretora Carla pedindo aprovação da Nova Política e Cartilha 
+
+
+09/10/2026
+
+- [x]  verificação de documentos gerados junto ao rede conect sobre o onboarding - Proposta de trilha a ser adicionada no Rede Conecta(aguardando verificação dos gerentes, QA, consultor Rodrigo Quites e Diretora Carla Reis)
+- [ ]  entrega de relatorios do mes Agosto,Setembro
+
+---
+
+14 /10/2026
+
+- [x]  REUNIR TODOS OS DOCUMENTOS PARA APRESENTAR AO ORIENTADOR RODRIGO QUITES.
+
+16/10/2026
+
+REUNIÃO DE DOCUMENTOS E APRESENTAÇÃO DOS RESULTADOS.
+
+
+
+1 questionário aplicado e não bem sucedido:13/03/2026 - publico novos integrantes
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScez3jmYZ9chfepjEBHlGyvm6wZskYbLvDevM1DS-1NGyf7yg/viewform?embedded=true" width="640" height="10228" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+
+2 questionário,voltado para os gestores: 02/09/29
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD8W7ThutfpAbvTlPxeyx8G5saRa3qm-bC4NktzwrFkdC7pg/viewform?embedded=true" width="640" height="3687" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+
+
+
+

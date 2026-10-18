@@ -1,0 +1,66 @@
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign p = t.prefs -%}
+        <div class="prefs" data-prefs hidden>
+          <button type="button" class="icon-button" aria-expanded="false" aria-controls="prefs-panel"
+                  aria-label="{{ p.title }}" title="{{ p.title }}" data-prefs-toggle>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+          </button>
+
+          <div class="prefs__panel" id="prefs-panel" role="group" aria-labelledby="prefs-titulo" hidden>
+            <p class="prefs__title" id="prefs-titulo">{{ p.title }}</p>
+
+            <fieldset class="prefs__group">
+              <legend>{{ p.textSize }}</legend>
+              <div class="segmented">
+                <button type="button" class="segmented__button" data-size-option="sm" aria-pressed="false" aria-label="{{ p.size.sm }}">A−</button>
+                <button type="button" class="segmented__button" data-size-option="md" aria-pressed="true" aria-label="{{ p.size.md }}">A</button>
+                <button type="button" class="segmented__button" data-size-option="lg" aria-pressed="false" aria-label="{{ p.size.lg }}">A+</button>
+                <button type="button" class="segmented__button" data-size-option="xl" aria-pressed="false" aria-label="{{ p.size.xl }}">A++</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="prefs__group">
+              <legend>{{ p.font }}</legend>
+              <div class="segmented">
+                <button type="button" class="segmented__button segmented__button--sans" data-font-option="sans" aria-pressed="true">{{ p.fontSans }}</button>
+                <button type="button" class="segmented__button segmented__button--serif" data-font-option="serif" aria-pressed="false">{{ p.fontSerif }}</button>
+                <button type="button" class="segmented__button segmented__button--legible" data-font-option="legible" aria-pressed="false">{{ p.fontLegible }}</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="prefs__group">
+              <legend>{{ p.background }}</legend>
+              <div class="bg-options">
+                {%- assign fundos = "liso,grade,papel,gradiente,riscas,imagem" | split: "," -%}
+                {%- for fundo in fundos %}
+                <button type="button" class="bg-option" data-bg-option="{{ fundo }}" aria-pressed="{% if fundo == 'liso' %}true{% else %}false{% endif %}"{% if fundo == 'imagem' %} disabled{% endif %}><span class="bg-swatch" data-bg-style="{{ fundo }}" aria-hidden="true"></span><span>{{ p.bg[fundo] }}</span></button>
+                {%- endfor %}
+              </div>
+              <p class="prefs__hint">{{ p.bgHint }}</p>
+              <div class="prefs__actions">
+                <label class="text-button text-button--apply bg-file">
+                  <span>{{ p.bgChoose }}</span>
+                  <input class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp" data-bg-file>
+                </label>
+                <button type="button" class="text-button" data-bg-remove hidden>{{ p.bgRemove }}</button>
+              </div>
+              <p class="prefs__message" data-bg-message hidden></p>
+            </fieldset>
+
+            <fieldset class="prefs__group">
+              <legend>{{ p.accent }}</legend>
+              <div class="hue-grid" data-hue-grid></div>
+              <label class="hue-range-label" for="hue-range">{{ p.hueRange }}</label>
+              <input class="hue-range" id="hue-range" type="range" min="0" max="359" step="1" value="188" data-hue-range>
+              <div class="hue-preview">
+                <span class="hue-preview__chip" data-hue-chip></span>
+                <span class="hue-preview__sample" data-hue-sample>{{ p.sample }}</span>
+                <span class="hue-preview__readout" data-hue-readout></span>
+              </div>
+              <div class="prefs__actions">
+                <button type="button" class="text-button" data-prefs-reset>{{ p.reset }}</button>
+                <button type="button" class="text-button text-button--apply" data-accent-apply>{{ p.apply }}</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>

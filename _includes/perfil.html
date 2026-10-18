@@ -1,0 +1,30 @@
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign perfil = site.data.perfil -%}
+    <aside class="profile" aria-label="{{ t.profile.label }}">
+      <img class="profile__photo"
+           src="{{ perfil.foto | relative_url }}"
+           data-fallback="{{ perfil.foto_reserva | relative_url }}"
+           alt="{{ t.profile.photoAlt }}"
+           width="176" height="176"
+           decoding="async">
+
+      <div class="profile__identity">
+        <p class="profile__name">{{ perfil.nome }}</p>
+        <p class="profile__role">{{ perfil.ocupacao[page.lang] }}</p>
+        <p class="profile__org">{{ perfil.instituicao[page.lang] }}</p>
+      </div>
+
+      <ul class="profile__details">
+        <li>
+          {% include icone.html nome="local" %}
+          <span>{{ perfil.localizacao[page.lang] }}</span>
+        </li>
+        {%- for link in perfil.links %}
+        {%- assign rotulo = link.rotulo[page.lang] %}
+        <li>{% include icone.html nome=link.id %}{% include link.html url=link.url texto=rotulo %}</li>
+        {%- endfor %}
+        {%- if perfil.curriculo != "" %}
+        <li>{% include icone.html nome="curriculo" %}{% include link.html url=perfil.curriculo texto="CV (PDF)" %}</li>
+        {%- endif %}
+      </ul>
+    </aside>

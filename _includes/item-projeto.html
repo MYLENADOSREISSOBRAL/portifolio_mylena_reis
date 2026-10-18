@@ -1,0 +1,39 @@
+{%- comment -%} Um projeto de _data/projetos.yml. Uso: {% include item-projeto.html p=projeto %} {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign p = include.p -%}
+{%- capture nome_projeto %}{% include traduz.html valor=p.nome %}{% endcapture -%}
+{%- capture nome_atributo %}{% include traduz.html valor=p.nome puro=true %}{% endcapture -%}
+{%- capture contexto %}{% if p.contexto %}{% include traduz.html valor=p.contexto %}{% endif %}{% endcapture -%}
+{%- capture periodo %}{% if p.periodo %}{% include traduz.html valor=p.periodo %}{% endif %}{% endcapture -%}
+          <li class="project" id="projeto-{{ p.id }}">
+            <div class="project__header">
+              <h3 class="project__title">{{ nome_projeto }}</h3>
+              {%- if p.estado %}
+              <span class="status-badge status-badge--{{ p.estado }}">{{ t.render.status[p.estado] }}</span>
+              {%- endif %}
+            </div>
+            {%- if contexto != "" or periodo != "" %}
+            <p class="project__meta">{{ contexto }}{% if contexto != "" and periodo != "" %} · {% endif %}{{ periodo }}</p>
+            {%- endif %}
+            {%- if p.imagem %}
+            <img class="project__image" src="{{ p.imagem | relative_url }}" alt="{% include traduz.html valor=p.imagem_alt puro=true %}"
+                 width="448" height="252" loading="lazy" decoding="async" data-fallback="{{ '/assets/images/project-placeholder.svg' | relative_url }}">
+            {%- endif %}
+            {%- if p.descricao %}
+            <p class="project__description">{% include traduz.html valor=p.descricao %}</p>
+            {%- endif %}
+            {%- if p.tecnologias.size > 0 %}
+            <ul class="tag-list" aria-label="{{ t.render.technologies }}: {{ nome_atributo }}">
+              {%- for tecnologia in p.tecnologias %}
+              <li class="tag">{% include traduz.html valor=tecnologia %}</li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+            {%- capture links_projeto -%}
+              {%- if p.repositorio -%}<li>{% include link.html url=p.repositorio texto=t.render.repository sufixo=nome_projeto %}</li>{%- endif -%}
+              {%- if p.demonstracao -%}<li>{% include link.html url=p.demonstracao texto=t.render.demo sufixo=nome_projeto %}</li>{%- endif -%}
+            {%- endcapture -%}
+            {%- if links_projeto != "" %}
+            <ul class="project__links">{{ links_projeto }}</ul>
+            {%- endif %}
+          </li>

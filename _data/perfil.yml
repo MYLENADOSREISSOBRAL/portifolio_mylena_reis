@@ -1,0 +1,45 @@
+# ============================================================================
+# Perfil — fonte única de nome, foto, ocupação e links profissionais.
+# Usado na coluna lateral, em "Informações rápidas", no rodapé e nos dados
+# estruturados (JSON-LD) para buscadores.
+# Links só aparecem quando começam com https:// ou mailto:.
+# ============================================================================
+
+nome: "Mylena Reis"
+foto: /assets/images/profile.jpg
+foto_reserva: /assets/images/profile-placeholder.svg
+
+ocupacao:
+  pt: "Estudante de Sistemas de Informação"
+  en: "Information Systems student"
+
+instituicao:
+  pt: "Universidade Federal do Pará (UFPA)"
+  en: "Federal University of Pará (UFPA)"
+instituicao_nome: "Universidade Federal do Pará"
+instituicao_sigla: "UFPA"
+
+localizacao:
+  pt: "Belém, Pará, Brasil"
+  en: "Belém, Pará, Brazil"
+cidade: "Belém"
+estado: "PA"
+pais: "BR"
+
+links:
+  - id: email
+    rotulo: { pt: "E-mail", en: "Email" }
+    url: "mailto:mylena1408@gmail.com"
+    exibir: "mylena1408@gmail.com"
+  - id: github
+    rotulo: { pt: "GitHub", en: "GitHub" }
+    url: "https://github.com/Mylena1408"
+    exibir: "github.com/Mylena1408"
+  - id: linkedin
+    rotulo: { pt: "LinkedIn", en: "LinkedIn" }
+    url: "https://www.linkedin.com/in/mylena-dos-reis-sobral-04480920b/"
+    exibir: "linkedin.com/in/mylena-dos-reis-sobral"
+
+# Currículo em PDF: informe o caminho (ex.: /assets/docs/curriculo.pdf)
+# somente quando o arquivo existir no projeto.
+curriculo: ""

@@ -1,0 +1,166 @@
+# ============================================================================
+# Projetos (página "Projetos e Trajetória"). A ordem da lista é a de exibição.
+# - Textos bilíngues: { pt: "...", en: "..." }; texto simples vale nos dois.
+# - Campos sem informação confirmada ficam null e não aparecem.
+# - estado: concluido | em-andamento | experimental | null (sem rótulo)
+# - Links só aparecem quando começam com https://
+# - imagem: caminho em /assets/images/... (exige imagem_alt em pt e en)
+# ============================================================================
+
+- id: healthos
+  nome: HealthOS
+  contexto:
+    pt: Atividade acadêmica
+    en: Academic assignment
+  periodo: null
+  estado: null
+  descricao:
+    pt: Sistema de gestão hospitalar integrada, com API em FastAPI documentada via OpenAPI e interface web para módulos como prontuário, consultas, laboratório, farmácia e financeiro. Aplicação didática, com dados fictícios.
+    en: Integrated hospital management system with a FastAPI backend documented via OpenAPI and a web interface for modules such as medical records, appointments, laboratory, pharmacy and billing. Educational application using fictitious data.
+  tecnologias:
+  - Python
+  - FastAPI
+  - SQLAlchemy
+  - Pydantic
+  - SQLite
+  - PostgreSQL
+  - JavaScript
+  - Docker
+  - Render
+  repositorio: https://github.com/Mylena1408/dsai-ap1--HealthOS-
+  demonstracao: https://dsai-ap1-healthos.onrender.com/
+  imagem: null
+  imagem_alt: null
+- id: minidb
+  nome: MiniDB
+  contexto: null
+  periodo: null
+  estado: null
+  descricao:
+    pt: Estudos e implementação de mecanismos de armazenamento e gerenciamento de páginas de dados.
+    en: Studies and implementation of storage mechanisms and data page management.
+  tecnologias: []
+  repositorio: null
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: sistema-distribuido-assinaturas
+  nome:
+    pt: Sistema Distribuído de Assinaturas
+    en: Distributed Subscription System
+  contexto:
+    pt: Disciplina de Sistemas Distribuídos — UFPA
+    en: Distributed Systems course — UFPA
+  periodo:
+    pt: '2026'
+    en: '2026'
+  estado: null
+  descricao:
+    pt: Protótipo de sistema distribuído para gerenciamento de assinaturas, com serviços independentes que se comunicam por sockets TCP, sincronização de horário via NTP, ordenação de eventos com relógios lógicos de Lamport e persistência em SQLite.
+    en: Prototype of a distributed system for managing subscriptions, with independent services communicating over TCP sockets, clock synchronization via NTP, event ordering with Lamport logical clocks and persistence in SQLite.
+  tecnologias:
+  - Python
+  - Flask
+  - SQLite
+  - pt: Sockets TCP
+    en: TCP sockets
+  - ntplib
+  repositorio: https://github.com/Mylena1408/SISTEMAS_DISTRIBUIDOS_ATIVIDADE_SERVI-OS
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: mrc-cadeia-fria
+  nome:
+    pt: MRC — Monitoramento da Cadeia Fria
+    en: MRC — Cold Chain Monitoring
+  contexto:
+    pt: Projeto em equipe — UFPA
+    en: Team project — UFPA
+  periodo:
+    pt: '2026'
+    en: '2026'
+  estado: null
+  descricao:
+    pt: 'Plataforma para monitoramento e suporte à manutenção preditiva da cadeia fria industrial: fluxo automatizado em n8n que identifica situações críticas de temperatura e gera relatórios de apoio à manutenção.'
+    en: 'Platform for monitoring and supporting predictive maintenance of the industrial cold chain: an automated n8n workflow that detects critical temperature conditions and generates reports to support maintenance.'
+  tecnologias:
+  - n8n
+  - Node.js
+  repositorio: https://github.com/Mylena1408/REPOSITORIO_O-M_2026.2
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: computacao-grafica
+  nome:
+    pt: Algoritmos de Computação Gráfica
+    en: Computer Graphics Algorithms
+  contexto:
+    pt: Disciplina de Computação Gráfica — UFPA
+    en: Computer Graphics course — UFPA
+  periodo:
+    pt: '2026.2'
+    en: '2026.2'
+  estado: null
+  descricao:
+    pt: Aplicação desktop que implementa algoritmos clássicos de computação gráfica — DDA, Bresenham, circunferência e elipse pelo ponto médio, curvas de Bézier e projeções ortogonal, oblíqua e em perspectiva de um cubo.
+    en: Desktop application implementing classic computer graphics algorithms — DDA, Bresenham, midpoint circle and ellipse, Bézier curves, and orthographic, oblique and perspective projections of a cube.
+  tecnologias:
+  - Python
+  - PySide6
+  - Qt Designer
+  repositorio: https://github.com/Mylena1408/computacao_grafica_UFPA
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: luapdf
+  nome: LuaPDF
+  contexto:
+    pt: Projeto acadêmico
+    en: Academic project
+  periodo: null
+  estado: null
+  descricao:
+    pt: Leitor de documentos PDF para desktop, desenvolvido para aplicar programação orientada a objetos, manipulação de arquivos e construção de interfaces gráficas.
+    en: Desktop PDF reader built to apply object-oriented programming, file handling and graphical user interface development.
+  tecnologias: []
+  repositorio: https://github.com/Mylena1408/projeto_Lua_PDF
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: desenvolvimento-apoiado-por-ia
+  nome:
+    pt: Desenvolvimento de Software Apoiado por IA
+    en: AI-Assisted Software Development
+  contexto:
+    pt: Diário e atividades da disciplina — UFPA
+    en: Course log and assignments — UFPA
+  periodo:
+    pt: set.–dez. 2026
+    en: Sep–Dec 2026
+  estado: null
+  descricao:
+    pt: 'Registro das atividades da disciplina: uso de agentes de IA no desenvolvimento, alterações realizadas, testes executados e aprendizados obtidos.'
+    en: 'Record of the course activities: use of AI agents in development, changes made, tests run and lessons learned.'
+  tecnologias: []
+  repositorio: https://github.com/Mylena1408/TOPICOS-ESPECIAIS-EM-SI
+  demonstracao: null
+  imagem: null
+  imagem_alt: null
+- id: estruturas-de-dados
+  nome:
+    pt: Estruturas de Dados I
+    en: Data Structures I
+  contexto:
+    pt: Atividade acadêmica
+    en: Academic assignment
+  periodo: null
+  estado: null
+  descricao:
+    pt: Implementações de algoritmos de ordenação em C++.
+    en: Implementations of sorting algorithms in C++.
+  tecnologias:
+  - C++
+  repositorio: https://github.com/Mylena1408/estruturas-de-dados-1
+  demonstracao: null
+  imagem: null
+  imagem_alt: null

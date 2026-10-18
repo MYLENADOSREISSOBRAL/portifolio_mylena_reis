@@ -1,0 +1,20 @@
+{%- comment -%}
+  Link com segurança e acessibilidade.
+  Uso: {% include link.html url=... texto=... sufixo="nome do item (opcional)" %}
+  - https:// abre em nova aba com rel="noopener noreferrer" e aviso oculto.
+  - Endereços vazios ou "#" nunca viram link (somente o texto é exibido).
+{%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign url = include.url | strip -%}
+{%- assign inicio8 = url | slice: 0, 8 -%}
+{%- assign inicio7 = url | slice: 0, 7 -%}
+{%- assign inicio1 = url | slice: 0, 1 -%}
+{%- if inicio8 == "https://" -%}
+<a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ include.texto }}<span class="visually-hidden"> {% if include.sufixo %}{{ include.sufixo }} {% endif %}{{ t.render.newTab }}</span></a>
+{%- elsif inicio7 == "mailto:" -%}
+<a href="{{ url }}">{{ include.texto }}</a>
+{%- elsif inicio1 == "/" -%}
+<a href="{{ url | relative_url }}">{{ include.texto }}{% if include.sufixo %}<span class="visually-hidden"> {{ include.sufixo }}</span>{% endif %}</a>
+{%- else -%}
+{{ include.texto }}
+{%- endif -%}

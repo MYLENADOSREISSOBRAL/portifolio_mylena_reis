@@ -1,0 +1,135 @@
+---
+# Ferramenta pessoal: sem layout do site e fora do mapa do site (ver _config.yml)
+layout: null
+sitemap: false
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor de foto de perfil — Mylena Reis</title>
+  <!-- Ferramenta pessoal: fora dos buscadores e sem link no menu público -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Aplica o tema escolhido no portfólio antes da primeira pintura -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var theme = window.localStorage.getItem("portfolio.theme");
+        if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+      } catch (e) { /* armazenamento indisponível: segue o sistema */ }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="editor-foto.css">
+
+  <script src="editor-foto.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#editor">Pular para o editor</a>
+
+  <!-- Mensagens de estado anunciadas por leitores de tela -->
+  <p class="visually-hidden" role="status" aria-live="polite" data-status></p>
+
+  <header class="editor-header">
+    <div class="editor-container editor-header__inner">
+      <a class="editor-back" href="../index.html">← Voltar ao portfólio</a>
+      <span class="editor-badge">Ferramenta pessoal</span>
+    </div>
+  </header>
+
+  <main id="editor" class="editor-container editor" tabindex="-1">
+    <h1>Editor de foto de perfil</h1>
+    <p class="editor-lead">
+      Recorte, aplique filtros e ajustes e baixe um <code>profile.jpg</code> de 480 × 480 px para
+      substituir <code>assets/images/profile.jpg</code>. Tudo acontece neste navegador: a imagem
+      não é enviada a nenhum servidor e o arquivo gerado não leva metadados (EXIF).
+    </p>
+
+    <noscript>
+      <p class="editor-notice editor-notice--warning">Este editor precisa de JavaScript.</p>
+    </noscript>
+    <p class="editor-notice" data-notice hidden></p>
+
+    <div class="editor-layout">
+      <div class="editor-preview">
+        <div class="editor-stage" data-stage tabindex="0" role="img"
+             aria-label="Prévia da foto de perfil"
+             aria-describedby="editor-dica">
+          <canvas width="480" height="480" data-canvas></canvas>
+          <span class="editor-stage__mask" aria-hidden="true"></span>
+        </div>
+        <p id="editor-dica" class="editor-hint">
+          Arraste a foto ou use as setas do teclado para reposicionar (Shift para passos maiores).
+          As teclas + e − ajustam o zoom. O círculo mostra como a foto aparece no site.
+        </p>
+        <button type="button" class="editor-button" aria-pressed="false" data-compare>Ver sem filtros e ajustes</button>
+      </div>
+
+      <div class="editor-controls">
+        <div class="editor-tabs" role="tablist" aria-label="Ferramentas de edição">
+          <button type="button" class="editor-tab" role="tab" id="aba-recorte" aria-controls="painel-recorte" aria-selected="true">Recorte</button>
+          <button type="button" class="editor-tab" role="tab" id="aba-filtros" aria-controls="painel-filtros" aria-selected="false" tabindex="-1">Filtros</button>
+          <button type="button" class="editor-tab" role="tab" id="aba-ajustes" aria-controls="painel-ajustes" aria-selected="false" tabindex="-1">Ajustes</button>
+        </div>
+
+        <div class="editor-panel" id="painel-recorte" role="tabpanel" aria-labelledby="aba-recorte">
+          <div class="editor-field">
+            <label for="ctl-zoom">Zoom</label>
+            <output for="ctl-zoom" data-output="zoom">1,00×</output>
+            <input id="ctl-zoom" type="range" min="100" max="300" step="1" value="100" data-control="zoom">
+          </div>
+          <div class="editor-field">
+            <label for="ctl-rotation">Endireitar</label>
+            <output for="ctl-rotation" data-output="rotation">0°</output>
+            <input id="ctl-rotation" type="range" min="-45" max="45" step="1" value="0" data-control="rotation">
+          </div>
+        </div>
+
+        <div class="editor-panel" id="painel-filtros" role="tabpanel" aria-labelledby="aba-filtros" hidden>
+          <div class="filter-list" role="group" aria-label="Filtros predefinidos" data-filter-list></div>
+        </div>
+
+        <div class="editor-panel" id="painel-ajustes" role="tabpanel" aria-labelledby="aba-ajustes" hidden>
+          <div class="editor-field">
+            <label for="ctl-brightness">Brilho</label>
+            <output for="ctl-brightness" data-output="brightness">0</output>
+            <input id="ctl-brightness" type="range" min="-100" max="100" step="1" value="0" data-control="brightness">
+          </div>
+          <div class="editor-field">
+            <label for="ctl-contrast">Contraste</label>
+            <output for="ctl-contrast" data-output="contrast">0</output>
+            <input id="ctl-contrast" type="range" min="-100" max="100" step="1" value="0" data-control="contrast">
+          </div>
+          <div class="editor-field">
+            <label for="ctl-saturation">Saturação</label>
+            <output for="ctl-saturation" data-output="saturation">0</output>
+            <input id="ctl-saturation" type="range" min="-100" max="100" step="1" value="0" data-control="saturation">
+          </div>
+          <div class="editor-field">
+            <label for="ctl-vignette">Vinheta</label>
+            <output for="ctl-vignette" data-output="vignette">0</output>
+            <input id="ctl-vignette" type="range" min="-100" max="100" step="1" value="0" data-control="vignette">
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <label class="editor-button editor-file">
+            Carregar outra foto
+            <input class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp" data-file>
+          </label>
+          <button type="button" class="editor-button" data-reset>Restaurar</button>
+          <button type="button" class="editor-button editor-button--primary" data-download>Baixar JPEG</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

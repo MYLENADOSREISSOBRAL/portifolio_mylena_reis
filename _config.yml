@@ -1,0 +1,145 @@
+# ============================================================================
+# Configuração do site — Jekyll (compilado automaticamente pelo GitHub Pages)
+# Após alterar este arquivo, reinicie a pré-visualização local.
+# ============================================================================
+
+title: "Mylena Reis"
+description: >-
+  Portfólio de Mylena Reis, estudante de Sistemas de Informação na
+  Universidade Federal do Pará (UFPA), com projetos, trajetória e estudos em
+  engenharia de software e desenvolvimento backend.
+
+# Endereço de publicação no GitHub Pages: https://mylenadosreissobral.github.io/portifolio_mylena_reis/
+url: "https://mylenadosreissobral.github.io"
+baseurl: "/portifolio_mylena_reis"
+
+# ---------------------------------------------------------------------------
+# Idiomas: português na raiz (/) e inglês em /en/
+# ---------------------------------------------------------------------------
+idioma_padrao: pt
+idiomas:
+  pt:
+    html: pt-BR
+    og: pt_BR
+    nome: Português
+    curto: PT
+  en:
+    html: en
+    og: en_US
+    nome: English
+    curto: EN
+
+# ---------------------------------------------------------------------------
+# Plano de fundo padrão para todos os visitantes
+# liso | grade | papel | gradiente | riscas | imagem
+# Para "imagem", informe o arquivo (paisagem, 1920 × 1080 px ou mais):
+#   plano_de_fundo_imagem: /assets/backgrounds/apresentacao.jpg
+# ---------------------------------------------------------------------------
+plano_de_fundo: liso
+plano_de_fundo_imagem: ""
+
+# ---------------------------------------------------------------------------
+# Conteúdo por arquivos
+#   _posts/AAAA-MM-DD-titulo.md   → Blog (página própria em /blog/titulo/)
+#   _publicacoes/*.md             → Publicações (lista por ano)
+#   _apresentacoes/*.md           → Apresentações (lista por ano)
+# Modelos prontos em docs/modelos/. Arquivos que começam com "_" são ignorados.
+# ---------------------------------------------------------------------------
+collections:
+  publicacoes:
+    output: false
+  apresentacoes:
+    output: false
+  # Slides em HTML, escritos em Markdown: _slides/AAAA-MM-DD-nome.md → /slides/AAAA-MM-DD-nome/
+  slides:
+    output: true
+    permalink: /slides/:name/
+
+
+# Publica também itens com data futura (slides e apresentações costumam ser
+# preparados antes do evento; textos do blog com data futura também aparecem)
+future: true
+
+# Formas do seu nome nas citações: aparecem em negrito nas listas de autores
+# (a comparação ignora espaços, pontos e maiúsculas)
+nome_citacao:
+  - "Reis, M."
+  - "Sobral, M. R."
+
+# ---------------------------------------------------------------------------
+# Plugins (permitidos pelo GitHub Pages)
+#   jekyll-feed    → feeds do blog por idioma: /feed/pt.xml e /feed/en.xml
+#   jekyll-sitemap → /sitemap.xml (páginas com "sitemap: false" ficam de fora)
+# ---------------------------------------------------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  categories:
+    - pt
+    - en
+
+# Visual próprio (_layouts, css/): desativa o tema padrão que o GitHub Pages
+# aplicaria automaticamente (Primer)
+theme: null
+
+# ---------------------------------------------------------------------------
+# Markdown
+# ---------------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Toda página usa o layout "pagina" e o idioma português, salvo indicação
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: pagina
+      lang: pt
+  - scope:
+      path: "en"
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: texto
+      lang: pt
+      categories: [pt]   # separa os feeds por idioma (não altera o endereço)
+      permalink: /blog/:title/   # só para os textos (páginas definem o próprio)
+  # Versões em inglês dos textos do blog: _posts/en/ → /en/blog/titulo/
+  - scope:
+      path: "_posts/en"
+      type: posts
+    values:
+      layout: texto
+      lang: en
+      categories: [en]
+      permalink: /en/blog/:title/
+  # Slides: layout próprio de apresentação (tela cheia, navegação por teclado)
+  - scope:
+      path: ""
+      type: slides
+    values:
+      layout: slides
+      lang: pt
+  # Ferramenta pessoal: fora do mapa do site e sem layout
+  - scope:
+      path: "tools"
+    values:
+      layout: null
+      sitemap: false
+
+# Arquivos do projeto que não fazem parte do site publicado
+exclude:
+  - docs/
+  - apresentar-na-rede.ps1
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/

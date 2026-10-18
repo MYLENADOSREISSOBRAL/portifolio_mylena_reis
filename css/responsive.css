@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Responsividade (mobile-first). Pontos de quebra em "em" para que o
+   layout se reorganize também quando o usuário amplia o zoom.
+   40em ≈ 640px · 64em ≈ 1024px (64em também é usado em js/navigation.js)
+   ========================================================================== */
+
+/* ---------- Telas médias ---------- */
+@media (min-width: 40em) {
+  /* Nome completo dos idiomas */
+  .lang-switch__long {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  .lang-switch__short {
+    display: none;
+  }
+
+  /* Painel de preferências ancorado no próprio botão */
+  .prefs {
+    position: relative;
+  }
+
+  .prefs__panel {
+    top: calc(100% + var(--space-2xs));
+    left: auto;
+    right: 0;
+    width: 22rem;
+  }
+
+  .profile {
+    --avatar-size-sm: 6rem;
+  }
+
+  .profile__details {
+    grid-column: 2;
+  }
+
+  .skill-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Telas grandes: cabeçalho em uma linha e coluna lateral ---------- */
+@media (min-width: 64em) {
+  .site-nav,
+  .site-header__controls {
+    flex-basis: auto;
+  }
+
+  .js .site-nav__list {
+    flex-direction: row;
+    gap: var(--space-3xs) var(--space-sm);
+    padding-block: 0;
+  }
+
+  .js .site-nav__link {
+    display: inline-block;
+    padding-block: var(--space-3xs);
+    font-size: var(--text-sm);
+  }
+
+  .page {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    gap: var(--space-2xl);
+    padding-block: var(--space-xl) var(--space-2xl);
+  }
+
+  .profile {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    gap: var(--space-2xs);
+  }
+
+  .profile__photo {
+    width: var(--avatar-size-lg);
+    height: var(--avatar-size-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .profile__details {
+    grid-column: 1;
+    margin-top: var(--space-xs);
+    padding-top: var(--space-xs);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+}
+
+/* A coluna lateral só fica fixa quando há altura suficiente, para que
+   nunca fique cortada em telas baixas ou com zoom ampliado. */
+@media (min-width: 64em) and (min-height: 40em) {
+  .profile {
+    position: sticky;
+    top: var(--space-lg);
+  }
+}

@@ -1,0 +1,20 @@
+{%- comment -%} Conteúdo da página Publicações, compartilhado por pt e en (página em publicacoes.html e en/). {%- endcomment -%}
+{%- comment -%} Cada publicação é um arquivo em _publicacoes/ (modelo em docs/modelos/publicacao.md) {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign publicacoes = site.publicacoes | sort: "ano", "last" | reverse -%}
+{%- if publicacoes.size == 0 %}
+        <p class="placeholder-note">{{ t.empty.publications }}</p>
+{%- else -%}
+{%- assign grupos = publicacoes | group_by: "ano" -%}
+{% include indice-anos.html grupos=grupos %}
+{%- for grupo in grupos %}
+        <section class="year-group" aria-labelledby="ano-{{ grupo.name }}">
+          <h2 id="ano-{{ grupo.name }}" class="section__title">{{ grupo.name }}</h2>
+          <ol class="entry-list entry-list--numbered">
+            {%- for publicacao in grupo.items %}
+{% include item-publicacao.html pub=publicacao %}
+            {%- endfor %}
+          </ol>
+        </section>
+{%- endfor %}
+{%- endif %}

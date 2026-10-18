@@ -1,0 +1,12 @@
+# ============================================================================
+# Interesses de pesquisa (página inicial). Publicações e apresentações ficam
+# em arquivos próprios (coleções _publicacoes/ e _apresentacoes/).
+# ============================================================================
+
+interesses:
+- pt: Gestão do conhecimento
+  en: Knowledge management
+- pt: Engenharia de software no setor público
+  en: Software engineering in the public sector
+- pt: Processos de onboarding e aprendizagem organizacional
+  en: Onboarding processes and organizational learning

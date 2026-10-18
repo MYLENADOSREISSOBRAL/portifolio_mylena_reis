@@ -1,0 +1,32 @@
+{%- comment -%}
+  Novidades na página inicial: os 3 itens mais recentes entre textos do blog
+  e apresentações (publicações têm só o ano, por isso não entram).
+  Só aparece quando há itens.
+{%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign textos_blog = site.posts | where: "lang", page.lang -%}
+{%- assign recentes = textos_blog | concat: site.apresentacoes | sort: "date" | reverse -%}
+{%- if page.lang == "en" -%}{%- assign pagina_apresentacoes = "/en/talks/" -%}{%- else -%}{%- assign pagina_apresentacoes = "/apresentacoes/" -%}{%- endif -%}
+{%- if recentes.size > 0 %}
+      <section class="section" aria-labelledby="titulo-novidades">
+        <h2 id="titulo-novidades" class="section__title">{{ t.news.title }}</h2>
+        <ul class="entry-list">
+          {%- for item in recentes limit: 3 %}
+          {%- if item.collection == "posts" -%}
+            {%- assign titulo_item = item.title -%}
+            {%- assign rotulo_item = t.news.blog -%}
+            {%- assign endereco_item = item.url | relative_url -%}
+          {%- else -%}
+            {%- capture titulo_item %}{% include traduz.html valor=item.titulo %}{% endcapture -%}
+            {%- assign rotulo_item = t.news.talk -%}
+            {%- assign ancora_item = item.date | date: '%Y-%m-%d' | append: '-' | append: item.slug -%}
+            {%- assign endereco_item = pagina_apresentacoes | relative_url | append: '#' | append: ancora_item -%}
+          {%- endif %}
+          <li class="entry">
+            <p class="entry__meta">{{ rotulo_item }} · {% include data.html data=item.date %}</p>
+            <h3 class="entry__title"><a href="{{ endereco_item }}">{{ titulo_item }}</a></h3>
+          </li>
+          {%- endfor %}
+        </ul>
+      </section>
+{%- endif -%}

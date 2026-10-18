@@ -1,0 +1,90 @@
+{%- comment -%} Conteúdo da página Projetos e Trajetória, compartilhado por pt e en (página em projetos.html e en/). {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign projetos = site.data.projetos -%}
+{%- assign trajetoria = site.data.trajetoria -%}
+{%- assign habilidades = site.data.habilidades -%}
+        <nav class="page-toc" aria-label="{{ t.sections.onThisPage }}">
+          <p class="page-toc__title">{{ t.sections.onThisPage }}</p>
+          <ul>
+            <li><a href="#projetos">{{ t.sections.projects }}</a></li>
+            <li><a href="#trajetoria">{{ t.sections.timeline }}</a></li>
+            <li><a href="#habilidades">{{ t.sections.skills }}</a></li>
+          </ul>
+        </nav>
+
+        <section class="section" aria-labelledby="projetos">
+          <h2 id="projetos" class="section__title">{{ t.sections.projects }}</h2>
+          {%- if projetos.size > 0 %}
+          <ul class="project-list">
+            {%- for projeto in projetos %}
+{% include item-projeto.html p=projeto %}
+            {%- endfor %}
+          </ul>
+          <p class="section__lead">{{ t.sections.projectsMore }}</p>
+          {%- else %}
+          <p class="placeholder-note">{{ t.empty.projects }}</p>
+          {%- endif %}
+        </section>
+
+        <section class="section" aria-labelledby="trajetoria">
+          <h2 id="trajetoria" class="section__title">{{ t.sections.timeline }}</h2>
+          {%- if trajetoria.size > 0 %}
+          <ol class="timeline">
+            {%- for etapa in trajetoria %}
+            <li class="timeline__item">
+              <h3 class="timeline__title">{% include traduz.html valor=etapa.titulo %}</h3>
+              {%- capture organizacao %}{% if etapa.organizacao %}{% include traduz.html valor=etapa.organizacao %}{% endif %}{% endcapture -%}
+              {%- capture periodo_etapa %}{% if etapa.periodo %}{% include traduz.html valor=etapa.periodo %}{% endif %}{% endcapture -%}
+              {%- if organizacao != "" or periodo_etapa != "" %}
+              <p class="timeline__meta">{{ organizacao }}{% if organizacao != "" and periodo_etapa != "" %} · {% endif %}{{ periodo_etapa }}</p>
+              {%- endif %}
+              {%- if etapa.descricao %}
+              <p>{% include traduz.html valor=etapa.descricao %}</p>
+              {%- endif %}
+              {%- if etapa.destaques and etapa.destaques.itens.size > 0 %}
+              {%- capture rotulo_destaques %}{% include traduz.html valor=etapa.destaques.rotulo %}{% endcapture %}
+              {%- capture rotulo_atributo %}{% include traduz.html valor=etapa.destaques.rotulo puro=true %}{% endcapture %}
+              <p class="timeline__label">{{ rotulo_destaques }}</p>
+              <ul class="tag-list" aria-label="{{ rotulo_atributo }}">
+                {%- for item in etapa.destaques.itens %}
+                <li class="tag">{% include traduz.html valor=item %}</li>
+                {%- endfor %}
+              </ul>
+              {%- endif %}
+            </li>
+            {%- endfor %}
+          </ol>
+          {%- else %}
+          <p class="placeholder-note">{{ t.empty.timeline }}</p>
+          {%- endif %}
+        </section>
+
+        <section class="section" aria-labelledby="habilidades">
+          <h2 id="habilidades" class="section__title">{{ t.sections.skills }}</h2>
+          {%- if habilidades.size > 0 %}
+          <p class="section__lead">{{ t.sections.skillsLead }}</p>
+          <div class="skill-groups">
+            {%- assign niveis = "profissional,projeto,estudado" | split: "," -%}
+            {%- for grupo in habilidades %}
+            {%- capture categoria %}{% include traduz.html valor=grupo.categoria %}{% endcapture %}
+            {%- capture categoria_atributo %}{% include traduz.html valor=grupo.categoria puro=true %}{% endcapture %}
+            <div class="skill-group">
+              <h3 class="skill-group__title">{{ categoria }}</h3>
+              {%- for nivel in niveis %}
+              {%- assign do_nivel = grupo.itens | where: "nivel", nivel -%}
+              {%- if do_nivel.size > 0 %}
+              <p class="skill-group__level">{{ t.render.level[nivel] }}</p>
+              <ul class="tag-list" aria-label="{{ categoria_atributo }} — {{ t.render.level[nivel] }}">
+                {%- for habilidade in do_nivel %}
+                <li class="tag">{% include traduz.html valor=habilidade.nome %}</li>
+                {%- endfor %}
+              </ul>
+              {%- endif %}
+              {%- endfor %}
+            </div>
+            {%- endfor %}
+          </div>
+          {%- else %}
+          <p class="placeholder-note">{{ t.empty.skills }}</p>
+          {%- endif %}
+        </section>

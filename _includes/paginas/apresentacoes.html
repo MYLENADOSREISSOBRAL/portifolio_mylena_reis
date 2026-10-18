@@ -1,0 +1,20 @@
+{%- comment -%} Conteúdo da página Apresentações, compartilhado por pt e en (página em apresentacoes.html e en/). {%- endcomment -%}
+{%- comment -%} Cada apresentação é um arquivo em _apresentacoes/ (modelo em docs/modelos/apresentacao.md) {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign apresentacoes = site.apresentacoes | sort: "date" | reverse -%}
+{%- if apresentacoes.size == 0 %}
+        <p class="placeholder-note">{{ t.empty.talks }}</p>
+{%- else -%}
+{%- assign grupos = apresentacoes | group_by_exp: "item", "item.date | date: '%Y'" -%}
+{% include indice-anos.html grupos=grupos %}
+{%- for grupo in grupos %}
+        <section class="year-group" aria-labelledby="ano-{{ grupo.name }}">
+          <h2 id="ano-{{ grupo.name }}" class="section__title">{{ grupo.name }}</h2>
+          <ul class="entry-list">
+            {%- for apresentacao in grupo.items %}
+{% include item-apresentacao.html a=apresentacao %}
+            {%- endfor %}
+          </ul>
+        </section>
+{%- endfor %}
+{%- endif %}

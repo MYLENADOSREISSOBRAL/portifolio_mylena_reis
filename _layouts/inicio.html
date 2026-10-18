@@ -1,0 +1,38 @@
+---
+layout: padrao
+---
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign perfil = site.data.perfil -%}
+{%- assign menu = site.data.navegacao[page.lang] -%}
+      <section class="section" aria-labelledby="titulo-inicio">
+        <h1 id="titulo-inicio">{{ page.titulo_intro }}</h1>
+        {{ content }}
+      </section>
+
+{% include novidades.html %}
+
+      <!-- Atalhos, no estilo "Frequently needed info": contatos confirmados e páginas do site -->
+      <section class="section" aria-labelledby="titulo-rapidas">
+        <h2 id="titulo-rapidas" class="section__title">{{ t.home.quickTitle }}</h2>
+        <ul class="link-list">
+          {%- for link in perfil.links %}
+          <li>{% include icone.html nome=link.id %}<span class="link-list__label">{{ link.rotulo[page.lang] }}:</span> {% include link.html url=link.url texto=link.exibir %}</li>
+          {%- endfor %}
+          {%- for item in menu offset: 1 %}
+          <li>{% include icone.html nome="pagina" %}{% include link.html url=item.url texto=item.titulo %}</li>
+          {%- endfor %}
+        </ul>
+      </section>
+
+      {%- assign interesses = site.data.pesquisa.interesses %}
+      {%- if interesses.size > 0 %}
+      <section class="section" aria-labelledby="titulo-interesses">
+        <h2 id="titulo-interesses" class="section__title">{{ t.home.interestsTitle }}</h2>
+        <p class="section__lead">{{ t.home.interestsLead }}</p>
+        <ul class="plain-list">
+          {%- for interesse in interesses %}
+          <li>{{ interesse[page.lang] }}</li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}

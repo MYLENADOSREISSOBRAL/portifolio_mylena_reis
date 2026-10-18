@@ -1,0 +1,23 @@
+{%- comment -%}
+  Exibe um campo que pode ser texto simples ou { pt: "...", en: "..." }.
+  Uso: {% include traduz.html valor=projeto.descricao %}
+  - Sem tradução no idioma da página, mostra o original marcado com lang
+    (leitores de tela pronunciam no idioma certo).
+  - Dentro de atributos (aria-label, alt), use puro=true: sem marcação HTML.
+{%- endcomment -%}
+{%- assign v = include.valor -%}
+{%- if v.pt or v.en -%}
+  {%- assign traduzido = v[page.lang] -%}
+  {%- if traduzido -%}
+    {{- traduzido -}}
+  {%- else -%}
+    {%- if page.lang == "en" -%}
+      {%- assign original = v.pt -%}{%- assign idioma_original = "pt-BR" -%}
+    {%- else -%}
+      {%- assign original = v.en -%}{%- assign idioma_original = "en" -%}
+    {%- endif -%}
+    {%- if include.puro -%}{{- original -}}{%- else -%}<span lang="{{ idioma_original }}">{{ original }}</span>{%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  {{- v -}}
+{%- endif -%}

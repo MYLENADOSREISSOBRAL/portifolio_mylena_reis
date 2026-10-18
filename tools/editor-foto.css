@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Editor de foto de perfil (ferramenta pessoal)
+   Reaproveita os tokens de ../css/variables.css e a base de ../css/base.css.
+   ========================================================================== */
+
+.editor-container {
+  width: 100%;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Cabeçalho ---------- */
+.editor-header {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.editor-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-md);
+  padding-block: var(--space-sm);
+}
+
+.editor-back {
+  font-weight: var(--weight-medium);
+}
+
+.editor-badge {
+  padding: 0.1em 0.6em;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---------- Página ---------- */
+.editor {
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.editor:focus {
+  outline: none;
+}
+
+.editor-lead {
+  color: var(--color-text-muted);
+}
+
+.editor-lead code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.editor-notice {
+  max-width: var(--measure);
+  padding: var(--space-xs) var(--space-sm);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background-color: var(--color-surface);
+  font-size: var(--text-sm);
+}
+
+.editor-notice--warning {
+  border-left-color: var(--color-status-experimental);
+}
+
+.editor-layout {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+/* ---------- Prévia ---------- */
+.editor-preview {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-xs);
+  align-content: start;
+}
+
+.editor-stage {
+  position: relative;
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  cursor: grab;
+  touch-action: none; /* permite arrastar com o dedo sem rolar a página */
+  user-select: none;
+}
+
+.editor-stage.is-dragging {
+  cursor: grabbing;
+}
+
+.editor-stage:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.editor-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Escurece a área fora do círculo, como a foto aparece no site */
+.editor-stage__mask {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 100vmax rgb(0 0 0 / 0.5);
+  outline: 2px solid rgb(255 255 255 / 0.85);
+  pointer-events: none;
+}
+
+.editor-hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  max-width: 22rem;
+}
+
+/* ---------- Abas ---------- */
+.editor-tabs {
+  display: flex;
+  gap: var(--space-3xs);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.editor-tab {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.9rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+
+.editor-tab:hover {
+  color: var(--color-text);
+}
+
+.editor-tab[aria-selected="true"] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+  font-weight: var(--weight-bold);
+}
+
+.editor-panel {
+  padding-block: var(--space-md);
+}
+
+/* ---------- Controles deslizantes ---------- */
+.editor-field {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3xs) var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.editor-field label {
+  font-weight: var(--weight-medium);
+}
+
+.editor-field output {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.editor-field input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 1.75rem;
+  margin: 0;
+  accent-color: var(--color-accent);
+}
+
+/* ---------- Filtros ---------- */
+.filter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.75rem, 1fr));
+  gap: var(--space-xs);
+}
+
+.filter-option {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-2xs);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.filter-option:hover {
+  background-color: var(--color-surface);
+}
+
+.filter-option[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+  font-weight: var(--weight-bold);
+}
+
+.filter-option canvas {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* ---------- Ações ---------- */
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  padding-top: var(--space-sm);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.editor-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.35rem 1rem;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.editor-button:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.editor-button[aria-pressed="true"] {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent);
+  font-weight: var(--weight-bold);
+}
+
+.editor-button--primary {
+  margin-left: auto;
+  border-color: var(--color-link);
+  background-color: var(--color-link);
+  color: var(--color-bg);
+  font-weight: var(--weight-bold);
+}
+
+.editor-button--primary:hover {
+  border-color: var(--color-link-hover);
+  background-color: var(--color-link-hover);
+  color: var(--color-bg);
+}
+
+/* O campo de arquivo fica oculto; o rótulo é o botão visível */
+.editor-file:focus-within {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.editor-button:disabled,
+.filter-option:disabled,
+.editor-field input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Telas largas: prévia ao lado dos controles ---------- */
+@media (min-width: 48em) {
+  .editor-layout {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .editor-stage,
+  .editor-hint {
+    width: 22rem;
+  }
+}

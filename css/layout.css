@@ -1,0 +1,277 @@
+/* ==========================================================================
+   Layout: container, cabeçalho, grade da página e rodapé
+   Mobile-first: a coluna lateral só aparece em responsive.css.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Cabeçalho ----------
+   A ordem no HTML é a ordem visual em todas as larguras:
+   nome → botão de menu → navegação → controles.
+   Telas pequenas: [nome · menu] / navegação (recolhível) / controles.
+   Telas grandes (responsive.css): tudo em uma linha. */
+.site-header {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.site-header__inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-md);
+  padding-block: var(--space-sm);
+}
+
+.site-header__brand {
+  margin-right: auto;
+  color: var(--color-text);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  text-decoration: none;
+  letter-spacing: -0.005em;
+}
+
+.site-header__brand:hover {
+  color: var(--color-link);
+}
+
+/* Idioma, preferências de exibição e tema */
+.site-header__controls {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2xs);
+}
+
+/* ---------- Seletor de idioma ---------- */
+/* Sem overflow: hidden, para não cortar texto com espaçamento ampliado
+   (WCAG 1.4.12); os cantos arredondados ficam nos próprios botões */
+.lang-switch {
+  display: inline-flex;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.lang-switch__button:first-child {
+  border-radius: calc(var(--radius-md) - 1px) 0 0 calc(var(--radius-md) - 1px);
+}
+
+.lang-switch__button:last-child {
+  border-radius: 0 calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px) 0;
+}
+
+.lang-switch__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.2rem 0.65rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lang-switch__button + .lang-switch__button {
+  border-left: var(--border-width) solid var(--color-border);
+}
+
+.lang-switch__button:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+/* Estado ativo: cor + peso + sublinhado (não depende só de cor) */
+.lang-switch__button[aria-current="true"] {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  font-weight: var(--weight-bold);
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+}
+
+.lang-switch__button:focus-visible {
+  outline-offset: -3px;
+}
+
+/* Telas estreitas mostram "PT"/"EN"; o nome completo fica oculto só
+   visualmente e continua sendo lido ("Português"/"English") */
+.lang-switch__long {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Botão de menu (somente com JavaScript, telas pequenas) ---------- */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  min-height: 2.25rem;
+  padding: 0.25rem 0.75rem;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-border-strong);
+}
+
+.menu-toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.menu-toggle__close,
+.menu-toggle[aria-expanded="true"] .menu-toggle__open {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__close {
+  display: block;
+}
+
+/* ---------- Navegação principal ---------- */
+.site-nav {
+  flex-basis: 100%;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs) var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: inline-block;
+  padding-block: var(--space-3xs);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav__link:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Seção atual (js/navigation.js): cor + sublinhado, não só cor */
+.site-nav__link[aria-current] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Com JavaScript, em telas pequenas, o menu aberto vira lista vertical */
+.js .site-nav__list {
+  flex-direction: column;
+  gap: 0;
+  padding-block: var(--space-3xs);
+}
+
+.js .site-nav__link {
+  display: block;
+  padding-block: var(--space-2xs);
+  font-size: var(--text-base);
+}
+
+/* ---------- Grade da página ---------- */
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.content {
+  min-width: 0;
+}
+
+.content:focus {
+  outline: none;
+}
+
+/* ---------- Seções ---------- */
+.section {
+  padding-block: var(--space-lg);
+  border-top: var(--border-width) solid var(--color-border);
+  scroll-margin-top: var(--space-md);
+}
+
+.section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+/* Pequeno marcador na cor de identidade antes dos títulos de seção */
+.section__title::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.section__lead {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+  border-top: var(--border-width) solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-md);
+  padding-block: var(--space-md);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Aviso sem JavaScript ---------- */
+.noscript-notice {
+  max-width: none; /* ocupa a faixa inteira (anula o limite de linha de p) */
+  margin: 0;
+  padding: var(--space-2xs) var(--gutter);
+  background-color: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-border);
+  font-size: var(--text-sm);
+  text-align: center;
+}

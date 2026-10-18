@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Planos de fundo para apresentação formal
+   ---------------------------------------------------------------------------
+   - <html data-background="…"> é definido pelo script do <head> e por
+     js/preferences.js: escolha do visitante ou o padrão da autora
+     (<html data-background-default="…">).
+   - "liso" mantém o layout original. Nos demais, o fundo fica fixo atrás
+     da página e o conteúdo vai para uma "folha" de cor sólida (.sheet),
+     preservando o contraste do texto.
+   - Cada fundo define --bg-base, --bg-layer e --bg-size, em versões para
+     os temas claro e escuro; as miniaturas do painel (.bg-swatch) usam
+     os mesmos valores.
+   ========================================================================== */
+
+/* ---------- Mecânica comum (especificidade baixa via :where) ---------- */
+:root:where([data-background]:not([data-background="liso"])) body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bg-base);
+  background-image: var(--bg-layer, none);
+  background-size: var(--bg-size, auto);
+  background-position: center;
+  pointer-events: none;
+}
+
+:root:where([data-background]:not([data-background="liso"])) .sheet {
+  margin: 0.5rem;
+  background-color: var(--color-bg);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1rem 2.5rem rgb(0 0 0 / 0.22);
+}
+
+/* Valores neutros: a miniatura não herda o fundo ativo da página
+   (as regras específicas abaixo, mais fortes, sobrescrevem) */
+.bg-swatch {
+  --bg-base: var(--color-bg);
+  --bg-layer: none;
+  --bg-size: auto;
+  --bg-swatch-size: var(--bg-size);
+  display: block;
+  height: 2.25rem;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-base);
+  background-image: var(--bg-layer);
+  background-size: var(--bg-swatch-size);
+  background-position: center;
+}
+
+/* ---------- Grade técnica ---------- */
+:root[data-background="grade"],
+.bg-swatch[data-bg-style="grade"] {
+  --bg-base: #e8edf1;
+  --bg-layer:
+    linear-gradient(rgb(36 78 104 / 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(36 78 104 / 0.16) 1px, transparent 1px),
+    linear-gradient(rgb(36 78 104 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(36 78 104 / 0.07) 1px, transparent 1px);
+  --bg-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  --bg-swatch-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+}
+
+/* ---------- Papel executivo (textura em arquivo SVG local) ---------- */
+:root[data-background="papel"],
+.bg-swatch[data-bg-style="papel"] {
+  --bg-base: #ebe6dc;
+  --bg-size: 240px 240px;
+  --bg-swatch-size: 120px 120px;
+}
+
+/* url() fica fora das variáveis para ser resolvida a partir deste arquivo */
+:root[data-background="papel"] body::before,
+.bg-swatch[data-bg-style="papel"] {
+  background-image: url("../assets/backgrounds/papel.svg");
+}
+
+/* ---------- Gradiente corporativo ---------- */
+:root[data-background="gradiente"],
+.bg-swatch[data-bg-style="gradiente"] {
+  --bg-base: #1d2b3a;
+  --bg-layer: linear-gradient(135deg, #1d2b3a 0%, #24425a 50%, #2b7f8f 100%);
+  --bg-size: cover;
+}
+
+/* ---------- Riscas de giz ---------- */
+:root[data-background="riscas"],
+.bg-swatch[data-bg-style="riscas"] {
+  --bg-base: #e6e7e9;
+  --bg-layer: repeating-linear-gradient(90deg, transparent 0 28px, rgb(40 48 58 / 0.16) 28px 29px);
+  --bg-size: auto;
+}
+
+/* ---------- Imagem própria (--bg-image é definida por JS) ---------- */
+:root[data-background="imagem"],
+.bg-swatch[data-bg-style="imagem"] {
+  --bg-base: #1c1f22;
+  --bg-layer: var(--bg-image, none);
+  --bg-size: cover;
+}
+
+/* ---------- Tema escuro (pelo sistema ou escolhido) ----------
+   Os dois blocos são iguais; ver a explicação em variables.css. */
+@media (prefers-color-scheme: dark) {
+  :root[data-background="grade"]:not([data-theme="light"]),
+  :root:not([data-theme="light"]) .bg-swatch[data-bg-style="grade"] {
+    --bg-base: #10151a;
+    --bg-layer:
+      linear-gradient(rgb(91 188 203 / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(91 188 203 / 0.12) 1px, transparent 1px),
+      linear-gradient(rgb(91 188 203 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(91 188 203 / 0.05) 1px, transparent 1px);
+  }
+
+  :root[data-background="papel"]:not([data-theme="light"]),
+  :root:not([data-theme="light"]) .bg-swatch[data-bg-style="papel"] {
+    --bg-base: #22211e;
+  }
+
+  :root[data-background="gradiente"]:not([data-theme="light"]),
+  :root:not([data-theme="light"]) .bg-swatch[data-bg-style="gradiente"] {
+    --bg-base: #0e151d;
+    --bg-layer: linear-gradient(135deg, #0e151d 0%, #172a3a 55%, #1d5560 100%);
+  }
+
+  :root[data-background="riscas"]:not([data-theme="light"]),
+  :root:not([data-theme="light"]) .bg-swatch[data-bg-style="riscas"] {
+    --bg-base: #22262b;
+    --bg-layer: repeating-linear-gradient(90deg, transparent 0 28px, rgb(230 232 234 / 0.10) 28px 29px);
+  }
+}
+
+:root[data-theme="dark"][data-background="grade"],
+:root[data-theme="dark"] .bg-swatch[data-bg-style="grade"] {
+  --bg-base: #10151a;
+  --bg-layer:
+    linear-gradient(rgb(91 188 203 / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(91 188 203 / 0.12) 1px, transparent 1px),
+    linear-gradient(rgb(91 188 203 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(91 188 203 / 0.05) 1px, transparent 1px);
+}
+
+:root[data-theme="dark"][data-background="papel"],
+:root[data-theme="dark"] .bg-swatch[data-bg-style="papel"] {
+  --bg-base: #22211e;
+}
+
+:root[data-theme="dark"][data-background="gradiente"],
+:root[data-theme="dark"] .bg-swatch[data-bg-style="gradiente"] {
+  --bg-base: #0e151d;
+  --bg-layer: linear-gradient(135deg, #0e151d 0%, #172a3a 55%, #1d5560 100%);
+}
+
+:root[data-theme="dark"][data-background="riscas"],
+:root[data-theme="dark"] .bg-swatch[data-bg-style="riscas"] {
+  --bg-base: #22262b;
+  --bg-layer: repeating-linear-gradient(90deg, transparent 0 28px, rgb(230 232 234 / 0.10) 28px 29px);
+}
+
+/* ---------- Folha responsiva ---------- */
+@media (min-width: 40em) {
+  :root:where([data-background]:not([data-background="liso"])) .sheet {
+    width: min(100% - 2 * var(--space-lg), var(--container-max));
+    margin: var(--space-lg) auto;
+    border-radius: calc(var(--radius-md) * 1.5);
+  }
+}
+
+/* ---------- Seleção no painel de preferências ---------- */
+.bg-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3xs);
+}
+
+.bg-option {
+  display: grid;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bg-option:hover {
+  background-color: var(--color-surface);
+}
+
+.bg-option[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+  font-weight: var(--weight-bold);
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+}
+
+.bg-option:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prefs__hint,
+.prefs__message {
+  margin: var(--space-2xs) 0;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.prefs__message {
+  color: var(--color-text);
+}
+
+/* Campo de arquivo oculto; o rótulo é o botão visível */
+.bg-file:focus-within {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Impressão: sem fundo nem folha ---------- */
+@media print {
+  body::before {
+    display: none !important;
+  }
+
+  .sheet {
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+}

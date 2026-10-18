@@ -1,0 +1,173 @@
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign idioma = site.idiomas[page.lang] -%}
+{%- assign perfil = site.data.perfil -%}
+{%- comment -%} Título: "titulo" (pt/en) dos slides tem prioridade sobre o "title" automático do Jekyll {%- endcomment -%}
+{%- capture titulo_pagina -%}
+  {%- if page.titulo -%}{% include traduz.html valor=page.titulo puro=true %}{%- elsif page.title -%}{{ page.title }}{%- endif -%}
+{%- endcapture -%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.layout == "inicio" %}
+  <title>{{ t.meta.title }}</title>
+  {%- else %}
+  <title>{{ titulo_pagina }} — {{ site.title }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ page.description | default: t.meta.description | strip_newlines | escape }}">
+  <meta name="author" content="{{ perfil.nome }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16191c" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph básico (og:image será definido quando houver imagem de compartilhamento) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ idioma.og }}">
+  <meta property="og:title" content="{% if page.layout == 'inicio' %}{{ t.meta.title }}{% else %}{{ titulo_pagina }} — {{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: t.meta.ogDescription | strip_newlines | escape }}">
+  {%- for outro in site.idiomas %}{% if outro[0] != page.lang %}
+  <meta property="og:locale:alternate" content="{{ outro[1].og }}">
+  {%- endif %}{% endfor %}
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <!-- Imagem de compartilhamento (gerada por docs/ferramentas/gerar-og.py) -->
+  {%- assign og_imagem = '/assets/images/og-' | append: page.lang | append: '.png' %}
+  <meta property="og:image" content="{{ og_imagem | absolute_url }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ t.og.alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="{{ t.og.alt }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Versões em outros idiomas (para buscadores) -->
+  {%- if url_pt != "" %}
+  <link rel="alternate" hreflang="pt-BR" href="{{ url_pt | absolute_url }}">
+  {%- endif %}
+  {%- if url_en != "" %}
+  <link rel="alternate" hreflang="en" href="{{ url_en | absolute_url }}">
+  {%- endif %}
+  {%- if url_pt != "" and url_en != "" %}
+  <link rel="alternate" hreflang="x-default" href="{{ url_pt | absolute_url }}">
+  {%- endif %}
+
+  <link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+  {%- comment -%} Feed do blog no idioma da página (só quando há textos) {%- endcomment -%}
+  {%- assign textos_no_idioma = site.posts | where: "lang", page.lang %}
+  {%- if textos_no_idioma.size > 0 %}
+  <link rel="alternate" type="application/atom+xml" title="{{ t.feed.title }}" href="{{ '/feed/' | append: page.lang | append: '.xml' | relative_url }}">
+  {%- endif %}
+
+  {%- if page.layout == "inicio" %}
+
+  <!-- Dados estruturados (gerados de _data/perfil.yml) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ perfil.nome | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }},
+    "description": {{ perfil.ocupacao[page.lang] | append: " — " | append: perfil.instituicao[page.lang] | jsonify }},
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": {{ perfil.instituicao_nome | jsonify }},
+      "alternateName": {{ perfil.instituicao_sigla | jsonify }}
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ perfil.cidade | jsonify }},
+      "addressRegion": {{ perfil.estado | jsonify }},
+      "addressCountry": {{ perfil.pais | jsonify }}
+    }
+    {%- assign externos = "" | split: "" -%}
+    {%- for link in perfil.links -%}
+      {%- if link.id == "email" %},
+    "email": {{ link.url | jsonify }}
+      {%- elsif link.url contains "https://" -%}
+        {%- assign externos = externos | push: link.url -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if externos.size > 0 %},
+    "sameAs": {{ externos | jsonify }}
+    {%- endif %}
+  }
+  </script>
+  {%- endif %}
+
+  <!-- Única lógica inline do projeto: aplica as preferências salvas antes da
+       primeira pintura (tema, fonte, tamanho, cor e plano de fundo).
+       Chaves e variáveis devem acompanhar js/theme.js e js/preferences.js. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function read(key) {
+        try { return window.localStorage.getItem(key); } catch (e) { return null; }
+      }
+      root.classList.add("js");
+
+      /* Idioma escolhido pelo visitante (seletor): se esta página tem versão
+         nesse idioma, vai direto para ela, antes de a página aparecer */
+      var lang = read("portfolio.lang");
+      if ((lang === "pt" || lang === "en") && lang !== root.getAttribute("data-lang")) {
+        var destino = root.getAttribute("data-url-" + lang);
+        if (destino) {
+          window.location.replace(destino + window.location.hash);
+          return;
+        }
+      }
+
+      var theme = read("portfolio.theme");
+      if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+
+      var font = read("portfolio.font");
+      if (font === "serif" || font === "legible") root.setAttribute("data-font", font);
+
+      var size = read("portfolio.textSize");
+      if (size === "sm" || size === "lg" || size === "xl") root.setAttribute("data-text-size", size);
+
+      try {
+        var accent = JSON.parse(read("portfolio.accent"));
+        var vars = {
+          accentLight: "--accent-light", linkLight: "--link-light", hoverLight: "--link-hover-light",
+          accentDark: "--accent-dark", linkDark: "--link-dark", hoverDark: "--link-hover-dark"
+        };
+        var valid = !!accent;
+        for (var k in vars) if (!valid || !/^#[0-9a-f]{6}$/i.test(accent[k])) valid = false;
+        if (valid) {
+          for (var v in vars) root.style.setProperty(vars[v], accent[v]);
+          root.setAttribute("data-accent", "custom");
+        }
+      } catch (e) { /* valor inválido: mantém a cor padrão */ }
+
+      /* Plano de fundo: escolha do visitante ou padrão de _config.yml */
+      var backgrounds = ["liso", "grade", "papel", "gradiente", "riscas", "imagem"];
+      var fallback = root.getAttribute("data-background-default");
+      if (backgrounds.indexOf(fallback) < 0) fallback = "liso";
+      var bg = read("portfolio.background");
+      if (backgrounds.indexOf(bg) < 0) bg = fallback;
+      var ownImage = read("portfolio.backgroundImage");
+      var imagePath = root.getAttribute("data-background-image");
+      var imageSrc = ownImage && /^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(ownImage) ? ownImage
+        : (imagePath ? new URL(imagePath, document.baseURI).href : null);
+      if (imageSrc) root.style.setProperty("--bg-image", 'url("' + imageSrc + '")');
+      if (bg === "imagem" && !imageSrc) bg = fallback === "imagem" ? "liso" : fallback;
+      root.setAttribute("data-background", bg);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="{{ '/css/variables.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/layout.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/responsive.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/backgrounds.css' | relative_url }}">
+
+  <!-- Textos da interface usados pelo JavaScript (gerados de _data/textos.yml) -->
+  <script type="application/json" id="textos-interface">{{ t | jsonify }}</script>
+
+  <!-- Ordem importa: utilitários e textos → módulos → inicialização -->
+  <script src="{{ '/js/i18n.js' | relative_url }}" defer></script>
+  <script src="{{ '/js/theme.js' | relative_url }}" defer></script>
+  <script src="{{ '/js/preferences.js' | relative_url }}" defer></script>
+  <script src="{{ '/js/navigation.js' | relative_url }}" defer></script>
+  <script src="{{ '/js/app.js' | relative_url }}" defer></script>

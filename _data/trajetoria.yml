@@ -1,0 +1,42 @@
+# ============================================================================
+# Trajetória: formação, experiência e atividades, na ordem de exibição.
+# - tipo: formacao | experiencia | atividade
+# - Não publique documentos internos, dados de sistemas ou de terceiros.
+# ============================================================================
+
+- id: ufpa
+  tipo: formacao
+  titulo:
+    pt: Sistemas de Informação
+    en: Information Systems
+  organizacao:
+    pt: Universidade Federal do Pará (UFPA)
+    en: Federal University of Pará (UFPA)
+  periodo: null
+  descricao: null
+  destaques:
+    rotulo:
+      pt: Disciplinas com projetos práticos
+      en: Courses with hands-on projects
+    itens:
+    - pt: Sistemas Distribuídos
+      en: Distributed Systems
+    - pt: Computação Gráfica
+      en: Computer Graphics
+    - pt: Desenvolvimento de Software Apoiado por IA
+      en: AI-Assisted Software Development
+    - pt: Estruturas de Dados
+      en: Data Structures
+    - pt: Programação II (orientação a objetos)
+      en: Programming II (object-oriented programming)
+- id: semas
+  tipo: experiencia
+  titulo:
+    pt: Estágio
+    en: Internship
+  organizacao:
+    pt: Secretaria de Estado de Meio Ambiente e Sustentabilidade do Pará (SEMAS-PA)
+    en: Pará State Department of Environment and Sustainability (SEMAS-PA)
+  periodo: null
+  descricao: null
+  destaques: null

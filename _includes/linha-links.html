@@ -1,0 +1,24 @@
+{%- comment -%}
+  Linha de links de uma publicação ou apresentação (PDF · DOI · Slides …).
+  Só aparecem links que começam com https:// ou com / (arquivo do site).
+  Uso: {% include linha-links.html links=item.links nome=titulo %}
+{%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign ordem = "pdf,doi,slides,video,codigo,dados,poster,pagina" | split: "," -%}
+{%- assign links = include.links -%}
+{%- assign nome = include.nome -%}
+{%- capture itens -%}
+  {%- for chave in ordem -%}
+    {%- assign endereco = links[chave] | strip -%}
+    {%- assign inicio8 = endereco | slice: 0, 8 -%}
+    {%- assign inicio1 = endereco | slice: 0, 1 -%}
+    {%- if inicio8 == "https://" or inicio1 == "/" -%}
+      {%- assign rotulo = t.links[chave] -%}
+      <li>{% include link.html url=endereco texto=rotulo sufixo=nome %}</li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign itens = itens | strip -%}
+{%- if itens != "" %}
+<ul class="link-row">{{ itens }}</ul>
+{%- endif -%}

@@ -1,0 +1,32 @@
+{%- comment -%} Conteúdo da página Blog, compartilhado por pt e en (página em blog.html e en/). {%- endcomment -%}
+{%- comment -%} Cada texto é um arquivo em _posts/AAAA-MM-DD-titulo.md (modelo em docs/modelos/post.md) {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign textos_blog = site.posts | where: "lang", page.lang -%}
+{%- comment -%} Textos que só existem no outro idioma (sem versão com o mesmo ref aqui) {%- endcomment -%}
+{%- assign refs_aqui = textos_blog | map: "ref" | compact -%}
+{%- assign so_no_outro = 0 -%}
+{%- for outro in site.posts -%}
+  {%- if outro.lang != page.lang -%}
+    {%- unless outro.ref and refs_aqui contains outro.ref -%}{%- assign so_no_outro = so_no_outro | plus: 1 -%}{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if page.lang == "en" -%}{%- assign blog_outro = "/blog/" -%}{%- assign hreflang_outro = "pt-BR" -%}{%- else -%}{%- assign blog_outro = "/en/blog/" -%}{%- assign hreflang_outro = "en" -%}{%- endif -%}
+{%- if textos_blog.size == 0 %}
+        <p class="placeholder-note">{% if so_no_outro > 0 %}{{ t.blog.onlyOther }}{% else %}{{ t.empty.blog }}{% endif %}</p>
+{%- else -%}
+{%- assign grupos = textos_blog | group_by_exp: "post", "post.date | date: '%Y'" -%}
+{% include indice-anos.html grupos=grupos %}
+{%- for grupo in grupos %}
+        <section class="year-group" aria-labelledby="ano-{{ grupo.name }}">
+          <h2 id="ano-{{ grupo.name }}" class="section__title">{{ grupo.name }}</h2>
+          <ul class="entry-list">
+            {%- for post in grupo.items %}
+{% include item-post.html post=post %}
+            {%- endfor %}
+          </ul>
+        </section>
+{%- endfor %}
+{%- endif %}
+{%- if so_no_outro > 0 %}
+        <p class="section__lead"><a href="{{ blog_outro | relative_url }}" hreflang="{{ hreflang_outro }}">{{ t.blog.moreOther }}</a></p>
+{%- endif %}

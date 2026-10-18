@@ -1,0 +1,354 @@
+# ============================================================================
+# Textos da interface em português (pt) e inglês (en)
+# - Usados pelos modelos (_layouts, _includes) e, em parte, pelo JavaScript
+#   (tema, painel de preferências), que os recebe pela própria página.
+# - As chaves devem existir nos dois idiomas.
+# - Conteúdo pessoal (apresentação, projetos, publicações…) fica nas páginas
+#   .md e nos demais arquivos de _data/, não aqui.
+# ============================================================================
+
+pt:
+  meta:
+    title: "Mylena Reis — Sistemas de Informação · UFPA"
+    description: "Portfólio de Mylena Reis, estudante de Sistemas de Informação na Universidade Federal do Pará (UFPA), com projetos, trajetória e estudos em engenharia de software e desenvolvimento backend."
+    ogDescription: "Projetos, trajetória e estudos em engenharia de software e desenvolvimento backend."
+  skipLink: "Pular para o conteúdo"
+  noscript: "O tema e as preferências de exibição dependem de JavaScript. Todo o conteúdo continua disponível."
+  language:
+    label: "Idioma"
+    notTranslated: "(esta página ainda não tem versão em inglês)"
+  nav:
+    label: "Navegação principal"
+    menu: "Menu"
+  theme:
+    toggle: "Tema escuro"
+    toDark: "Ativar tema escuro"
+    toLight: "Ativar tema claro"
+    darkOn: "Tema escuro ativado."
+    lightOn: "Tema claro ativado."
+  prefs:
+    title: "Preferências de exibição"
+    textSize: "Tamanho do texto"
+    size:
+      sm: "Texto pequeno (90%)"
+      md: "Texto padrão (100%)"
+      lg: "Texto grande (112,5%)"
+      xl: "Texto muito grande (125%)"
+    font: "Fonte"
+    fontSans: "Padrão"
+    fontSerif: "Serifada"
+    fontLegible: "Alta legibilidade"
+    accent: "Cor de destaque"
+    hueRange: "Ajuste fino da matiz"
+    hueValue: "{h}° — {name}"
+    hueReadout: "Matiz {h}° · {rgb}"
+    swatch: "Matiz {h}° — {name}"
+    sample: "Exemplo de link"
+    apply: "Aplicar"
+    reset: "Restaurar padrões"
+    applied: "Cor de destaque aplicada."
+    restored: "Preferências de exibição restauradas."
+    background: "Plano de fundo"
+    bg:
+      liso: "Liso"
+      grade: "Grade técnica"
+      papel: "Papel executivo"
+      gradiente: "Gradiente corporativo"
+      riscas: "Riscas de giz"
+      imagem: "Imagem própria"
+    bgChoose: "Escolher imagem…"
+    bgRemove: "Remover imagem"
+    bgHint: "Para apresentações, use imagens de 1920 × 1080 px ou mais, sem pessoas identificáveis. A imagem fica guardada só neste navegador."
+    bgApplied: "Plano de fundo aplicado."
+    bgLowRes: "A imagem tem {w} × {h} px; para apresentação, recomenda-se 1920 × 1080 px ou mais."
+    bgSessionOnly: "A imagem é grande demais para ser guardada neste navegador e vale só nesta visita."
+    bgInvalid: "Selecione uma imagem JPEG, PNG ou WebP."
+    bgRemoved: "Imagem removida."
+    hues:
+      default: "azul-água (padrão)"
+      h0: "vermelho"
+      h30: "laranja"
+      h60: "amarelo"
+      h90: "verde-limão"
+      h120: "verde"
+      h150: "verde-primavera"
+      h180: "ciano"
+      h210: "azul-celeste"
+      h240: "azul"
+      h270: "violeta"
+      h300: "magenta"
+      h330: "rosa"
+  profile:
+    label: "Perfil"
+    photoAlt: "Foto de perfil de Mylena Reis"
+  home:
+    quickTitle: "Informações rápidas"
+    interestsTitle: "Interesses de pesquisa"
+    interestsLead: "Pesquisas e estudos em desenvolvimento, incluindo o Trabalho de Conclusão de Curso."
+  pages:
+    underConstruction: "Esta página está em construção e será publicada em breve."
+  render:
+    repository: "Repositório"
+    demo: "Demonstração"
+    technologies: "Tecnologias"
+    newTab: "(abre em nova aba)"
+    status:
+      concluido: "Concluído"
+      em-andamento: "Em andamento"
+      experimental: "Experimental"
+    level:
+      estudado: "Estudados"
+      projeto: "Utilizados em projetos"
+      profissional: "Experiência profissional"
+  sections:
+    onThisPage: "Nesta página"
+    projects: "Projetos"
+    timeline: "Trajetória"
+    skills: "Habilidades"
+    projectsMore: "Novos projetos serão adicionados ao longo do tempo."
+    skillsLead: "Tecnologias e conhecimentos aplicados nos projetos listados acima."
+  empty:
+    projects: "Os projetos serão adicionados em breve."
+    timeline: "A trajetória será adicionada em breve."
+    skills: "As habilidades serão adicionadas em breve."
+    publications: "Esta página será atualizada quando houver publicações."
+    talks: "Esta página será atualizada quando houver apresentações."
+    blog: "Os primeiros textos serão publicados em breve."
+  lists:
+    years: "Anos"
+    backToTop: "Voltar ao topo"
+  pub:
+    tipos:
+      artigo-evento: "Artigo em evento"
+      artigo-periodico: "Artigo em periódico"
+      capitulo: "Capítulo de livro"
+      tcc: "Trabalho de Conclusão de Curso"
+      poster: "Pôster"
+      relatorio: "Relatório técnico"
+  talk:
+    tipos:
+      palestra: "Palestra"
+      seminario: "Seminário"
+      apresentacao-trabalho: "Apresentação de trabalho"
+      minicurso: "Minicurso"
+      poster: "Pôster"
+  links:
+    pdf: "PDF"
+    doi: "DOI"
+    slides: "Slides"
+    video: "Vídeo"
+    codigo: "Código"
+    dados: "Dados"
+    poster: "Pôster"
+    pagina: "Página do evento"
+  blog:
+    readingTime: "%n min de leitura"
+    back: "Voltar ao blog"
+    previous: "Texto anterior"
+    next: "Próximo texto"
+    nav: "Outros textos"
+    scrollTable: "Tabela com rolagem horizontal"
+    moreOther: "Mais textos em inglês →"
+    onlyOther: "Ainda não há textos em português."
+  news:
+    title: "Novidades"
+    blog: "Blog"
+    talk: "Apresentação"
+  months: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+  footer:
+    tagline: "Portfólio pessoal"
+    links: "Links profissionais"
+    rss: "RSS do blog"
+  og:
+    alt: "Cartão com a foto de Mylena Reis, estudante de Sistemas de Informação na Universidade Federal do Pará (UFPA), Belém."
+  feed:
+    title: "Mylena Reis — Blog (português)"
+  deck:
+    label: "Apresentação de slides"
+    back: "Apresentações"
+    prev: "Slide anterior"
+    next: "Próximo slide"
+    fullscreen: "Tela cheia"
+    print: "Imprimir ou salvar em PDF"
+    controls: "Controles da apresentação"
+    slideOf: "Slide %n de %t"
+    status: "Slide {n} de {t}: {h}"
+    hint: "← → ou Espaço para avançar · F: tela cheia · Ctrl+P: salvar em PDF"
+    by: "Apresentação de"
+    qr: "Acompanhe no celular (mesma rede Wi-Fi)"
+  notFound:
+    title: "Página não encontrada"
+    text: "O endereço pode ter mudado ou estar incorreto. Você pode continuar por aqui:"
+
+en:
+  meta:
+    title: "Mylena Reis — Information Systems · UFPA"
+    description: "Portfolio of Mylena Reis, an Information Systems student at the Federal University of Pará (UFPA), featuring projects, background and studies in software engineering and backend development."
+    ogDescription: "Projects, background and studies in software engineering and backend development."
+  skipLink: "Skip to content"
+  noscript: "The theme and display preferences require JavaScript. All content remains available."
+  language:
+    label: "Language"
+    notTranslated: "(this page has no Portuguese version yet)"
+  nav:
+    label: "Main navigation"
+    menu: "Menu"
+  theme:
+    toggle: "Dark theme"
+    toDark: "Switch to dark theme"
+    toLight: "Switch to light theme"
+    darkOn: "Dark theme enabled."
+    lightOn: "Light theme enabled."
+  prefs:
+    title: "Display preferences"
+    textSize: "Text size"
+    size:
+      sm: "Small text (90%)"
+      md: "Default text (100%)"
+      lg: "Large text (112.5%)"
+      xl: "Extra large text (125%)"
+    font: "Font"
+    fontSans: "Default"
+    fontSerif: "Serif"
+    fontLegible: "High legibility"
+    accent: "Accent color"
+    hueRange: "Fine-tune hue"
+    hueValue: "{h}° — {name}"
+    hueReadout: "Hue {h}° · {rgb}"
+    swatch: "Hue {h}° — {name}"
+    sample: "Sample link"
+    apply: "Apply"
+    reset: "Restore defaults"
+    applied: "Accent color applied."
+    restored: "Display preferences restored."
+    background: "Background"
+    bg:
+      liso: "Plain"
+      grade: "Technical grid"
+      papel: "Executive paper"
+      gradiente: "Corporate gradient"
+      riscas: "Pinstripe"
+      imagem: "Custom image"
+    bgChoose: "Choose image…"
+    bgRemove: "Remove image"
+    bgHint: "For presentations, use images of 1920 × 1080 px or larger, without identifiable people. The image is stored only in this browser."
+    bgApplied: "Background applied."
+    bgLowRes: "The image is {w} × {h} px; 1920 × 1080 px or larger is recommended for presentations."
+    bgSessionOnly: "The image is too large to be stored in this browser and applies to this visit only."
+    bgInvalid: "Select a JPEG, PNG or WebP image."
+    bgRemoved: "Image removed."
+    hues:
+      default: "aqua blue (default)"
+      h0: "red"
+      h30: "orange"
+      h60: "yellow"
+      h90: "chartreuse"
+      h120: "green"
+      h150: "spring green"
+      h180: "cyan"
+      h210: "sky blue"
+      h240: "blue"
+      h270: "violet"
+      h300: "magenta"
+      h330: "pink"
+  profile:
+    label: "Profile"
+    photoAlt: "Profile photo of Mylena Reis"
+  home:
+    quickTitle: "Quick links"
+    interestsTitle: "Research interests"
+    interestsLead: "Ongoing research and studies, including my undergraduate thesis."
+  pages:
+    underConstruction: "This page is under construction and will be published soon."
+  render:
+    repository: "Repository"
+    demo: "Live demo"
+    technologies: "Technologies"
+    newTab: "(opens in a new tab)"
+    status:
+      concluido: "Completed"
+      em-andamento: "In progress"
+      experimental: "Experimental"
+    level:
+      estudado: "Studied"
+      projeto: "Used in projects"
+      profissional: "Professional experience"
+  sections:
+    onThisPage: "On this page"
+    projects: "Projects"
+    timeline: "Background"
+    skills: "Skills"
+    projectsMore: "New projects will be added over time."
+    skillsLead: "Technologies and knowledge applied in the projects listed above."
+  empty:
+    projects: "Projects will be added soon."
+    timeline: "Background information will be added soon."
+    skills: "Skills will be added soon."
+    publications: "This page will be updated once publications are available."
+    talks: "This page will be updated once talks are available."
+    blog: "The first posts will be published soon."
+  lists:
+    years: "Years"
+    backToTop: "Back to top"
+  pub:
+    tipos:
+      artigo-evento: "Conference paper"
+      artigo-periodico: "Journal article"
+      capitulo: "Book chapter"
+      tcc: "Undergraduate thesis"
+      poster: "Poster"
+      relatorio: "Technical report"
+  talk:
+    tipos:
+      palestra: "Talk"
+      seminario: "Seminar"
+      apresentacao-trabalho: "Paper presentation"
+      minicurso: "Short course"
+      poster: "Poster"
+  links:
+    pdf: "PDF"
+    doi: "DOI"
+    slides: "Slides"
+    video: "Video"
+    codigo: "Code"
+    dados: "Data"
+    poster: "Poster"
+    pagina: "Event page"
+  blog:
+    readingTime: "%n min read"
+    back: "Back to the blog"
+    previous: "Previous post"
+    next: "Next post"
+    nav: "More posts"
+    scrollTable: "Horizontally scrollable table"
+    moreOther: "More posts in Portuguese →"
+    onlyOther: "There are no posts in English yet."
+  news:
+    title: "Latest updates"
+    blog: "Blog"
+    talk: "Talk"
+  months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  footer:
+    tagline: "Personal portfolio"
+    links: "Professional links"
+    rss: "Blog RSS feed"
+  og:
+    alt: "Card with the photo of Mylena Reis, Information Systems student at the Federal University of Pará (UFPA), Belém."
+  feed:
+    title: "Mylena Reis — Blog (English)"
+  deck:
+    label: "Slide presentation"
+    back: "Talks"
+    prev: "Previous slide"
+    next: "Next slide"
+    fullscreen: "Full screen"
+    print: "Print or save as PDF"
+    controls: "Presentation controls"
+    slideOf: "Slide %n of %t"
+    status: "Slide {n} of {t}: {h}"
+    hint: "← → or Space to advance · F: full screen · Ctrl+P: save as PDF"
+    by: "Presentation by"
+    qr: "Follow on your phone (same Wi-Fi network)"
+  notFound:
+    title: "Page not found"
+    text: "The address may have changed or be incorrect. You can continue from here:"

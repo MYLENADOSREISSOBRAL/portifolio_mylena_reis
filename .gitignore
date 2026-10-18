@@ -1,0 +1,13 @@
+# Gerados pelo Jekyll na pré-visualização local
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Dependências locais do Ruby
+.bundle/
+vendor/
+Gemfile.lock
+
+# Endereço local gerado por apresentar-na-rede.ps1
+_config_rede.yml

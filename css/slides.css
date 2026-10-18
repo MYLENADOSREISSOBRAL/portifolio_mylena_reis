@@ -1,0 +1,815 @@
+/* ==========================================================================
+   Slides (_layouts/slides.html + js/slides.js)
+   Usa os tokens de css/variables.css: tema, cor de destaque, fonte e
+   tamanho escolhidos no site valem também na apresentação.
+   - Modo documento (sem JS): slides empilhados.
+   - Modo apresentação (.deck-ativo): um slide 16:9 por vez, escalado.
+   - Impressão: um slide por página (Salvar como PDF).
+   ========================================================================== */
+
+.deck-body {
+  min-height: 100vh;
+  background-color: var(--color-surface);
+}
+
+/* ---------- Barra superior ---------- */
+.deck-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-2xs) var(--space-sm);
+  border-bottom: var(--border-width) solid var(--color-border);
+  background-color: var(--color-bg);
+  font-size: var(--text-sm);
+}
+
+.deck-bar__back {
+  flex: none;
+  font-weight: var(--weight-medium);
+}
+
+.deck-bar__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: var(--weight-regular);
+  overflow: hidden;
+  color: var(--color-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deck-bar__actions {
+  display: flex;
+  gap: var(--space-3xs);
+}
+
+/* ---------- Slides: modo documento (padrão, sem JS) ---------- */
+.deck {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 62rem;
+  margin: var(--space-md) auto;
+  padding-inline: var(--gutter);
+}
+
+.deck-slide {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Tema claro: slides em tom de folha de papel (#F4ECD8), para conforto
+   visual. As cores de texto, links e destaque do tema mantêm contraste AA
+   sobre esse fundo, então só fundo, superfícies e bordas mudam. */
+.deck-slide {
+  --color-bg: #f4ecd8;
+  --color-surface: #ebe1c9;
+  --color-border: #dacfb3;
+  --color-border-strong: #c9bd9c;
+}
+
+/* Tema escuro: os slides voltam às cores do tema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .deck-slide {
+    --color-bg: inherit;
+    --color-surface: inherit;
+    --color-border: inherit;
+    --color-border-strong: inherit;
+  }
+}
+
+:root[data-theme="dark"] .deck-slide {
+  --color-bg: inherit;
+  --color-surface: inherit;
+  --color-border: inherit;
+  --color-border-strong: inherit;
+}
+
+.deck-slide__inner {
+  width: 100%;
+  padding: clamp(1.25rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+/* Rodapé de cada slide: autora · evento e número (decorativo; o contador
+   acessível fica nos controles e no anúncio para leitores de tela) */
+.deck-slide__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0 clamp(1.25rem, 5vw, 4rem) clamp(0.75rem, 2vw, 1.25rem);
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+}
+
+/* ---------- Conteúdo dos slides ---------- */
+.deck-slide h2 {
+  margin: 0 0 0.8em;
+  font-size: 2.1em;
+  line-height: 1.2;
+}
+
+.deck-slide h2::after {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 0.12em;
+  margin-top: 0.35em;
+  border-radius: 999px;
+  background-color: var(--color-accent);
+}
+
+.deck-slide h3 {
+  margin: 0.8em 0 0.4em;
+  font-size: 1.3em;
+}
+
+.deck-slide p,
+.deck-slide li {
+  max-width: none;
+  font-size: 1.3em;
+  line-height: 1.45;
+}
+
+.deck-slide ul,
+.deck-slide ol {
+  padding-left: 1.3em;
+}
+
+.deck-slide li + li {
+  margin-top: 0.45em;
+}
+
+.deck-slide li::marker {
+  color: var(--color-accent);
+}
+
+.deck-slide strong {
+  color: var(--color-text);
+}
+
+.deck-slide pre {
+  padding: 0.8em 1em;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.deck-slide code {
+  font-family: var(--font-mono);
+}
+
+.deck-slide :not(pre) > code {
+  padding: 0.05em 0.3em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+}
+
+.deck-slide table {
+  border-collapse: collapse;
+  font-size: 1.05em;
+}
+
+.deck-slide th,
+.deck-slide td {
+  padding: 0.35em 0.8em;
+  border: var(--border-width) solid var(--color-border);
+  text-align: left;
+}
+
+.deck-slide th {
+  background-color: var(--color-surface);
+}
+
+.deck-slide img {
+  max-height: 60vh;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+}
+
+.deck-slide blockquote,
+.deck-slide .destaque {
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  border-left: 0.25em solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background-color: var(--color-surface);
+  font-size: 1.2em;
+}
+
+/* Capa */
+.deck-slide--cover .deck-slide__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 0.6em solid var(--color-accent);
+}
+
+.deck-cover__tag {
+  align-self: flex-start;
+  margin: 0 0 1.2em;
+  padding: 0.25em 0.9em;
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: 999px;
+  color: var(--color-link);
+  font-size: 0.95em !important;
+  font-weight: var(--weight-medium);
+}
+
+.deck-cover__title {
+  margin: 0 0 0.8em;
+  font-size: 2.8em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* O título da capa é h2 (o h1 fica na barra); sem o traço dos títulos de slide */
+.deck-slide .deck-cover__title::after {
+  content: none;
+}
+
+.deck-cover__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.6em;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* Logomarcas institucionais na capa (campo opcional "logos:" do cabeçalho).
+   Fundo branco fixo: as logomarcas têm texto escuro e não podem mudar de cor. */
+.deck-cover__logos {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 1.2em;
+  margin: 0 0 1.2em;
+  padding: 0.3em 1em;
+  border-radius: var(--radius-md);
+  background-color: #fff;
+}
+
+.deck-slide .deck-cover__logos img {
+  width: auto;
+  height: 5.5em;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* QR code da capa (só ao apresentar na rede local): canto superior direito,
+   ao lado das logomarcas. Fundo branco fixo para a leitura pela câmera. */
+.deck-slide--cover .deck-slide__inner {
+  position: relative;
+}
+
+.deck-cover__qr {
+  position: absolute;
+  top: 6%;
+  right: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+  width: 9em;
+  margin: 0;
+  text-align: center;
+}
+
+.deck-cover__qr-codigo {
+  width: 100%;
+  border-radius: var(--radius-md);
+  background-color: #fff;
+}
+
+.deck-cover__qr-codigo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.deck-cover__qr figcaption {
+  color: var(--color-text-muted);
+  font-size: 0.6em;
+  line-height: 1.3;
+}
+
+.deck-cover__qr figcaption span {
+  display: block;
+  margin-top: 0.3em;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono, monospace);
+}
+
+/* Passo a passo: itens ainda não revelados mantêm o espaço */
+.passos > li.passo-oculto {
+  visibility: hidden;
+}
+
+/* ---------- Modo apresentação (com JS) ---------- */
+.deck-ativo .deck-body {
+  overflow: hidden;
+}
+
+.deck-ativo .deck {
+  /* Slide 16:9 do maior tamanho que cabe entre a barra e os controles */
+  --deck-w: min(96vw, calc((100vh - 7.5rem) * 16 / 9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: none;
+  height: calc(100vh - 7.5rem);
+  margin: 0;
+  padding: 0;
+}
+
+.deck-ativo .deck-slide {
+  width: var(--deck-w);
+  aspect-ratio: 16 / 9;
+  font-size: calc(var(--deck-w) / 48);
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.14);
+}
+
+.deck-ativo .deck-slide__inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4.5% 6.5% 2%;
+}
+
+/* Conteúdo maior que o slide começa no topo (rola por dentro) */
+.deck-ativo .deck-slide__inner > :first-child {
+  margin-top: auto;
+}
+
+.deck-ativo .deck-slide__inner > :last-child {
+  margin-bottom: auto;
+}
+
+/* Tela cheia: o slide ocupa toda a tela */
+:fullscreen .deck-bar,
+:fullscreen .deck-hint {
+  display: none;
+}
+
+:fullscreen .deck {
+  --deck-w: min(100vw, calc((100vh - 3.5rem) * 16 / 9));
+  height: calc(100vh - 3.5rem);
+}
+
+/* ---------- Controles ---------- */
+.deck-controls {
+  position: fixed;
+  bottom: 0.6rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transform: translateX(-50%);
+}
+
+.deck-controls__button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.deck-controls__button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-link);
+}
+
+.deck-controls__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.deck-controls__counter {
+  min-width: 4.5em;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.deck-hint {
+  position: fixed;
+  right: var(--space-sm);
+  bottom: 1.2rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.deck-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  pointer-events: none;
+}
+
+.deck-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: width var(--transition-fast);
+}
+
+/* Celular: dica some; controles ocupam a base */
+@media (max-width: 40em) {
+  .deck-hint {
+    display: none !important;
+  }
+
+  .deck-ativo .deck {
+    --deck-w: 96vw;
+  }
+
+  .deck-ativo .deck-slide {
+    font-size: max(0.6rem, calc(var(--deck-w) / 40));
+  }
+}
+
+/* Tela em pé (celular, tablet): um slide 16:9 ficaria pequeno; o slide ocupa
+   a altura disponível, com texto maior (js/slides.js reduz o texto se não couber) */
+@media (orientation: portrait) {
+  .deck-ativo .deck {
+    --deck-w: 96vw;
+  }
+
+  .deck-ativo .deck-slide {
+    height: 100%;
+    aspect-ratio: auto;
+    font-size: clamp(0.95rem, calc(var(--deck-w) / 26), 1.6rem);
+  }
+
+  .deck-ativo .deck-slide__inner {
+    padding: 6% 5% 2%;
+  }
+
+  /* A dica de teclado ficaria sobre os controles */
+  .deck-hint {
+    display: none !important;
+  }
+
+  .deck-ativo .deck-slide__footer {
+    font-size: 0.6em;
+  }
+
+  /* Linha do tempo: mantém largura legível e rola na horizontal */
+  .deck-ativo .deck-figura {
+    overflow-x: auto;
+  }
+
+  .deck-ativo .linha-do-tempo {
+    min-width: 46rem;
+  }
+}
+
+/* Tela deitada e baixa (celular na horizontal): usa toda a largura, sem 16:9;
+   os controles flutuam no canto para liberar altura para o slide */
+@media (orientation: landscape) and (max-height: 30em) {
+  .deck-ativo .deck {
+    --deck-w: 96vw;
+    height: calc(100vh - 3.75rem);
+  }
+
+  .deck-controls {
+    right: 0.4rem;
+    bottom: 0.4rem;
+    left: auto;
+    transform: none;
+  }
+
+  .deck-controls__button {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.25rem;
+  }
+
+  .deck-ativo .deck-slide {
+    height: 100%;
+    aspect-ratio: auto;
+    font-size: calc(var(--deck-w) / 56);
+  }
+
+  .deck-ativo .deck-slide__inner {
+    padding: 2.5% 4% 1%;
+  }
+
+  .deck-hint {
+    display: none !important;
+  }
+
+  /* O número do slide já aparece nos controles, que ficam sobre o rodapé */
+  .deck-ativo .deck-slide__footer span:last-child {
+    visibility: hidden;
+  }
+}
+
+/* Esmaecimento na troca de slide: o slide que deixa de estar [hidden] surge
+   suavemente. Sem animação para quem prefere movimento reduzido (base.css já
+   zera animações e transições) */
+.deck-ativo .deck-slide:not([hidden]) {
+  animation: deck-esmaecer 0.45s ease-out both;
+}
+
+@keyframes deck-esmaecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Impressão / Salvar como PDF: um slide por página ---------- */
+@media print {
+  @page {
+    size: 297mm 167mm;
+    margin: 0;
+  }
+
+  .deck-bar,
+  .deck-controls,
+  .deck-footer,
+  .deck-hint,
+  .deck-progress,
+  .ldt-regulador {
+    display: none !important;
+  }
+
+  .deck-body {
+    background: #ffffff;
+  }
+
+  .deck,
+  .deck-ativo .deck {
+    display: block;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .deck-slide,
+  .deck-ativo .deck-slide,
+  .deck-ativo .deck-slide[hidden] {
+    display: flex !important;
+    width: 297mm;
+    height: 167mm;
+    aspect-ratio: auto;
+    font-size: 11pt;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  /* Sem página em branco depois do último slide */
+  .deck-slide:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .deck-ativo .deck-slide__inner {
+    overflow: visible;
+  }
+
+  .passos > li.passo-oculto {
+    visibility: visible;
+  }
+}
+
+/* ---------- Figuras nos slides ---------- */
+.deck-figura {
+  margin: 0.4em 0 0;
+}
+
+/* Linha do tempo em SVG: cores do tema (claro/escuro e cor de destaque) */
+.linha-do-tempo {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* --ldt-escala vem do regulador de letras (js/slides.js); balões e legenda
+   têm tamanho próprio e não mudam com ela */
+.linha-do-tempo text {
+  fill: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: calc(22px * var(--ldt-escala, 1));
+  text-anchor: middle;
+}
+
+.linha-do-tempo .ldt-acao {
+  fill: var(--color-text);
+  font-size: calc(18px * var(--ldt-escala, 1));
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.02em;
+}
+
+/* Regulador de letras da linha do tempo */
+.ldt-regulador {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6em;
+  margin-top: 0.3em;
+  font-size: 0.7em;
+  color: var(--color-text-muted);
+}
+
+.ldt-regulador[hidden] {
+  display: none;
+}
+
+.ldt-regulador input {
+  width: 9em;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.ldt-regulador output {
+  min-width: 3em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ldt-linha {
+  stroke: var(--color-border-strong);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.ldt-progresso {
+  stroke: var(--color-accent);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.ldt-marco circle {
+  fill: var(--color-bg);
+  stroke: var(--color-accent);
+  stroke-width: 5;
+}
+
+.ldt-marco--feito circle {
+  fill: var(--color-accent);
+}
+
+.ldt-marco path {
+  fill: none;
+  stroke: var(--color-bg);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.linha-do-tempo .ldt-legenda text {
+  font-size: 20px;
+  text-anchor: start;
+}
+
+.ldt-legenda--feito {
+  fill: var(--color-accent);
+}
+
+.ldt-legenda--previsto {
+  fill: var(--color-bg);
+  stroke: var(--color-accent);
+  stroke-width: 4;
+}
+
+/* Balões da linha do tempo: aparecem ao passar o mouse ou focar (Tab) um mês.
+   Cada SVG liga marco e balão com :has() num <style> próprio. */
+.ldt-alvo {
+  fill: transparent;
+}
+
+.ldt-marco[tabindex] {
+  cursor: help;
+  outline: none;
+}
+
+.ldt-marco[tabindex]:hover circle,
+.ldt-marco[tabindex]:focus-visible circle,
+a.ldt-marco:hover circle,
+a.ldt-marco:focus-visible circle {
+  stroke-width: 8;
+}
+
+/* Marco que é link para um anexo: abre o documento ao clicar */
+a.ldt-marco {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+a.ldt-marco:hover .ldt-acao,
+a.ldt-marco:focus-visible .ldt-acao {
+  fill: var(--color-link);
+  text-decoration: underline;
+}
+
+.ldt-balao {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s;
+}
+
+.ldt-balao rect,
+.ldt-balao path {
+  fill: var(--color-surface);
+  stroke: var(--color-accent);
+  stroke-width: 3;
+}
+
+.ldt-balao path {
+  stroke-linejoin: round;
+}
+
+.linha-do-tempo .ldt-balao text {
+  fill: var(--color-text);
+  font-size: 19px;
+  text-anchor: start;
+}
+
+.linha-do-tempo .ldt-balao .ldt-balao__titulo {
+  fill: var(--color-link);
+  font-weight: var(--weight-bold);
+}
+
+/* Link para anexo em destaque (botão) */
+.deck-anexo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.6em;
+  padding: 0.6em 1.1em;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  font-size: 1.15em;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+
+.deck-anexo::before {
+  content: "PDF";
+  padding: 0.1em 0.45em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-link);
+  color: var(--color-bg);
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+}
+
+/* Variante para link de site externo */
+.deck-anexo--site::before {
+  content: "SITE";
+}
+
+.deck-anexo:hover {
+  border-color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Lista longa em duas colunas (classe .colunas no Markdown); uma coluna em tela em pé */
+.deck-slide .colunas {
+  columns: 2;
+  column-gap: 2.5em;
+}
+
+.deck-slide .colunas > li {
+  break-inside: avoid;
+}
+
+@media (orientation: portrait) {
+  .deck-slide .colunas {
+    columns: 1;
+  }
+}

@@ -1,0 +1,15 @@
+{%- comment -%}
+  Encontra a versão desta página no idioma pedido, pelo campo "ref".
+  Uso: {% include equivalente.html idioma="en" %} → define url_equivalente
+  (vazio quando não há tradução). Vale para páginas e textos do blog.
+{%- endcomment -%}
+{%- assign url_equivalente = "" -%}
+{%- if page.lang == include.idioma -%}
+  {%- assign url_equivalente = page.url -%}
+{%- elsif page.ref -%}
+  {%- assign candidatos = site.pages | where: "ref", page.ref | where: "lang", include.idioma -%}
+  {%- if candidatos.size == 0 -%}
+    {%- assign candidatos = site.posts | where: "ref", page.ref | where: "lang", include.idioma -%}
+  {%- endif -%}
+  {%- if candidatos.size > 0 -%}{%- assign url_equivalente = candidatos.first.url -%}{%- endif -%}
+{%- endif -%}

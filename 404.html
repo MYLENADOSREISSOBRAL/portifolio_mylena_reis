@@ -1,0 +1,32 @@
+---
+# Página exibida pelo GitHub Pages para endereços inexistentes.
+# Não dá para saber o idioma de quem chegou: a mensagem vem nos dois.
+layout: padrao
+lang: pt
+title: "Página não encontrada · Page not found"
+permalink: /404.html
+sitemap: false
+---
+{%- assign pt = site.data.textos.pt -%}
+{%- assign en = site.data.textos.en -%}
+      <article class="section" aria-labelledby="titulo-404">
+        <h1 id="titulo-404">{{ pt.notFound.title }} <span lang="en">· {{ en.notFound.title }}</span></h1>
+
+        <div class="not-found">
+          <p>{{ pt.notFound.text }}</p>
+          <ul class="link-list">
+            {%- for item in site.data.navegacao.pt %}
+            <li>{% include icone.html nome="pagina" %}<a href="{{ item.url | relative_url }}">{{ item.titulo }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+
+        <div class="not-found" lang="en">
+          <p>{{ en.notFound.text }}</p>
+          <ul class="link-list">
+            {%- for item in site.data.navegacao.en %}
+            <li>{% include icone.html nome="pagina" %}<a href="{{ item.url | relative_url }}" hreflang="en">{{ item.titulo }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </article>

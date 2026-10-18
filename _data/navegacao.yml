@@ -1,0 +1,27 @@
+# ============================================================================
+# Menu principal, por idioma. "url" é relativa à raiz do site (sem o baseurl).
+# ============================================================================
+
+pt:
+  - titulo: "Início"
+    url: /
+  - titulo: "Projetos e Trajetória"
+    url: /projetos/
+  - titulo: "Publicações"
+    url: /publicacoes/
+  - titulo: "Apresentações"
+    url: /apresentacoes/
+  - titulo: "Blog"
+    url: /blog/
+
+en:
+  - titulo: "Home"
+    url: /en/
+  - titulo: "Projects & Background"
+    url: /en/projects/
+  - titulo: "Publications"
+    url: /en/publications/
+  - titulo: "Talks"
+    url: /en/talks/
+  - titulo: "Blog"
+    url: /en/blog/

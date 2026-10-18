@@ -1,0 +1,36 @@
+{%- assign t = site.data.textos[page.lang] -%}
+{%- comment -%} Versões desta página em cada idioma (vazio = sem tradução) {%- endcomment -%}
+{%- include equivalente.html idioma="pt" -%}{%- assign url_pt = url_equivalente -%}
+{%- include equivalente.html idioma="en" -%}{%- assign url_en = url_equivalente -%}
+<!doctype html>
+<html lang="{{ site.idiomas[page.lang].html }}" data-lang="{{ page.lang }}"{% if url_pt != "" %} data-url-pt="{{ url_pt | relative_url }}"{% endif %}{% if url_en != "" %} data-url-en="{{ url_en | relative_url }}"{% endif %} data-background-default="{{ site.plano_de_fundo }}"{% if site.plano_de_fundo_imagem != "" %} data-background-image="{{ site.plano_de_fundo_imagem | relative_url }}"{% endif %}>
+<head>
+{% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">{{ t.skipLink }}</a>
+
+  <noscript>
+    <p class="noscript-notice">{{ t.noscript }}</p>
+  </noscript>
+
+  <!-- Mensagens de estado anunciadas por leitores de tela -->
+  <p class="visually-hidden" role="status" aria-live="polite" data-status></p>
+
+  <!-- "Folha": com plano de fundo ativo, o conteúdo fica sobre ela (css/backgrounds.css) -->
+  <div class="sheet">
+{% include cabecalho.html %}
+
+  <div class="container page">
+{% include perfil.html %}
+
+    <main id="conteudo" class="content" tabindex="-1">
+{{ content }}
+    </main>
+  </div>
+
+{% include rodape.html %}
+  </div>
+  <!-- /.sheet -->
+</body>
+</html>

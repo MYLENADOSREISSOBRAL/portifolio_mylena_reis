@@ -1,0 +1,8 @@
+{%- comment -%}
+  Tempo de leitura estimado (200 palavras por minuto, mínimo de 1 minuto).
+  Uso: {% include tempo-leitura.html texto=post.content %}
+{%- endcomment -%}
+{%- assign palavras = include.texto | strip_html | number_of_words -%}
+{%- assign minutos = palavras | plus: 199 | divided_by: 200 -%}
+{%- if minutos < 1 -%}{%- assign minutos = 1 -%}{%- endif -%}
+{{ site.data.textos[page.lang].blog.readingTime | replace: "%n", minutos }}

@@ -1,0 +1,18 @@
+{%- comment -%}
+  Lista de autores separada por ";". As formas do seu nome definidas em
+  nome_citacao (_config.yml) aparecem em negrito; a comparação ignora
+  espaços, pontos e maiúsculas ("Reis,M" = "Reis, M." = "REIS, M").
+  Uso: {% include autores.html autores=publicacao.autores %}
+{%- endcomment -%}
+{%- assign destaques = "" | split: "" -%}
+{%- for forma in site.nome_citacao -%}
+  {%- assign normal = forma | remove: " " | remove: "." | downcase -%}
+  {%- assign destaques = destaques | push: normal -%}
+{%- endfor -%}
+{%- assign lista = include.autores | split: ";" -%}
+{%- for autor in lista -%}
+  {%- assign nome = autor | strip -%}
+  {%- assign normal = nome | remove: " " | remove: "." | downcase -%}
+  {%- if destaques contains normal -%}<strong>{{ nome }}</strong>{%- else -%}{{ nome }}{%- endif -%}
+  {%- unless forloop.last %}; {% endunless -%}
+{%- endfor -%}

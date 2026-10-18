@@ -1,0 +1,19 @@
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign perfil = site.data.perfil -%}
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-current-year>{{ site.time | date: "%Y" }}</span> {{ perfil.nome }} · <span>{{ t.footer.tagline }}</span></p>
+      <nav aria-label="{{ t.footer.links }}">
+        <ul class="site-footer__links">
+          {%- for link in perfil.links %}
+          {%- assign rotulo = link.rotulo[page.lang] %}
+          <li>{% include link.html url=link.url texto=rotulo %}</li>
+          {%- endfor %}
+          {%- assign textos_no_idioma = site.posts | where: "lang", page.lang %}
+          {%- if textos_no_idioma.size > 0 %}
+          <li><a href="{{ '/feed/' | append: page.lang | append: '.xml' | relative_url }}" type="application/atom+xml">{{ t.footer.rss }}</a></li>
+          {%- endif %}
+        </ul>
+      </nav>
+    </div>
+  </footer>

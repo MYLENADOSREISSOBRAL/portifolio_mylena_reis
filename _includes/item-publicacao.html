@@ -1,0 +1,22 @@
+{%- comment -%} Uma publicação de _publicacoes/. Uso: {% include item-publicacao.html pub=publicacao %} {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign pub = include.pub -%}
+{%- capture titulo_pub %}{% include traduz.html valor=pub.titulo %}{% endcapture -%}
+        <li class="entry" id="{{ pub.slug }}">
+          <h3 class="entry__title">{% if pub.idioma and pub.idioma != page.lang %}<span lang="{% if pub.idioma == 'en' %}en{% else %}pt-BR{% endif %}">{{ titulo_pub }}</span>{% else %}{{ titulo_pub }}{% endif %}</h3>
+          {%- if pub.autores %}
+          <p class="entry__authors">{% include autores.html autores=pub.autores %}</p>
+          {%- endif %}
+          <p class="entry__meta">{% if pub.tipo %}{{ t.pub.tipos[pub.tipo] | default: pub.tipo }} · {% endif %}{% if pub.veiculo %}{{ pub.veiculo }}, {% endif %}{{ pub.ano }}</p>
+          {%- if pub.selos.size > 0 %}
+          <ul class="badge-list">
+            {%- for selo in pub.selos %}
+            <li class="badge">{{ selo }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+          {%- if pub.resumo %}
+          <p class="entry__summary">{% include traduz.html valor=pub.resumo %}</p>
+          {%- endif %}
+          {% include linha-links.html links=pub.links nome=titulo_pub %}
+        </li>

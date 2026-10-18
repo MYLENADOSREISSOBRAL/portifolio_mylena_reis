@@ -1,0 +1,14 @@
+{%- comment -%}
+  Índice de anos no topo das listas (só aparece com mais de um ano).
+  Uso: {% include indice-anos.html grupos=grupos %}  (resultado de group_by)
+{%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- if include.grupos.size > 1 %}
+<nav class="year-index" aria-label="{{ t.lists.years }}">
+  <ul>
+    {%- for grupo in include.grupos %}
+    <li><a href="#ano-{{ grupo.name }}">{{ grupo.name }}</a> <span class="year-index__count">({{ grupo.items.size }})</span></li>
+    {%- endfor %}
+  </ul>
+</nav>
+{%- endif -%}

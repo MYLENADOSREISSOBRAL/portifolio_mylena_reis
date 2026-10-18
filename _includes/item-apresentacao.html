@@ -1,0 +1,17 @@
+{%- comment -%} Uma apresentação de _apresentacoes/. Uso: {% include item-apresentacao.html a=apresentacao %} {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- assign a = include.a -%}
+{%- capture titulo_apr %}{% include traduz.html valor=a.titulo %}{% endcapture -%}
+        <li class="entry" id="{{ a.date | date: '%Y-%m-%d' }}-{{ a.slug }}">
+          <h3 class="entry__title">{{ titulo_apr }}</h3>
+          <p class="entry__meta">
+            {%- if a.tipo %}{{ t.talk.tipos[a.tipo] | default: a.tipo }} · {% endif -%}
+            {%- if a.evento %}{% include traduz.html valor=a.evento %}{% endif -%}
+            {%- if a.local %} · {{ a.local }}{% endif -%}
+            {%- if a.date %} · {% include data.html data=a.date %}{% endif -%}
+          </p>
+          {%- if a.resumo %}
+          <p class="entry__summary">{% include traduz.html valor=a.resumo %}</p>
+          {%- endif %}
+          {% include linha-links.html links=a.links nome=titulo_apr %}
+        </li>

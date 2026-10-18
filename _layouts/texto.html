@@ -1,0 +1,39 @@
+---
+layout: padrao
+---
+{%- comment -%} Página de um texto do blog (_posts/). {%- endcomment -%}
+{%- assign t = site.data.textos[page.lang] -%}
+{%- if page.lang == "en" -%}{%- assign pagina_blog = "/en/blog/" -%}{%- else -%}{%- assign pagina_blog = "/blog/" -%}{%- endif -%}
+{%- comment -%} Anterior/próximo apenas entre textos do mesmo idioma {%- endcomment -%}
+{%- assign mesmo_idioma = site.posts | where: "lang", page.lang -%}
+{%- assign anterior = nil -%}
+{%- assign proximo = nil -%}
+{%- for item in mesmo_idioma -%}
+  {%- if item.url == page.url -%}
+    {%- assign indice_proximo = forloop.index0 | minus: 1 -%}
+    {%- if forloop.index0 > 0 -%}{%- assign proximo = mesmo_idioma[indice_proximo] -%}{%- endif -%}
+    {%- assign anterior = mesmo_idioma[forloop.index] -%}
+  {%- endif -%}
+{%- endfor %}
+      <article class="section post" aria-labelledby="titulo-texto">
+        <p class="post__back"><a href="{{ pagina_blog | relative_url }}">← {{ t.blog.back }}</a></p>
+        <h1 id="titulo-texto">{{ page.title }}</h1>
+        <p class="entry__meta">{% include data.html data=page.date %} · {% include tempo-leitura.html texto=content %}</p>
+
+        <div class="prose">
+{{ content }}
+        </div>
+
+        {%- if anterior or proximo %}
+        <nav class="post-nav" aria-label="{{ t.blog.nav }}">
+          <ul>
+            {%- if anterior %}
+            <li class="post-nav__prev"><span class="post-nav__label">← {{ t.blog.previous }}</span> <a href="{{ anterior.url | relative_url }}">{{ anterior.title }}</a></li>
+            {%- endif %}
+            {%- if proximo %}
+            <li class="post-nav__next"><span class="post-nav__label">{{ t.blog.next }} →</span> <a href="{{ proximo.url | relative_url }}">{{ proximo.title }}</a></li>
+            {%- endif %}
+          </ul>
+        </nav>
+        {%- endif %}
+      </article>

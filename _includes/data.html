@@ -1,0 +1,11 @@
+{%- comment -%}
+  Data por extenso no idioma da página: "20 de outubro de 2026" / "October 20, 2026".
+  Uso: {% include data.html data=post.date %}
+{%- endcomment -%}
+{%- assign meses = site.data.textos[page.lang].months -%}
+{%- assign d = include.data -%}
+{%- assign dia = d | date: "%-d" -%}
+{%- assign ano = d | date: "%Y" -%}
+{%- assign indice = d | date: "%-m" | minus: 1 -%}
+{%- assign mes = meses[indice] -%}
+<time datetime="{{ d | date: '%Y-%m-%d' }}">{% if page.lang == "en" %}{{ mes }} {{ dia }}, {{ ano }}{% else %}{{ dia }} de {{ mes }} de {{ ano }}{% endif %}</time>

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Tokens de design
+   Cores, tipografia, espaçamentos e medidas centralizados aqui.
+
+   Pontos de quebra (media queries não aceitam variáveis CSS; os valores
+   abaixo são usados literalmente em responsive.css, em "em" para
+   acompanhar o zoom do navegador):
+     --bp-md: 40em  (~640px)  — cabeçalho em linha, perfil compacto maior
+     --bp-lg: 64em  (~1024px) — coluna lateral de perfil
+   ========================================================================== */
+
+:root {
+  /* Tipografia — somente fontes do sistema */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    Cambria, "Times New Roman", serif;
+  --font-legible: "Atkinson Hyperlegible", Verdana, Tahoma, "Segoe UI",
+    sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas,
+    "Liberation Mono", monospace;
+
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-body);
+
+  /* Escala de texto do usuário (ajustada pelo painel de leitura, Etapa 4) */
+  --text-scale: 100%;
+
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-2xl: clamp(1.625rem, 1.4rem + 1vw, 2.25rem);
+
+  --line-height-body: 1.65;
+  --line-height-tight: 1.25;
+  --letter-spacing-body: normal;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 650;
+
+  /* Espaçamentos */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.25rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5rem;
+
+  /* Medidas */
+  --measure: 68ch;
+  --container-max: 72rem;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
+  --sidebar-width: 16.5rem;
+  --avatar-size-sm: 4.5rem;
+  --avatar-size-lg: 11rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --border-width: 1px;
+  --focus-width: 3px;
+
+  --transition-fast: 150ms ease;
+
+  /* Cor de identidade (fixa nos dois temas) */
+  --brand-aqua: #2b8e9e;
+
+  /* ---------- Tema claro (padrão) ---------- */
+  color-scheme: light;
+  --color-bg: #fafaf7;
+  --color-surface: #f1f2ee;
+  --color-text: #1c1f22;
+  --color-text-muted: #50575e;
+  --color-border: #d9ddd8;
+  --color-border-strong: #b9c0bb;
+  --color-accent: var(--brand-aqua);
+  --color-link: #1d6b77;
+  --color-link-hover: #14525b;
+  --color-focus: #1d6b77;
+  --color-on-accent: #ffffff;
+
+  --color-status-done: #2e6b3a;
+  --color-status-progress: #1d6b77;
+  --color-status-experimental: #7a5418;
+}
+
+/* ---------- Tema escuro ----------
+   Aplicado pela preferência do sistema (quando o usuário não escolheu
+   o tema claro manualmente) ou pela escolha explícita data-theme="dark".
+   Os valores são repetidos nos dois seletores porque media queries não
+   podem ser combinadas com seletores de atributo em uma única regra. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #16191c;
+    --color-surface: #1e2226;
+    --color-text: #e6e8ea;
+    --color-text-muted: #a3abb2;
+    --color-border: #2e343a;
+    --color-border-strong: #46505a;
+    --color-link: #5bbccb;
+    --color-link-hover: #8ad3de;
+    --color-focus: #5bbccb;
+    --color-on-accent: #0d1012;
+
+    --color-status-done: #7cc58b;
+    --color-status-progress: #5bbccb;
+    --color-status-experimental: #e0b46a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #16191c;
+  --color-surface: #1e2226;
+  --color-text: #e6e8ea;
+  --color-text-muted: #a3abb2;
+  --color-border: #2e343a;
+  --color-border-strong: #46505a;
+  --color-link: #5bbccb;
+  --color-link-hover: #8ad3de;
+  --color-focus: #5bbccb;
+  --color-on-accent: #0d1012;
+
+  --color-status-done: #7cc58b;
+  --color-status-progress: #5bbccb;
+  --color-status-experimental: #e0b46a;
+}
+
+/* ---------- Cor de destaque escolhida pelo visitante ----------
+   js/preferences.js calcula, para a matiz escolhida, tons com contraste
+   adequado em cada tema e os grava nas variáveis --accent-light,
+   --link-light, --accent-dark, --link-dark (e afins) no <html>.
+   Estas regras vêm depois das do tema escuro para prevalecer sobre elas. */
+:root[data-accent="custom"] {
+  --color-accent: var(--accent-light);
+  --color-link: var(--link-light);
+  --color-link-hover: var(--link-hover-light);
+  --color-focus: var(--link-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-accent="custom"]:not([data-theme="light"]) {
+    --color-accent: var(--accent-dark);
+    --color-link: var(--link-dark);
+    --color-link-hover: var(--link-hover-dark);
+    --color-focus: var(--link-dark);
+  }
+}
+
+:root[data-accent="custom"][data-theme="dark"] {
+  --color-accent: var(--accent-dark);
+  --color-link: var(--link-dark);
+  --color-link-hover: var(--link-hover-dark);
+  --color-focus: var(--link-dark);
+}
+
+/* ---------- Preferências de leitura (js/preferences.js) ---------- */
+:root[data-font="serif"] {
+  --font-body: var(--font-serif);
+}
+
+:root[data-font="legible"] {
+  --font-body: var(--font-legible);
+  --letter-spacing-body: 0.02em;
+  --line-height-body: 1.8;
+}
+
+:root[data-text-size="sm"] { --text-scale: 90%; }
+:root[data-text-size="lg"] { --text-scale: 112.5%; }
+:root[data-text-size="xl"] { --text-scale: 125%; }

@@ -1,0 +1,81 @@
+# ============================================================================
+# Habilidades por categoria. nivel: estudado | projeto | profissional
+# (sem barras de porcentagem ou estrelas, de propósito)
+# ============================================================================
+
+- id: languages
+  categoria:
+    pt: Linguagens de programação
+    en: Programming languages
+  itens:
+  - nome: Python
+    nivel: projeto
+  - nome: JavaScript
+    nivel: projeto
+  - nome: C++
+    nivel: projeto
+- id: backend
+  categoria:
+    pt: Desenvolvimento backend
+    en: Backend development
+  itens:
+  - nome: FastAPI
+    nivel: projeto
+  - nome: Flask
+    nivel: projeto
+  - nome: SQLAlchemy
+    nivel: projeto
+  - nome: Pydantic
+    nivel: projeto
+- id: databases
+  categoria:
+    pt: Bancos de dados
+    en: Databases
+  itens:
+  - nome: SQLite
+    nivel: projeto
+  - nome: PostgreSQL
+    nivel: projeto
+- id: tools
+  categoria:
+    pt: Ferramentas de desenvolvimento
+    en: Development tools
+  itens:
+  - nome: Docker
+    nivel: projeto
+  - nome: Render
+    nivel: projeto
+  - nome: n8n
+    nivel: projeto
+  - nome: PySide6
+    nivel: projeto
+- id: vcs
+  categoria:
+    pt: Versionamento e colaboração
+    en: Version control and collaboration
+  itens:
+  - nome: Git
+    nivel: projeto
+  - nome: GitHub
+    nivel: projeto
+- id: fundamentals
+  categoria:
+    pt: Fundamentos de computação
+    en: Computer science fundamentals
+  itens:
+  - nome:
+      pt: Sistemas distribuídos
+      en: Distributed systems
+    nivel: projeto
+  - nome:
+      pt: Computação gráfica
+      en: Computer graphics
+    nivel: projeto
+  - nome:
+      pt: Estruturas de dados
+      en: Data structures
+    nivel: projeto
+  - nome:
+      pt: Orientação a objetos
+      en: Object-oriented programming
+    nivel: projeto

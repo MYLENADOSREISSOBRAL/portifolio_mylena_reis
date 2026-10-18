@@ -1,0 +1,12 @@
+{%- comment -%} Um texto do blog na lista. Uso: {% include item-post.html post=post %} {%- endcomment -%}
+{%- assign post = include.post -%}
+{%- capture resumo_post -%}
+  {%- if post.resumo -%}{{ post.resumo }}{%- else -%}{{ post.excerpt | strip_html | strip | truncatewords: 40 }}{%- endif -%}
+{%- endcapture -%}
+        <li class="entry">
+          <h3 class="entry__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="entry__meta">{% include data.html data=post.date %} · {% include tempo-leitura.html texto=post.content %}</p>
+          {%- if resumo_post != "" %}
+          <p class="entry__summary">{{ resumo_post }}</p>
+          {%- endif %}
+        </li>

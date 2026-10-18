@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline' data:">
+		<title>Relatório Zotero</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7Cgljb2xvci1zY2hlbWU6IGxpZ2h0IGRhcms7CgkvKiBUaGVzZSBzaG91bGQgYmUgdGhlIGRlZmF1bHRzLCBidXQganVzdCBpbiBjYXNlOiAqLwoJYmFja2dyb3VuZDogQ2FudmFzOwoJY29sb3I6IENhbnZhc1RleHQ7Cn0KCmEgewoJdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7Cn0KCmJvZHkgewoJcGFkZGluZzogMDsKfQoKdWwucmVwb3J0IGxpLml0ZW0gewoJYm9yZGVyLXRvcDogNHB4IHNvbGlkICM1NTU7CglwYWRkaW5nLXRvcDogMWVtOwoJcGFkZGluZy1sZWZ0OiAxZW07CglwYWRkaW5nLXJpZ2h0OiAxZW07CgltYXJnaW4tYm90dG9tOiAyZW07Cn0KCmgxLCBoMiwgaDMsIGg0LCBoNSwgaDYgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDIgewoJbWFyZ2luOiAwIDAgLjVlbTsKfQoKaDIucGFyZW50SXRlbSB7Cglmb250LXdlaWdodDogNjAwOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDsKCWZvbnQtc2l6ZTogMWVtOwoJZGlzcGxheTogYmxvY2s7Cn0KCi8qIE1ldGFkYXRhIHRhYmxlICovCnRoIHsKCXZlcnRpY2FsLWFsaWduOiB0b3A7Cgl0ZXh0LWFsaWduOiByaWdodDsKCXdpZHRoOiAxNSU7Cgl3aGl0ZS1zcGFjZTogbm93cmFwOwp9Cgp0ZCB7CglwYWRkaW5nLWxlZnQ6IC41ZW07Cn0KCgp1bC5yZXBvcnQsIHVsLm5vdGVzLCB1bC50YWdzIHsKCWxpc3Qtc3R5bGU6IG5vbmU7CgltYXJnaW4tbGVmdDogMDsKCXBhZGRpbmctbGVmdDogMDsKfQoKLyogVGFncyAqLwpoMy50YWdzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLnRhZ3MgewoJbGluZS1oZWlnaHQ6IDEuNzVlbTsKCWxpc3Qtc3R5bGU6IG5vbmU7Cn0KCnVsLnRhZ3MgbGkgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIG5vdGVzICovCmgzLm5vdGVzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLm5vdGVzIHsKCW1hcmdpbi1ib3R0b206IDEuMmVtOwp9Cgp1bC5ub3RlcyA+IGxpOmZpcnN0LWNoaWxkIHAgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSB7CglwYWRkaW5nOiAuN2VtIDA7Cn0KCnVsLm5vdGVzID4gbGk6bm90KDpsYXN0LWNoaWxkKSB7Cglib3JkZXItYm90dG9tOiAxcHggI2NjYyBzb2xpZDsKfQoKCnVsLm5vdGVzID4gbGkgcDpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9Cgp1bC5ub3RlcyA+IGxpIHA6bGFzdC1jaGlsZCB7CgltYXJnaW4tYm90dG9tOiAwOwp9CgovKiBBZGQgcXVvdGF0aW9uIG1hcmtzIGFyb3VuZCBibG9ja3F1b3RlICovCnVsLm5vdGVzID4gbGkgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6YmVmb3JlIHsKCWNvbnRlbnQ6ICfigJwnOwp9Cgp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyLApsaS5ub3RlIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyIHsKCWNvbnRlbnQ6ICfigJ0nOwp9CgovKiBQcmVzZXJ2ZSB3aGl0ZXNwYWNlIG9uIHBsYWludGV4dCBub3RlcyAqLwp1bC5ub3RlcyBsaSBwLnBsYWludGV4dCwgbGkubm90ZSBwLnBsYWludGV4dCwgZGl2Lm5vdGUgcC5wbGFpbnRleHQgewoJd2hpdGUtc3BhY2U6IHByZS13cmFwOwp9CgovKiBEaXNwbGF5IHRhZ3Mgd2l0aGluIGNoaWxkIG5vdGVzIGlubGluZSAqLwp1bC5ub3RlcyBoMy50YWdzIHsKCWRpc3BsYXk6IGlubGluZTsKCWZvbnQtc2l6ZTogMWVtOwp9Cgp1bC5ub3RlcyBoMy50YWdzOmFmdGVyIHsKCWNvbnRlbnQ6ICcgJzsKfQoKdWwubm90ZXMgdWwudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlciB7Cgljb250ZW50OiAnLCAnOwp9CgoKLyogQ2hpbGQgYXR0YWNobWVudHMgKi8KaDMuYXR0YWNobWVudHMgewoJZm9udC1zaXplOiAxLjFlbTsKfQoKdWwuYXR0YWNobWVudHMgbGkgewoJcGFkZGluZy10b3A6IC41ZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHsKCW1hcmdpbi1sZWZ0OiAyZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogLjc1ZW07Cn0KCmRpdiB0YWJsZSB7Cglib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOwp9CgpkaXYgdGFibGUgdGQsIGRpdiB0YWJsZSB0aCB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKCXdvcmQtYnJlYWs6IGJyZWFrLWFsbDsKfQoKZGl2IHRhYmxlIHRkIHA6ZW1wdHk6OmFmdGVyLCBkaXYgdGFibGUgdGggcDplbXB0eTo6YWZ0ZXIgewoJY29udGVudDogIlwwMGEwIjsKfQoKZGl2IHRhYmxlIHRkICo6Zmlyc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IDA7Cn0KCmRpdiB0YWJsZSB0ZCAqOmxhc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQo=">
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmFueS1saW5rIHsKCWNvbG9yOiAjOTAwOwp9CgphOmhvdmVyLCBhOmFjdGl2ZSB7Cgljb2xvcjogIzc3NzsKfQoKQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewoJYTphbnktbGluayB7CgkJY29sb3I6ICNmMDA7Cgl9CgoJYTpob3ZlciwgYTphY3RpdmUgewoJCWNvbG9yOiAjOTk5OwoJfQp9CgoKdWwucmVwb3J0IHsKCWZvbnQtc2l6ZTogMS40ZW07Cgl3aWR0aDogNjgwcHg7CgltYXJnaW46IDAgYXV0bzsKCXBhZGRpbmc6IDIwcHggMjBweDsKfQoKLyogTWV0YWRhdGEgdGFibGUgKi8KdGFibGUgewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCW92ZXJmbG93OiBhdXRvOwoJd2lkdGg6IDEwMCU7CgltYXJnaW46IC4xZW0gYXV0byAuNzVlbTsKCXBhZGRpbmc6IDAuNWVtOwp9Cg==">
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiBpbmhlcml0OwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg==">
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_XFADRGR2" class="item journalArticle">
+			<h2>Current Interventions for the Digital Onboarding of First-Year Students in Higher Education Institutions: A Scoping Review</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Artigo de periódico</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Hannes Schilling</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Britta Wittner</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Simone Kauffeld</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Every year, students around the globe embark upon their higher
+ education journey, making the onboarding of these students a critical 
+task for colleges and universities. Combined with the growth in distance
+ learning and the rapid development in technologies, the onboarding 
+process occurs increasingly in the digital setting. For this reason, the
+ objective of this scoping review was to report and map interventions, 
+which are used in digital onboarding of first-year students in higher 
+education institutions and explore the digital settings that 
+characterized these interventions. The PRISMA-ScR Guidelines and the JBI
+ Manual for Evidence Synthesis guided this investigation, which included
+ researching four databases and screening the resulting titles and 
+abstracts to identify the 17 sources of evidence included in the final 
+analysis. According to our results, digital and virtual onboarding 
+interventions were categorized into four onboarding dimensions: 
+information interventions, socialization interventions, counseling 
+interventions, and self-study interventions. Examples of the purposes 
+and outcomes of these onboarding interventions included the transfer of 
+information and the socialization of incoming students. Of the five 
+onboarding settings that were also identified in the categorization, 
+telecommunication software and virtual environments predominated. An 
+independently developed onboarding tool could combine the identified 
+onboarding settings and dimensions in the future.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2022/8</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Current Interventions for the Digital Onboarding of First-Year Students in Higher Education Institutions</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>www.mdpi.com</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.mdpi.com/2227-7102/12/8/551">https://www.mdpi.com/2227-7102/12/8/551</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 19:13:59</td>
+					</tr>
+					<tr>
+					<th>Direitos</th>
+						<td>http://creativecommons.org/licenses/by/3.0/</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>12</td>
+					</tr>
+					<tr>
+					<th>Editor</th>
+						<td>Multidisciplinary Digital Publishing Institute</td>
+					</tr>
+					<tr>
+					<th>Páginas</th>
+						<td>551</td>
+					</tr>
+					<tr>
+					<th>Título da publicação</th>
+						<td>Education Sciences</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.3390/educsci12080551">10.3390/educsci12080551</a></td>
+					</tr>
+					<tr>
+					<th>Edição</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2227-7102</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 19:13:59</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 19:13:59</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Etiquetas:</h3>
+				<ul class="tags">
+					<li>digital onboarding</li>
+					<li>first-year students</li>
+					<li>interventions</li>
+					<li>scoping review</li>
+					<li>virtual settings</li>
+				</ul>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_UVBHE8P6">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6G7KNHFP" class="item webpage">
+			<h2>Designing a remote onboarding program for KIKI's Home Box</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Luiza de Oliveira Vago</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>The aim of this thesis was to develop a remote onboarding 
+program for the company KIKI’s Home Box, underpinned by an exploration 
+of the fundamental concepts intrinsic to the onboarding process, 
+emphasizing its significance for both the organization and its 
+employees. Deliberations involving the compa-ny's representative and the
+ author culminated in the selection of this topic, driven by the 
+recognized need for more robust Human Resources (HR) pro-cesses in the 
+context of KIKI’s Home Box, a recently established enterprise currently 
+in the process of solidifying its HR practices. This thesis designed and
+ aimed to implement an onboarding program that fosters deep 
+compre-hension of the company’s culture, vision, mission, and values for
+ employee self-development.
+
+Employing a mixed-method research approach, encompassing qualitative and
+ quantitative methods, the study involved an interview with the CEO and 
+found-er of the commissioning company to extract insights, needs, and 
+expectations for the final product of the onboarding program. 
+Simultaneously, a compre-hensive review of existing literature enhanced 
+the understanding of the bene-fits associated with tailored onboarding 
+initiatives. The development process underscored addressing challenges 
+in understanding the company's vision, ensuring comprehensive 
+information dissemination, integrating feedback mechanisms, cultivating a
+ sense of belonging, and leveraging technological tools to enrich the 
+onboarding experience, make it engaging and healthy for remote 
+employees.
+
+The research culminated in the creation of a comprehensive and adaptable
+ onboarding program for KIKI’s Home Box, characterized by personalized 
+goals, regular interactions, and flexible duration. The positive 
+feedback re-ceived confirmed the alignment of the final product with the
+ company's opera-tional framework, affirming its efficacy in meeting 
+predetermined expectations. Considering the specific needs and 
+objectives of KIKI’s Home Box, the rec-ommendations encompass the 
+development of tailored training modules for new employees, leveraging 
+Microsoft Teams with suggested features, imple-mentation of customized 
+checklists, prioritization of regular feedback sessions, provision of 
+comprehensive wellness programs, and the establishment of a structured 
+mechanism for periodic program assessment. These recommenda-tions are 
+designed to foster an inclusive and supportive onboarding experi-ence 
+that aligns with the company's vision and long-term growth strategies.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2023</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="http://www.theseus.fi/handle/10024/809613">http://www.theseus.fi/handle/10024/809613</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:13:58</td>
+					</tr>
+					<tr>
+					<th>Direitos</th>
+						<td>fi=All rights reserved. This publication is copyrighted. You 
+may download, display and print it for Your own personal use. Commercial
+ use is prohibited.|sv=All rights reserved. This publication is 
+copyrighted. You may download, display and print it for Your own 
+personal use. Commercial use is prohibited.|en=All rights reserved. This
+ publication is copyrighted. You may download, display and print it for 
+Your own personal use. Commercial use is prohibited.|</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Accepted: 2023-11-09T12:50:31Z</td>
+					</tr>
+					<tr>
+					<th>Tipo de site</th>
+						<td>fi=AMK-opinnäytetyö|sv=YH-examensarbete|en=Bachelor's thesis|</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:13:58</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:13:58</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_GMAEABNP">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_L7SW4J5I" class="item preprint">
+			<h2>Onboarding in Agile Teams: A Literature Review of Practices and Evidence-Based Model Categorization</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Pré-impressão</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Henriquez Spencer</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Matias Ignacio</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>ContextThe adoption of agile methodologies in the software 
+development and information technology industries has led to significant
+ changes in the ways teams collaborate and develop products. However, 
+successful agile adoption needs the integration of new team members 
+while considering the challenges they face in adapting to agile 
+practices. While existing theories offer general approaches to 
+onboarding, they lack insights into the application of specific 
+practices in agile scenarios.ObjectiveThis study aims to address the gap
+ in knowledge by examining specific onboarding practices in the context 
+of agile teams and classify them into an evidence-base model of 
+onboarding.MethodA semi-systematic literature review was performed to 
+identify, interpret and categorize onboarding practices in agile teams. 
+Identified works were analyzed using a thematic coding approach of the 
+onboarding practices reported. Then, we classified the specific 
+practices onto the Talya N. Bauer´s Onboarding functions model.Results13
+ studies were identified and analyzed. I describe the team´s onboarding 
+activities and present them in a resulting model from the evidence-based
+ approach.ConclusionsThis literature review makes a substantial 
+contribution by addressing onboarding practices in agile teams 
+comprehensively. The study compiles an exhaustive list of practices and 
+techniques and also applied Talya N. Bauer's onboarding model to 
+systematically categorize and align them with key onboarding functions. 
+The study provides practitioners with a practical tool to strategically 
+design or refine onboarding programs. Furthermore, researchers gain an 
+organized overview of the field. The review's outcome offers immediate 
+value to organizations and serves as a foundation for advancing 
+understanding in this evolving area.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2023-08-23</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Onboarding in Agile Teams</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>papers.ssrn.com</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://papers.ssrn.com/abstract=4549723">https://papers.ssrn.com/abstract=4549723</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 17:46:00</td>
+					</tr>
+					<tr>
+					<th>Lugar</th>
+						<td>Rochester, NY</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.2139/ssrn.4549723">10.2139/ssrn.4549723</a></td>
+					</tr>
+					<tr>
+					<th>Repositório</th>
+						<td>Social Science Research Network</td>
+					</tr>
+					<tr>
+					<th>Gênero</th>
+						<td>SSRN Scholarly Paper</td>
+					</tr>
+					<tr>
+					<th>ID do Arquivo</th>
+						<td>4549723</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:46:00</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:46:00</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Etiquetas:</h3>
+				<ul class="tags">
+					<li>onboarding</li>
+					<li>agile teams</li>
+					<li>newcomers</li>
+					<li>onboarding activities</li>
+					<li>team onboarding</li>
+				</ul>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_F3QYFTDA">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_25Y4LGFL" class="item conferencePaper">
+			<h2>A Systematic Mapping Study of the Onboarding Process in Software Development Organizations</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Conferência</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Sueli Pereira Perpétua</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Sávio Luiz Vieira</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Carlos dos Santos Portela</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Maurício Ronny de Almeida Souza</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>The onboarding process refers to the organizational 
+integration or socialization of new employees to the company and their 
+role. This includes training, orientation, support, and communication, 
+seeking to help newcomers to adapt to the new culture and work 
+environment. Since software development is a human activity that 
+requires collaboration and teamwork, especially in the professional 
+environment, onboarding is a critical process to ensure the proper 
+integration of new employees in software projects. Thus, this paper aims
+ to identify the main approaches, practices, trends, and challenges 
+related to the onboarding process in the Software Engineering context. 
+We conducted a Systematic Mapping Study, which resulted in the selection
+ of 23 primary studies. The main findings include the observation that 
+onboarding process is context-sensitive, affected by characterisctics 
+such as organization size, work model, and development methodologies. We
+ also found that there is a lack of studies evaluating models and tools.
+ Finally, there is a heavy focus on oboarding activities related to 
+learning and socialization, in contrast to developing the confidence of 
+newcomers.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>Dezembro 6, 2023</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>ACM Digital Library</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://dl.acm.org/doi/10.1145/3629479.3629500">https://dl.acm.org/doi/10.1145/3629479.3629500</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>15/02/2026, 21:00:00</td>
+					</tr>
+					<tr>
+					<th>Lugar</th>
+						<td>New York, NY, USA</td>
+					</tr>
+					<tr>
+					<th>Editor</th>
+						<td>Association for Computing Machinery</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>979-8-4007-0786-5</td>
+					</tr>
+					<tr>
+					<th>Páginas</th>
+						<td>11–20</td>
+					</tr>
+					<tr>
+					<th>Série</th>
+						<td>SBQS '23</td>
+					</tr>
+					<tr>
+					<th>Título dos anais</th>
+						<td>Proceedings of the XXII Brazilian Symposium on Software Quality</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1145/3629479.3629500">10.1145/3629479.3629500</a></td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:43:35</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:43:35</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_WL6XA64B">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_448NKCV9" class="item journalArticle">
+			<h2>The Pandora's box of social, process, and people debts in software engineering</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Artigo de periódico</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Muhammad Ovais Ahmad</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Tomas Gustavsson</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>In software engineering, technical debt (TD) has been widely 
+investigated, but debt regarding social issues, people, and processes 
+has not been explored as much. It should be noted here that we use 
+nontechnical debt (NTD) as an umbrella term to cover social, process, 
+and people debts. Although the number of studies on NTD in software is 
+increasing, the majority of them are descriptive rather than rigorous, 
+and there is no systematic development of cumulative knowledge. As a 
+result, identifying the fundamental causes of NTD and the associated 
+mitigation techniques in software engineering is challenging. Therefore,
+ this study investigates the scientific evidence regarding NTD till date
+ by conducting a systematic mapping review of software engineering 
+research between January 2000 and October 2021. The search strategy 
+resulted in 175 studies, 17 of which were identified as unique and 
+relevant primary papers. The primary studies show that NTD and TD are 
+inextricably linked. In addition, this study also captured a plethora of
+ causes and mitigation strategies for managing NTD and thus makes four 
+important contributions: (i) highlighting state-of-the-art NTD research;
+ (ii) identification of the reported causes and mitigation strategies in
+ the primary papers; and (iii) determination of opportunities for future
+ NTD research.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2024</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>Wiley Online Library</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/smr.2516">https://onlinelibrary.wiley.com/doi/abs/10.1002/smr.2516</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:16:04</td>
+					</tr>
+					<tr>
+					<th>Direitos</th>
+						<td>© 2022 The Authors. Journal of Software: Evolution and Process published by John Wiley &amp; Sons Ltd.</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/smr.2516</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>36</td>
+					</tr>
+					<tr>
+					<th>Páginas</th>
+						<td>e2516</td>
+					</tr>
+					<tr>
+					<th>Título da publicação</th>
+						<td>Journal of Software: Evolution and Process</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1002/smr.2516">10.1002/smr.2516</a></td>
+					</tr>
+					<tr>
+					<th>Edição</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2047-7481</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:16:04</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:16:04</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Etiquetas:</h3>
+				<ul class="tags">
+					<li>agile</li>
+					<li>people debt</li>
+					<li>process debt</li>
+					<li>social debt</li>
+					<li>software development</li>
+					<li>systematic mapping review</li>
+				</ul>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_BNRL4XM2">Full Text PDF					</li>
+					<li id="item_53KJK2YZ">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_AWBPVI74" class="item journalArticle">
+			<h2>Validation and Refinement of an Experience-Based Onboarding Model for the IT Industry Through Multivocal Literature Review</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Artigo de periódico</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Igor Vecstejn</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Zeljko Stojanov</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Mila Kavalic</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Verica Gluvakov</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Vuk Amizic</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Aim: This review aims to validate the Experience-Based 
+Onboarding Model (EBOM) and refine it into an improved adaptive 
+onboarding model, OnMod. Methods: In this review, autoethnography is 
+combined with a Multivocal Literature Review (MLR) that combines white 
+and gray literature sources. Evidence is mapped to entities and semantic
+ relations and assessed using predefined decision rules. Main findings: 
+The validation of the model confirms the core EBOM entities and semantic
+ relations. It also introduces several new or renamed entities or 
+semantic relations that close the feedback loop and yield the refined 
+OnMod model. Implications: The theoretical contribution is reflected in 
+the application of autoethnography in combination with the MLR, where it
+ represents a good basis for the development of an onboarding model. In 
+industrial practice, the presented OnMod model can be used by mentors 
+and managers as a guide for improving operational and daily activities, 
+as well as for the development of onboarding strategies in IT and 
+software companies.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2025/1</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>www.mdpi.com</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.mdpi.com/2076-3417/15/19/10672">https://www.mdpi.com/2076-3417/15/19/10672</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 17:45:39</td>
+					</tr>
+					<tr>
+					<th>Direitos</th>
+						<td>http://creativecommons.org/licenses/by/3.0/</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>15</td>
+					</tr>
+					<tr>
+					<th>Editor</th>
+						<td>Multidisciplinary Digital Publishing Institute</td>
+					</tr>
+					<tr>
+					<th>Páginas</th>
+						<td>10672</td>
+					</tr>
+					<tr>
+					<th>Título da publicação</th>
+						<td>Applied Sciences</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.3390/app151910672">10.3390/app151910672</a></td>
+					</tr>
+					<tr>
+					<th>Edição</th>
+						<td>19</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2076-3417</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:45:39</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:45:39</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Etiquetas:</h3>
+				<ul class="tags">
+					<li>autoethnography</li>
+					<li>employee integration</li>
+					<li>IT industry</li>
+					<li>model validation</li>
+					<li>multivocal literature review</li>
+					<li>onboarding</li>
+				</ul>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_YHQUYEKI">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ZP2M65M5" class="item journalArticle">
+			<h2>Training and onboarding initiatives in high energy physics experiments</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Artigo de periódico</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Allison Reinsvold Hall</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Nicole Skidmore</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Gabriele Benelli</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Ben Carlson</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Claire David</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Jonathan Davies</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Wouter Deconinck</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>David DeMuth</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Peter Elmer</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Rocky Bala Garg</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Stephan Hageböck</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Killian Lieret</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Valeriia Lukashenko</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Sudhir Malik</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Andy Morris</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Heidi Schellman</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Graeme A. Stewart</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Jason Veatch</td>
+					</tr>
+					<tr>
+						<th class="author">Autor</th>
+						<td>Michel Hernandez Villanueva</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>In this article we document the current analysis software 
+training and onboarding activities in several High Energy Physics (HEP) 
+experiments: ATLAS, CMS, LHCb, Belle II and DUNE. Fast and efficient 
+onboarding of new collaboration members is increasingly important for 
+HEP experiments. With rapidly increasing data volumes and larger 
+collaborations the analyses and consequently, the related software, 
+become ever more complex. This necessitates structured onboarding and 
+training. Recognizing this, a meeting series was held by the HEP 
+Software Foundation (HSF) in 2022 for experiments to showcase their 
+initiatives. Here we document and analyze these in an attempt to 
+determine a set of key considerations for future HEP experiments.</td>
+					</tr>
+					<tr>
+					<th>Data</th>
+						<td>2025-02-10</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>English</td>
+					</tr>
+					<tr>
+					<th>Catálogo de biblioteca</th>
+						<td>Frontiers</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.frontiersin.org/journals/big-data/articles/10.3389/fdata.2025.1497622/full">https://www.frontiersin.org/journals/big-data/articles/10.3389/fdata.2025.1497622/full</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:02:26</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>Editor</th>
+						<td>Frontiers</td>
+					</tr>
+					<tr>
+					<th>Título da publicação</th>
+						<td>Frontiers in Big Data</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.3389/fdata.2025.1497622">10.3389/fdata.2025.1497622</a></td>
+					</tr>
+					<tr>
+					<th>Abreviatura do periódico</th>
+						<td>Front. Big Data</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2624-909X</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:02:26</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:02:26</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Etiquetas:</h3>
+				<ul class="tags">
+					<li>analysis software</li>
+					<li>data analysis</li>
+					<li>high energy physics</li>
+					<li>onboarding</li>
+					<li>particle physics</li>
+					<li>scientific computing</li>
+					<li>training</li>
+				</ul>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_XJPDT8ED">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_SA4FDWP7" class="item webpage">
+			<h2>Mapping the organizational socialization and onboarding literature: a bibliometric analysis of the field</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>This study provides a comprehensive review of the intellectual
+ structure and current dynamics of onboarding and socialization 
+research. Using the Web of Science (WoS) database, we found 452 research
+ articles that met the inclusion criteria. Biblioshiny R-package and 
+VOSviewer were used for the bibliometric analysis. We lay out the most 
+prolific authors, journals, institutions and articles in this rapidly 
+growing field. We find that current research is scattered all over 
+different topics and disciplines.  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Mapping the organizational socialization and onboarding literature</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4394692190">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4394692190</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 17:32:24</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:32:24</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:32:24</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_H6YWXF7A">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_R6MMS6WG" class="item webpage">
+			<h2>Onboarding for an Agile Software Development Company</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Abstract The global shortage of highly skilled employees has 
+created a need for a more efficient onboarding process in software 
+development companies. The experienced onboarding efficiency affects the
+ new employee’s willingness to stay within the company and the 
+efficiency of their work. Our case company transferred to a team-based 
+organization structure, where agile teams were given high autonomy. 
+Supervisor responsibilities were divided among different roles, such as 
+people coaches and a lead  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4399152602">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4399152602</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 17:50:58</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:50:58</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:50:58</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_6DG5YCEX">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_CM36GW2J" class="item webpage">
+			<h2>Improving Onboarding Experiences of Design Graduates in the 
+Fintech Industry : A Constructive Design Research Approach - ProQuest</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Explore millions of resources from scholarly journals, books, newspapers, videos and more, on the ProQuest Platform.</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Improving Onboarding Experiences of Design Graduates in the Fintech Industry</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.proquest.com/openview/8f6ab75a502c37d5fc1a33f015f09401/1?pq-origsite=gscholar&amp;cbl=2026366&amp;diss=y">https://www.proquest.com/openview/8f6ab75a502c37d5fc1a33f015f09401/1?pq-origsite=gscholar&amp;cbl=2026366&amp;diss=y</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 17:59:53</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 17:59:53</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 17:59:53</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_F52KNM57">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_PBTR8ABK" class="item webpage">
+			<h2>Exploring Knowledge Management From a Software Engineering Perspective - ProQuest</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Explore millions of resources from scholarly journals, books, newspapers, videos and more, on the ProQuest Platform.</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.proquest.com/openview/d846be93887063c8d73820667ae1d3f2/1?pq-origsite=gscholar&amp;cbl=1796412">https://www.proquest.com/openview/d846be93887063c8d73820667ae1d3f2/1?pq-origsite=gscholar&amp;cbl=1796412</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:10:45</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:10:45</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:10:45</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_UUV7AHNJ">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_C7RQC3P8" class="item webpage">
+			<h2>Exploring knowledge management from a software engineering perspective</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Context: The knowledge domain of software engineering (SE) 
+gradually expands due to fast emerging technologies and complex 
+organisational processes. The software industry represents a special 
+focus of interest from a Knowledge Management (KM) perspective, as it is
+ characterized by high employee turnover, a high level of outsourced 
+projects, and an accelerated pace of technology innovations. Knowledge 
+management can substantially influence SE knowledge's life cycle, 
+contributing to better structuring  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4386449665">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4386449665</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:19:14</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:19:14</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:19:14</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_99UGWQLE">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_XXXWMEIQ" class="item webpage">
+			<h2>The Role of Responsiveness to Change in Large Onboarding Campaigns</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Abstract Onboarding is a process of organizational 
+socialization of the new hires, that includes recruitment, orientation, 
+training, coaching and support. While onboarding individuals into an 
+organization is a rather straightforward task, little is known about 1) 
+onboarding hundreds of developers and 2) doing it on a distance in 
+outsourcing situations. Furthermore, the subject of sustainable growth 
+with respect to organizational capabilities and culture is often 
+overlooked. This paper reports findings  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4381833134">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4381833134</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:38:00</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:38:00</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:38:00</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_5SRG5EBR">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_2A6GUUY4" class="item webpage">
+			<h2>Adopting Artificial Intelligence in a Decision Support System – Learnings from Comment Moderation Systems</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Enterprise Information Systems (EIS) comprise components for 
+decision-making in an organization. While traditional Decision Support 
+Systems (DSS) rely on sophistically designed decision models, this 
+approach has its limitations when it comes to making decisions based on 
+large amounts of unstructured data. In this paper, we present the case 
+of online community management, where moderators need to decide if user 
+content (i.e., comments) can be published. We have implemented a 
+moderation platform that  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4401020988">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4401020988</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:39:23</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:39:23</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:39:23</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_5XPRVA6A">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_RTYXTSYX" class="item webpage">
+			<h2>Enabling digital growth through continuous education of project 
+managers: A framework for collaborative, complementary, sustained, and 
+simultaneous learning in software engineering organizations</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Resumo</th>
+						<td>Introduction/purpose: This paper introduces a novel PMO EDUCT 
+framework that encompasses Collaborative, Complementary, Sustained, and 
+Simultaneous learning explicitly tailored for the dynamic landscape of 
+software engineering. This paper contributes to the ongoing discourse on
+ education and professional development in the digital era by 
+illuminating the challenges faced, the framework developed, and the 
+measurable outcomes achieved. The presented framework underscores the 
+need for agility, adaptability,  ...</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Enabling digital growth through continuous education of project managers</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4389495373">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4389495373</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 18:40:25</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 18:40:25</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 18:40:25</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">Anexos</h3>
+				<ul class="attachments">
+					<li id="item_M7F7T5W2">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_UVPM6KQT" class="item webpage">
+			<h2>Onboarding in small software enterprises: Practical recommendations from a qualitative case study</h2>
+				<table>
+					<tbody><tr>
+						<th>Tipo do item</th>
+						<td>Página web</td>
+					</tr>
+					<tr>
+					<th>Idioma</th>
+						<td>pt-br</td>
+					</tr>
+					<tr>
+					<th>Título curto</th>
+						<td>Onboarding in small software enterprises</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4411274449">https://www-periodicos-capes-gov-br.ez3.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&amp;source=all&amp;id=W4411274449</a></td>
+					</tr>
+					<tr>
+					<th>Data de acesso</th>
+						<td>16/02/2026, 19:00:56</td>
+					</tr>
+					<tr>
+					<th>Título do site</th>
+						<td>Portal de Periódicos da CAPES</td>
+					</tr>
+					<tr>
+					<th>Data de adição</th>
+						<td>16/02/2026, 19:00:56</td>
+					</tr>
+					<tr>
+					<th>Data de modificação</th>
+						<td>16/02/2026, 19:00:56</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+		</ul>
+	
+</body></html>
