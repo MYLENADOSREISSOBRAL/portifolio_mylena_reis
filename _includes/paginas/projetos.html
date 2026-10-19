@@ -41,16 +41,22 @@
               {%- if etapa.descricao %}
               <p>{% include traduz.html valor=etapa.descricao %}</p>
               {%- endif %}
-              {%- if etapa.destaques and etapa.destaques.itens.size > 0 %}
-              {%- capture rotulo_destaques %}{% include traduz.html valor=etapa.destaques.rotulo %}{% endcapture %}
-              {%- capture rotulo_atributo %}{% include traduz.html valor=etapa.destaques.rotulo puro=true %}{% endcapture %}
+              {%- comment -%} destaques e, opcionalmente, um segundo grupo (destaques_extra) {%- endcomment -%}
+              {%- assign grupos_destaques = "" | split: "" -%}
+              {%- if etapa.destaques %}{% assign grupos_destaques = grupos_destaques | push: etapa.destaques %}{% endif -%}
+              {%- if etapa.destaques_extra %}{% assign grupos_destaques = grupos_destaques | push: etapa.destaques_extra %}{% endif -%}
+              {%- for grupo_destaques in grupos_destaques %}
+              {%- if grupo_destaques.itens.size > 0 %}
+              {%- capture rotulo_destaques %}{% include traduz.html valor=grupo_destaques.rotulo %}{% endcapture %}
+              {%- capture rotulo_atributo %}{% include traduz.html valor=grupo_destaques.rotulo puro=true %}{% endcapture %}
               <p class="timeline__label">{{ rotulo_destaques }}</p>
               <ul class="tag-list" aria-label="{{ rotulo_atributo }}">
-                {%- for item in etapa.destaques.itens %}
+                {%- for item in grupo_destaques.itens %}
                 <li class="tag">{% include traduz.html valor=item %}</li>
                 {%- endfor %}
               </ul>
               {%- endif %}
+              {%- endfor %}
             </li>
             {%- endfor %}
           </ol>

@@ -81,6 +81,34 @@
       pt: Orientação a objetos
       en: Object-oriented programming
     nivel: projeto
+  - nome:
+      pt: Engenharia de software
+      en: Software engineering
+    nivel: estudado
+  - nome:
+      pt: Gerência de projetos de software
+      en: Software project management
+    nivel: estudado
+  - nome:
+      pt: Interação humano-computador
+      en: Human-computer interaction
+    nivel: estudado
+  - nome:
+      pt: Sistemas operacionais
+      en: Operating systems
+    nivel: estudado
+  - nome:
+      pt: Redes de computadores
+      en: Computer networks
+    nivel: estudado
+  - nome:
+      pt: Processamento de imagens
+      en: Image processing
+    nivel: estudado
+  - nome:
+      pt: Análise de algoritmos e grafos
+      en: Algorithm analysis and graphs
+    nivel: estudado
 - id: gestao
   categoria:
     pt: Gestão e qualidade de TI

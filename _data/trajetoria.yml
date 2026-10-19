@@ -2,38 +2,76 @@
 # Trajetória: formação, experiência e atividades, na ordem de exibição.
 # - tipo: formacao | experiencia | atividade
 # - Não publique documentos internos, dados de sistemas ou de terceiros.
-# Fonte: currículo de 2026 (curriculo_mylena/, fora do site publicado).
+# Fontes: currículo de 2026 e histórico da UFPA (curriculo_mylena/, fora do
+# site publicado). Do histórico, só entram dados acadêmicos gerais: nada de
+# notas, dados pessoais ou matrícula.
+# - destaques_extra: segundo grupo opcional de etiquetas, igual a destaques.
 # ============================================================================
 
 - id: ufpa
   tipo: formacao
   titulo:
-    pt: Sistemas de Informação
-    en: Information Systems
+    pt: Bacharelado em Sistemas de Informação
+    en: Bachelor's in Information Systems
   organizacao:
-    pt: Universidade Federal do Pará (UFPA)
-    en: Federal University of Pará (UFPA)
+    pt: Universidade Federal do Pará (UFPA) – ICEN
+    en: Federal University of Pará (UFPA) – ICEN
   periodo:
-    pt: Conclusão prevista para julho de 2027
-    en: Expected graduation in July 2027
+    pt: 2022 – conclusão prevista para julho de 2027
+    en: 2022 – expected graduation in July 2027
   descricao:
-    pt: 8º período, no turno da noite, com foco em Engenharia de Software e interesse em análise, desenvolvimento e manutenção de sistemas.
-    en: 8th semester, evening program, focused on Software Engineering, with interest in systems analysis, development and maintenance.
+    pt: 9º período, no turno da noite, com foco em Engenharia de Software. Cerca de 84% da carga horária concluída (2.924 h de 3.468 h), incluindo o Estágio Supervisionado (340 h), o TCC I e todas as atividades complementares e optativas.
+    en: 9th semester, evening program, focused on Software Engineering. About 84% of the course load completed (2,924 of 3,468 hours), including the Supervised Internship (340 h), Capstone Project I and all complementary and elective activities.
   destaques:
     rotulo:
-      pt: Disciplinas com projetos práticos
-      en: Courses with hands-on projects
+      pt: Disciplinas concluídas
+      en: Completed courses
     itens:
+    - pt: Engenharia de Software
+      en: Software Engineering
+    - pt: Gerência de Projetos de Software
+      en: Software Project Management
+    - pt: Interação Humano-Computador
+      en: Human-Computer Interaction
+    - pt: Organização e Métodos para Análise de Sistemas
+      en: Organization and Methods for Systems Analysis
     - pt: Sistemas Distribuídos
       en: Distributed Systems
+    - pt: Sistemas Operacionais
+      en: Operating Systems
+    - pt: Redes de Computadores
+      en: Computer Networks
     - pt: Computação Gráfica
       en: Computer Graphics
-    - pt: Desenvolvimento de Software Apoiado por IA
-      en: AI-Assisted Software Development
-    - pt: Estruturas de Dados
-      en: Data Structures
+    - pt: Processamento de Imagens
+      en: Image Processing
+    - pt: Análise de Algoritmos
+      en: Algorithm Analysis
+    - pt: Grafos
+      en: Graph Theory
+    - pt: Estruturas de Dados I e II
+      en: Data Structures I and II
     - pt: Programação II (orientação a objetos)
       en: Programming II (object-oriented programming)
+    - pt: Algoritmos
+      en: Algorithms
+    - pt: Probabilidade e Estatística
+      en: Probability and Statistics
+    - pt: Gestão Empresarial (eletiva, Engenharia Civil)
+      en: Business Management (elective, Civil Engineering)
+  destaques_extra:
+    rotulo:
+      pt: Cursando em 2026
+      en: In progress in 2026
+    itens:
+    - pt: Banco de Dados I
+      en: Databases I
+    - pt: Banco de Dados II
+      en: Databases II
+    - pt: Tópicos Especiais em Sistemas de Informação I
+      en: Special Topics in Information Systems I
+    - pt: Empreendedorismo em Informática
+      en: Entrepreneurship in Computing
 - id: semas
   tipo: experiencia
   titulo:
