@@ -106,7 +106,7 @@ pt:
     timeline: "Trajetória"
     skills: "Habilidades"
     projectsMore: "Novos projetos serão adicionados ao longo do tempo."
-    skillsLead: "Tecnologias e conhecimentos aplicados nos projetos listados acima."
+    skillsLead: "Tecnologias e conhecimentos aplicados em projetos, na formação e na experiência profissional."
   empty:
     projects: "Os projetos serão adicionados em breve."
     timeline: "A trajetória será adicionada em breve."
@@ -279,7 +279,7 @@ en:
     timeline: "Background"
     skills: "Skills"
     projectsMore: "New projects will be added over time."
-    skillsLead: "Technologies and knowledge applied in the projects listed above."
+    skillsLead: "Technologies and knowledge applied in projects, coursework and professional experience."
   empty:
     projects: "Projects will be added soon."
     timeline: "Background information will be added soon."

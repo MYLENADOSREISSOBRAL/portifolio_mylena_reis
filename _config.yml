@@ -138,6 +138,7 @@ defaults:
 exclude:
   - docs/
   - apresentar-na-rede.ps1
+  - curriculo_mylena/
   - README.md
   - Gemfile
   - Gemfile.lock

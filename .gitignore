@@ -11,3 +11,6 @@ Gemfile.lock
 
 # Endereço local gerado por apresentar-na-rede.ps1
 _config_rede.yml
+
+# Currículo original (tem telefone e endereço): fica fora do Git e do site
+curriculo_mylena/

@@ -2,6 +2,7 @@
 # Trajetória: formação, experiência e atividades, na ordem de exibição.
 # - tipo: formacao | experiencia | atividade
 # - Não publique documentos internos, dados de sistemas ou de terceiros.
+# Fonte: currículo de 2026 (curriculo_mylena/, fora do site publicado).
 # ============================================================================
 
 - id: ufpa
@@ -12,8 +13,12 @@
   organizacao:
     pt: Universidade Federal do Pará (UFPA)
     en: Federal University of Pará (UFPA)
-  periodo: null
-  descricao: null
+  periodo:
+    pt: Conclusão prevista para julho de 2027
+    en: Expected graduation in July 2027
+  descricao:
+    pt: 8º período, no turno da noite, com foco em Engenharia de Software e interesse em análise, desenvolvimento e manutenção de sistemas.
+    en: 8th semester, evening program, focused on Software Engineering, with interest in systems analysis, development and maintenance.
   destaques:
     rotulo:
       pt: Disciplinas com projetos práticos
@@ -32,11 +37,134 @@
 - id: semas
   tipo: experiencia
   titulo:
-    pt: Estágio
-    en: Internship
+    pt: Bolsista PCT Guamá
+    en: PCT Guamá research fellow
   organizacao:
     pt: Secretaria de Estado de Meio Ambiente e Sustentabilidade do Pará (SEMAS-PA)
     en: Pará State Department of Environment and Sustainability (SEMAS-PA)
-  periodo: null
+  periodo:
+    pt: 2026 – atual
+    en: 2026 – present
+  descricao:
+    pt: Atuação em Gestão de Serviços de Tecnologia da Informação e Comunicação (TIC) na Diretoria de Tecnologia da Informação.
+    en: Information and Communication Technology (ICT) service management at the IT Department.
+  destaques:
+    rotulo:
+      pt: Atividades
+      en: Activities
+    itens:
+    - pt: Organização e padronização de documentos e evidências institucionais
+      en: Organizing and standardizing institutional documents and evidence
+    - pt: Acompanhamento de projetos e demandas de sistemas na Rede Conecta
+      en: Tracking systems projects and requests on the Rede Conecta platform
+    - pt: Análise documental e verificação de checklists de entrega
+      en: Document analysis and delivery checklist verification
+    - pt: Apoio à qualidade de software e à melhoria de processos
+      en: Support for software quality and process improvement
+    - pt: Gestão do conhecimento e conformidade com o modelo MPS.BR
+      en: Knowledge management and compliance with the MPS.BR model
+- id: suporte-etdufpa
+  tipo: experiencia
+  titulo:
+    pt: Suporte de Computadores
+    en: Computer Support
+  organizacao:
+    pt: Escola de Teatro e Dança da UFPA
+    en: UFPA School of Theater and Dance
+  periodo: 2023 – 2025
+  descricao: null
+  destaques:
+    rotulo:
+      pt: Atividades
+      en: Activities
+    itens:
+    - pt: Formatação de computadores
+      en: Computer formatting and setup
+    - pt: Instalação de drivers
+      en: Driver installation
+    - pt: Manutenção de segurança
+      en: Security maintenance
+    - pt: Backup
+      en: Backup
+- id: lab-ideias-itec
+  tipo: atividade
+  titulo:
+    pt: Voluntária de Pesquisa
+    en: Research Volunteer
+  organizacao:
+    pt: Laboratório de Desenvolvimento de Ideias – ITEC/UFPA
+    en: Idea Development Laboratory – ITEC/UFPA
+  periodo: 2022 – 2024
+  descricao: null
+  destaques:
+    rotulo:
+      pt: Atividades
+      en: Activities
+    itens:
+    - pt: Coordenação de um curso de Informática Básica no projeto "Indígenas e Quilombolas"
+      en: Coordinated a Basic Computing course in the "Indigenous and Quilombola Peoples" project
+    - pt: Gestão documental
+      en: Document management
+    - pt: Gerenciamento de equipes, atividades e qualidade da aprendizagem
+      en: Management of teams, activities and learning quality
+- id: lab-bioinformatica
+  tipo: atividade
+  titulo:
+    pt: Voluntária de Pesquisa
+    en: Research Volunteer
+  organizacao:
+    pt: Laboratório de Bioinformática e Computação de Alto Desempenho – UFPA
+    en: Bioinformatics and High-Performance Computing Laboratory – UFPA
+  periodo: 2022 – 2023
   descricao: null
   destaques: null
+- id: cursos-livres
+  tipo: formacao
+  titulo:
+    pt: Cursos livres e qualificação profissional
+    en: Short courses and professional training
+  organizacao: DIO · Conquer · SENAC
+  periodo: null
+  descricao: null
+  destaques:
+    rotulo:
+      pt: Cursos
+      en: Courses
+    itens:
+    - pt: GitHub (DIO)
+      en: GitHub (DIO)
+    - pt: Lógica de Programação (DIO)
+      en: Programming Logic (DIO)
+    - pt: Linguagem Python (DIO)
+      en: Python Language (DIO)
+    - pt: Linguagem Java (DIO)
+      en: Java Language (DIO)
+    - pt: Gestão e Produtividade (Conquer)
+      en: Management and Productivity (Conquer)
+    - pt: Assistente Administrativo (SENAC)
+      en: Administrative Assistant (SENAC)
+    - pt: Assistente de Logística (SENAC)
+      en: Logistics Assistant (SENAC)
+- id: ifpa
+  tipo: formacao
+  titulo:
+    pt: Ensino Médio com formação em Design
+    en: High School with Design training
+  organizacao:
+    pt: Instituto Federal do Pará (IFPA)
+    en: Federal Institute of Pará (IFPA)
+  periodo:
+    pt: Turma de 2013
+    en: Class of 2013
+  descricao: null
+  destaques:
+    rotulo:
+      pt: Ênfases
+      en: Focus areas
+    itens:
+    - pt: Projetos de interiores e planejamento de ambientes
+      en: Interior design and space planning
+    - pt: Desenvolvimento de logomarcas
+      en: Logo design
+    - pt: Tratamento digital de imagens
+      en: Digital image editing
