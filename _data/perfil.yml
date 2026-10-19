@@ -40,6 +40,7 @@ links:
     url: "https://www.linkedin.com/in/mylena-dos-reis-sobral-04480920b/"
     exibir: "linkedin.com/in/mylena-dos-reis-sobral"
 
-# Currículo em PDF: informe o caminho (ex.: /assets/docs/curriculo.pdf)
+# Currículo em PDF (versão pública, sem telefone e endereço; o original fica em
+# curriculo_mylena/, fora do site). Para trocar, informe outro caminho
 # somente quando o arquivo existir no projeto.
-curriculo: ""
+curriculo: /assets/docs/curriculo-mylena-reis.pdf
