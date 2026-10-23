@@ -12,6 +12,8 @@ description: >-
 # Endereço de publicação no GitHub Pages: https://mylenadosreissobral.github.io/portifolio_mylena_reis/
 url: "https://mylenadosreissobral.github.io"
 baseurl: "/portifolio_mylena_reis"
+# Endereço publicado, fixo: "jekyll serve" troca o url por localhost (usado no QR code dos slides)
+url_publicada: "https://mylenadosreissobral.github.io"
 
 # ---------------------------------------------------------------------------
 # Idiomas: português na raiz (/) e inglês em /en/

@@ -262,7 +262,7 @@
   window.addEventListener("beforeprint", function () { root.classList.add("deck-imprimindo"); });
   window.addEventListener("afterprint", function () { root.classList.remove("deck-imprimindo"); });
 
-  /* QR code da capa: endereço da apresentação na rede local (data-qr) */
+  /* QR code da capa: endereço da apresentação (data-qr) */
   var qr = deck.querySelector("[data-qr]");
   if (qr && window.qrcode) {
     var codigo = window.qrcode(0, "M");

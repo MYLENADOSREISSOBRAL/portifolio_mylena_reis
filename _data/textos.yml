@@ -176,6 +176,7 @@ pt:
     hint: "← → ou Espaço para avançar · F: tela cheia · Ctrl+P: salvar em PDF"
     by: "Apresentação de"
     qr: "Acompanhe no celular (mesma rede Wi-Fi)"
+    qrPublicado: "Acompanhe no celular"
   notFound:
     title: "Página não encontrada"
     text: "O endereço pode ter mudado ou estar incorreto. Você pode continuar por aqui:"
@@ -349,6 +350,7 @@ en:
     hint: "← → or Space to advance · F: full screen · Ctrl+P: save as PDF"
     by: "Presentation by"
     qr: "Follow on your phone (same Wi-Fi network)"
+    qrPublicado: "Follow on your phone"
   notFound:
     title: "Page not found"
     text: "The address may have changed or be incorrect. You can continue from here:"

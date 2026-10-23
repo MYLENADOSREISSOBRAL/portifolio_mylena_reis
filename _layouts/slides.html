@@ -5,6 +5,9 @@
 {%- endcomment -%}
 {%- assign t = site.data.textos[page.lang] -%}
 {%- assign perfil = site.data.perfil -%}
+{%- comment -%} Coautores (coautores: no cabeçalho) aparecem junto ao nome na capa e no rodapé {%- endcomment -%}
+{%- assign autores = perfil.nome -%}
+{%- if page.coautores -%}{%- assign autores = page.coautores | unshift: perfil.nome | join: " e " -%}{%- endif -%}
 {%- capture titulo_deck %}{% include traduz.html valor=page.titulo %}{% endcapture -%}
 {%- capture titulo_puro %}{% include traduz.html valor=page.titulo puro=true %}{% endcapture -%}
 {%- assign partes = content | split: "<!-- slide -->" -%}
@@ -13,12 +16,24 @@
 {%- comment -%} Versões desta página em cada idioma (usadas no head: hreflang) {%- endcomment -%}
 {%- include equivalente.html idioma="pt" -%}{%- assign url_pt = url_equivalente -%}
 {%- include equivalente.html idioma="en" -%}{%- assign url_en = url_equivalente -%}
+{%- comment -%}
+  QR code da capa: endereço no GitHub Pages (qr_publicado: true) ou, ao
+  apresentar com apresentar-na-rede.ps1, na rede local (qr_rede: true)
+{%- endcomment -%}
+{%- assign endereco_qr = "" -%}
+{%- if site.rede_local and page.qr_rede -%}
+  {%- capture endereco_qr %}{{ site.rede_local }}{{ page.url | relative_url }}{% endcapture -%}
+  {%- assign legenda_qr = site.data.textos[page.lang].deck.qr -%}
+{%- elsif page.qr_publicado -%}
+  {%- capture endereco_qr %}{{ site.url_publicada }}{{ page.url | relative_url }}{% endcapture -%}
+  {%- assign legenda_qr = site.data.textos[page.lang].deck.qrPublicado -%}
+{%- endif -%}
 <!doctype html>
 <html lang="{{ site.idiomas[page.lang].html }}" data-lang="{{ page.lang }}"{% if url_pt != "" %} data-url-pt="{{ url_pt | relative_url }}"{% endif %}{% if url_en != "" %} data-url-en="{{ url_en | relative_url }}"{% endif %} data-background-default="{{ site.plano_de_fundo }}"{% if site.plano_de_fundo_imagem != "" %} data-background-image="{{ site.plano_de_fundo_imagem | relative_url }}"{% endif %}>
 <head>
 {% include head.html %}
   <link rel="stylesheet" href="{{ '/css/slides.css' | relative_url }}">
-  {%- if site.rede_local and page.qr_rede %}
+  {%- if endereco_qr != "" %}
   <script src="{{ '/js/lib/qrcode.min.js' | relative_url }}" defer></script>
   {%- endif %}
   <script src="{{ '/js/slides.js' | relative_url }}" defer></script>
@@ -59,20 +74,15 @@
         {%- endif %}
         <h2 class="deck-cover__title">{{ titulo_deck }}</h2>
         <p class="deck-cover__meta">
-          <span><strong>{{ perfil.nome }}</strong></span>
+          <span><strong>{{ autores }}</strong></span>
           <span>{{ perfil.instituicao[page.lang] }}</span>
           {%- if page.date %}<span>{% include data.html data=page.date %}</span>{% endif %}
           {%- if page.local %}<span>{{ page.local }}</span>{% endif %}
         </p>
-        {%- comment -%}
-          QR code com o endereço na rede local: site.rede_local só existe ao
-          apresentar com apresentar-na-rede.ps1 (nunca no site publicado)
-        {%- endcomment -%}
-        {%- if site.rede_local and page.qr_rede %}
-        {%- capture endereco_rede %}{{ site.rede_local }}{{ page.url | relative_url }}{% endcapture %}
-        <figure class="deck-cover__qr" data-qr="{{ endereco_rede }}">
+        {%- if endereco_qr != "" %}
+        <figure class="deck-cover__qr" data-qr="{{ endereco_qr }}">
           <div class="deck-cover__qr-codigo" data-qr-codigo></div>
-          <figcaption>{{ t.deck.qr }}<span>{{ endereco_rede }}</span></figcaption>
+          <figcaption>{{ legenda_qr }}<span>{{ endereco_qr }}</span></figcaption>
         </figure>
         {%- endif %}
       </div>
@@ -84,7 +94,7 @@
 {{ parte }}
       </div>
       <footer class="deck-slide__footer" aria-hidden="true">
-        <span>{{ perfil.nome }}{% if page.evento %} · {% include traduz.html valor=page.evento puro=true %}{% endif %}</span>
+        <span>{{ autores }}{% if page.evento %} · {% include traduz.html valor=page.evento puro=true %}{% endif %}</span>
         <span>{{ numero }} / {{ total }}</span>
       </footer>
     </section>

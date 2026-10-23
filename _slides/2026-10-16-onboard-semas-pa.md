@@ -5,8 +5,8 @@ titulo:
 evento: "SEMAS-PA — Diretoria de Tecnologia da Informação"
 date: 2026-10-16
 local: "Belém, PA"
-# QR code na capa, só ao apresentar na rede local (apresentar-na-rede.ps1)
-qr_rede: true
+# QR code na capa com o endereço da apresentação no GitHub Pages
+qr_publicado: true
 logos:
   - src: /assets/images/slides/logo_semas_pa.svg
     alt: "Logomarca da Secretaria de Estado de Meio Ambiente, Clima e Sustentabilidade – Governo do Estado do Pará"
