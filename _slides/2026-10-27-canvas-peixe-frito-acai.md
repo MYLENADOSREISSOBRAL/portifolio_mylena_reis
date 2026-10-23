@@ -31,12 +31,6 @@ logos:
 
 <!-- slide -->
 
-## O Canvas feito em sala
-
-![Foto do Business Model Canvas preenchido à mão em sala, com a anotação "faça a parte digital" acima do título]({{ anexos }}canvas-original.jpeg){: .foto-canvas}
-
-<!-- slide -->
-
 ## O Canvas completo
 
 <div class="bmc" role="list" aria-label="Business Model Canvas, nove blocos">
@@ -190,7 +184,7 @@ O benefício é de **quem fabrica** os equipamentos, não de quem os usa.
 - BRASIL. **Lei nº 13.969, de 26 de dezembro de 2019** (altera a Lei de Informática)
 - OSTERWALDER, A.; PIGNEUR, Y. *Business Model Generation* (Business Model Canvas, Strategyzer)
 
-[Foto do Canvas elaborado em sala]({{ anexos }}canvas-original.jpeg)
+[Anexo: foto do Canvas feito em sala (imagem)]({{ anexos }}tela1.jpeg){: target="_blank" rel="noopener noreferrer"}
 
 <!-- slide -->
 

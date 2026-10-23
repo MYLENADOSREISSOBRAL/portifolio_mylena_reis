@@ -912,13 +912,3 @@ a.ldt-marco:focus-visible .ldt-acao {
   margin: 0.5em 0 0;
   font-size: 1em;
 }
-
-/* Foto do Canvas feito em sala: ocupa toda a largura útil do slide */
-.deck-slide .foto-canvas {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  /* No modo apresentação, a altura acompanha o slide (--deck-w) */
-  max-height: min(70vh, calc(var(--deck-w, 300vh) * 0.34));
-  border: var(--border-width) solid var(--color-border-strong);
-}
