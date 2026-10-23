@@ -894,7 +894,7 @@ a.ldt-marco:focus-visible .ldt-acao {
   background-color: var(--color-bg);
   color: var(--color-text);
   box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.25);
-  font-size: max(1.15rem, calc(var(--deck-w, 0px) / 38));
+  font-size: max(1rem, calc(var(--deck-w, 0px) / 52));
   line-height: 1.45;
 }
 
@@ -902,7 +902,23 @@ a.ldt-marco:focus-visible .ldt-acao {
   background: rgb(0 0 0 / 0.25);
 }
 
+/* Balão aberto pelo mouse: não captura o ponteiro, para não fechar sozinho */
+.termo__sintese,
+.termo__sintese::backdrop {
+  pointer-events: none;
+}
+
 .deck-slide .termo__sintese p {
   margin: 0.5em 0 0;
   font-size: 1em;
+}
+
+/* Foto do Canvas feito em sala: ocupa toda a largura útil do slide */
+.deck-slide .foto-canvas {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  /* No modo apresentação, a altura acompanha o slide (--deck-w) */
+  max-height: min(70vh, calc(var(--deck-w, 300vh) * 0.34));
+  border: var(--border-width) solid var(--color-border-strong);
 }

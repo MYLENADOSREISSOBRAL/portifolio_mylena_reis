@@ -15,6 +15,12 @@ logos:
     altura: 5.5em
 ---
 {%- assign anexos = '/assets/apresentacoes/2026-10-27-canvas-peixe-frito-acai/' | relative_url -%}
+{%- comment -%} Síntese do defeso, usada nos balões dos slides 6 e 7 {%- endcomment -%}
+{%- capture defeso -%}
+<strong>Período de defeso</strong>
+<p>Época em que a pesca de certas espécies é proibida para proteger a reprodução dos peixes (na Amazônia, em geral de novembro a março, conforme a espécie e a norma do IBAMA). O pescador artesanal recebe o seguro-defeso nesse período.</p>
+<p><strong>Penalidades:</strong> pescar, transportar ou comercializar pescado proibido é crime ambiental (Lei nº 9.605/1998, art. 34): detenção de 1 a 3 anos ou multa, ou ambas. Há ainda multa administrativa de R$ 700 a R$ 100 mil, mais R$ 20 por quilo (Decreto nº 6.514/2008, art. 35), e apreensão do pescado e dos equipamentos.</p>
+{%- endcapture -%}
 
 ## Roteiro
 
@@ -22,6 +28,12 @@ logos:
 2. A parte digital do negócio
 3. Incentivos à inovação: Lei do Bem e Lei de Informática
 4. Conclusão e referências
+
+<!-- slide -->
+
+## O Canvas feito em sala
+
+![Foto do Business Model Canvas preenchido à mão em sala, com a anotação "faça a parte digital" acima do título]({{ anexos }}canvas-original.jpeg){: .foto-canvas}
 
 <!-- slide -->
 
@@ -72,7 +84,9 @@ Famílias, moradores locais, estudantes, trabalhadores, turistas e usuários de 
 | **Recursos** | Físicos: entregas, fritadeira industrial, exaustor, ponto comercial · Humanos: fritadores experientes, atendimento · Intelectuais: receita padrão do tempero |
 | **Atividades** | Compras com seleção rigorosa (diária ou semanal), cozinha, logística e delivery, marketing e vendas |
 | **Parcerias** | Pescadores e cooperativas, produtores de açaí, plataformas de delivery ou motoboys, embalagens |
-| **Custos** | Variáveis: peixe (defeso), óleo, açaí, farinha, taxa de apps, embalagens · Fixos: aluguel, salários, gás, energia |
+| **Custos** | Variáveis: peixe (<button type="button" class="termo" popovertarget="termo-defeso" data-termo-hover>defeso</button>), óleo, açaí, farinha, taxa de apps, embalagens · Fixos: aluguel, salários, gás, energia |
+
+<div class="termo__sintese" id="termo-defeso" popover>{{ defeso }}</div>
 
 <!-- slide -->
 
@@ -83,7 +97,9 @@ Famílias, moradores locais, estudantes, trabalhadores, turistas e usuários de 
 - **Canais:** aplicativos de delivery e redes sociais
 - **Custos:** a **taxa dos apps** pesa em cada pedido
 - **Relacionamento:** o programa de pontos precisa de **registro por cliente**
-- **Atividades:** compras diárias e peixe que **muda com o defeso**
+- **Atividades:** compras diárias e peixe que **muda com o <button type="button" class="termo" popovertarget="termo-defeso-2" data-termo-hover>defeso</button>**
+
+<div class="termo__sintese" id="termo-defeso-2" popover>{{ defeso }}</div>
 
 <!-- slide -->
 
@@ -182,4 +198,6 @@ O benefício é de **quem fabrica** os equipamentos, não de quem os usa.
 
 > Peixe fresco, fritura perfeita e açaí — agora também no digital.
 
-Mylena Reis · [mylena.sobral@icen.ufpa.br](mailto:mylena.sobral@icen.ufpa.br) · Carlos Pires
+Mylena Reis · [mylena.sobral@icen.ufpa.br](mailto:mylena.sobral@icen.ufpa.br)
+
+Carlos Pires · [carlos.silvapires@hotmail.com](mailto:carlos.silvapires@hotmail.com)

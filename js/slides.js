@@ -274,6 +274,19 @@
     alvo.firstChild.setAttribute("aria-hidden", "true");
   }
 
+  /* Termos com balão ao passar o mouse (data-termo-hover): o clique
+     continua abrindo e fechando o balão (popover) */
+  document.querySelectorAll("[data-termo-hover]").forEach(function (termo) {
+    var balao = document.getElementById(termo.getAttribute("popovertarget"));
+    if (!balao || !balao.showPopover) return;
+    termo.addEventListener("mouseenter", function () {
+      if (!balao.matches(":popover-open")) balao.showPopover();
+    });
+    termo.addEventListener("mouseleave", function () {
+      if (balao.matches(":popover-open")) balao.hidePopover();
+    });
+  });
+
   root.classList.add("deck-ativo");
   document.querySelectorAll("[data-deck-controls], [data-deck-hint]").forEach(function (el) {
     el.hidden = false;
