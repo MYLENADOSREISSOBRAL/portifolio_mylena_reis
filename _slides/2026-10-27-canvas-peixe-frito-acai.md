@@ -18,12 +18,10 @@ logos:
 
 ## Roteiro
 
-1. O Modelo de Negócio Canvas · *~5 min*
-2. A parte digital do negócio · *~5 min*
-3. Incentivos à inovação: Lei do Bem e Lei de Informática · *~4 min*
-4. Conclusão e referências · *~1 min*
-
-**15 min** de apresentação e **5 min** de arguição
+1. O Modelo de Negócio Canvas
+2. A parte digital do negócio
+3. Incentivos à inovação: Lei do Bem e Lei de Informática
+4. Conclusão e referências
 
 <!-- slide -->
 
