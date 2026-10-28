@@ -16,7 +16,6 @@ logos:
     altura: 5.5em
 ---
 {%- assign img = '/assets/images/slides/gestao-documental/' | relative_url -%}
-{%- assign anexos_onboard = '/assets/apresentacoes/2026-10-16-onboard-semas-pa/' | relative_url -%}
 
 ## Roteiro
 
@@ -113,7 +112,7 @@ A organização do Drive transforma o trabalho diário da DTI em evidência: é 
 
 ![Sistemas › Documentação do Sistema com cinco subpastas; Demandas Projetos com uma pasta PAE por demanda e dez subpastas; pastas de acesso rápido e de não classificados]({{ img }}estrutura-drive.svg)
 
-Estrutura validada pela Qualidade de TI e pela Diretoria em 16/04/2026, com piloto no Sistema Central de Postagens: [ver o e-mail de validação]({{ anexos_onboard }}anexo1.png){:target="_blank" rel="noopener noreferrer"}.
+Estrutura validada pela Qualidade de TI e pela Diretoria em 16/04/2026, com piloto no Sistema Central de Postagens.
 
 <!-- slide -->
 
@@ -195,6 +194,7 @@ Medimos antes e depois no piloto, com tarefas equivalentes.
 - **Definir** permissões de acesso, responsáveis pela atualização e critérios de arquivamento.
 - **Triar, não excluir**: duplicatas e arquivos sem contexto passam por análise antes de qualquer descarte.
 - **Verificar** se o Google Drive é o repositório adequado para cada tipo de documento.
+- **Proteger dados pessoais (LGPD)**: pastas com nomes, e-mails, CPF ou endereços ficam com acesso restrito, e prints usados como evidência ou em apresentações ocultam essas informações.
 
 <!-- slide -->
 
