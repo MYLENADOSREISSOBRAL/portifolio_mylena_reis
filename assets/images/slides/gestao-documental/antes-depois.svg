@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="t d">
+  <title id="t">Antes e depois da padronização</title>
+  <desc id="d">À esquerda, documentos soltos, inclinados e duplicados; uma seta leva, à direita, a três pastas organizadas e conferidas.</desc>
+  <defs>
+    <g id="doc"><rect width="90" height="116" rx="6" fill="#F5F4EE" stroke="#9DB5AC" stroke-width="3"/><path d="M18 30h54M18 48h54M18 66h40M18 84h48" stroke="#9DB5AC" stroke-width="6" stroke-linecap="round"/></g>
+    <g id="dup"><rect width="90" height="116" rx="6" fill="#F8EBC8" stroke="#E2B33C" stroke-width="3"/><path d="M18 30h54M18 48h54M18 66h40M18 84h48" stroke="#C98A12" stroke-width="6" stroke-linecap="round"/></g>
+    <g id="pasta"><path d="M0 18a10 10 0 0 1 10-10h86l18 18h186a10 10 0 0 1 10 10v66a10 10 0 0 1-10 10H10a10 10 0 0 1-10-10z"/><rect x="28" y="56" width="150" height="14" rx="7" fill="#F5F4EE" opacity="0.85"/><rect x="28" y="80" width="96" height="10" rx="5" fill="#F5F4EE" opacity="0.6"/></g>
+  </defs>
+  <rect width="960" height="520" rx="24" fill="#10302B"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="26" fill="#E2B33C" letter-spacing="2">
+    <text x="60" y="58">ANTES</text>
+    <text x="580" y="58">DEPOIS</text>
+  </g>
+  <g transform="translate(40 60)">
+    <use href="#doc" transform="translate(20 70) rotate(-12)"/>
+    <use href="#doc" transform="translate(140 24) rotate(9)"/>
+    <use href="#doc" transform="translate(250 96) rotate(-5)"/>
+    <use href="#doc" transform="translate(40 250) rotate(11)"/>
+    <use href="#dup" transform="translate(160 214) rotate(-14)"/>
+    <use href="#dup" transform="translate(180 232) rotate(-14)"/>
+    <use href="#dup" transform="translate(200 250) rotate(-14)"/>
+    <use href="#doc" transform="translate(288 270) rotate(7)"/>
+    <path d="M398 220h84" stroke="#E2B33C" stroke-width="10" stroke-linecap="round"/>
+    <path d="M468 196l30 24-30 24" fill="none" stroke="#E2B33C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#pasta" fill="#2F8A68" transform="translate(530 30)"/>
+    <use href="#pasta" fill="#1E6B52" transform="translate(530 165)"/>
+    <use href="#pasta" fill="#C98A12" transform="translate(530 300)"/>
+    <circle cx="830" cy="82" r="22" fill="#E2B33C"/><path d="M819 82l8 8 14-16" fill="none" stroke="#10302B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="830" cy="217" r="22" fill="#E2B33C"/><path d="M819 217l8 8 14-16" fill="none" stroke="#10302B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="830" cy="352" r="22" fill="#E2B33C"/><path d="M819 352l8 8 14-16" fill="none" stroke="#10302B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#DCE7E2">
+    <text x="60" y="490">Soltos, duplicados (em amarelo), sem lugar</text>
+    <text x="580" y="490">Cada documento em sua pasta</text>
+  </g>
+</svg>

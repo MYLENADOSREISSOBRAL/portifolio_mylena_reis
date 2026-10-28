@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">Do processo à evidência</title>
+  <desc id="d">Quatro etapas ligadas por setas: processo executado, documento no lugar certo, evidência localizável e nível mantido na avaliação do MPS.BR.</desc>
+  <rect width="1200" height="300" rx="24" fill="#E7ECE6"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <rect x="30" y="40" width="250" height="220" rx="16" fill="#F5F4EE"/>
+    <g transform="translate(155 105)" fill="none" stroke="#1E6B52" stroke-width="6" stroke-linecap="round"><circle r="22"/><path d="M0-40v10M0 30v10M-40 0h10M30 0h10M-28-28l7 7M21 21l7 7M-28 28l7-7M21-21l7-7"/></g>
+    <text x="155" y="190" font-size="26" font-weight="700" fill="#10302B">Processo</text>
+    <text x="155" y="222" font-size="26" font-weight="700" fill="#10302B">executado</text>
+    <rect x="320" y="40" width="250" height="220" rx="16" fill="#F5F4EE"/>
+    <g transform="translate(445 105)"><path d="M-34-26a6 6 0 0 1 6-6h18l7 7h31a6 6 0 0 1 6 6v40a6 6 0 0 1-6 6h-56a6 6 0 0 1-6-6z" fill="#1E6B52"/></g>
+    <text x="445" y="190" font-size="26" font-weight="700" fill="#10302B">Documento no</text>
+    <text x="445" y="222" font-size="26" font-weight="700" fill="#10302B">lugar certo</text>
+    <rect x="610" y="40" width="250" height="220" rx="16" fill="#F5F4EE"/>
+    <g transform="translate(735 100)" fill="none" stroke="#1E6B52" stroke-width="7" stroke-linecap="round"><circle cx="-6" cy="-6" r="22"/><path d="M10 10l20 20"/></g>
+    <text x="735" y="190" font-size="26" font-weight="700" fill="#10302B">Evidência</text>
+    <text x="735" y="222" font-size="26" font-weight="700" fill="#10302B">localizável</text>
+    <rect x="900" y="40" width="270" height="220" rx="16" fill="#10302B"/>
+    <g transform="translate(1035 105)"><circle r="32" fill="#E2B33C"/><path d="M-14 0l9 10 19-20" fill="none" stroke="#10302B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="1035" y="190" font-size="26" font-weight="700" fill="#F5F4EE">Nível mantido</text>
+    <text x="1035" y="222" font-size="22" fill="#DCE7E2">avaliação MPS.BR</text>
+  </g>
+  <g fill="#C98A12"><path d="M284 140h20v-12l14 22-14 22v-12h-20z"/><path d="M574 140h20v-12l14 22-14 22v-12h-20z"/><path d="M864 140h20v-12l14 22-14 22v-12h-20z"/></g>
+</svg>

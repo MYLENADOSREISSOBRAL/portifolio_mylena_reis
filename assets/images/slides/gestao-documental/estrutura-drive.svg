@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">Estrutura padrão do Drive da DTI</title>
+  <desc id="d">Duas pastas principais: Sistemas, com a Documentação do Sistema e cinco subpastas permanentes; e Demandas Projetos, com uma pasta PAE por demanda e dez subpastas. Mais duas pastas de apoio: acesso rápido com atalhos e não classificados, área temporária.</desc>
+  <defs>
+    <path id="f" d="M0 7a5 5 0 0 1 5-5h14l6 6h22a5 5 0 0 1 5 5v22a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5z"/>
+  </defs>
+  <rect width="1200" height="560" rx="24" fill="#E7ECE6"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="30" y="30" width="555" height="380" rx="16" fill="#F5F4EE"/>
+    <rect x="30" y="30" width="555" height="8" rx="4" fill="#1E6B52"/>
+    <use href="#f" x="56" y="62" fill="#1E6B52"/>
+    <text x="124" y="92" font-size="26" font-weight="700" fill="#10302B">Sistemas › Documentação</text>
+    <text x="56" y="138" font-size="20" font-weight="700" fill="#1E6B52">BASE PERMANENTE DE CADA SISTEMA</text>
+    <g font-size="22" fill="#3D4A46">
+      <path d="M72 160v206M72 178h24M72 224h24M72 270h24M72 316h24M72 362h24" stroke="#9DB5AC" stroke-width="3" fill="none"/>
+      <text x="106" y="186">Requisitos e HU</text>
+      <text x="106" y="232">Dados de Teste</text>
+      <text x="106" y="278">Manuais e Treinamentos</text>
+      <text x="106" y="324">Documentação de Implantação</text>
+      <text x="106" y="370">Arquitetura – Integração</text>
+    </g>
+    <rect x="615" y="30" width="555" height="380" rx="16" fill="#F5F4EE"/>
+    <rect x="615" y="30" width="555" height="8" rx="4" fill="#C98A12"/>
+    <use href="#f" x="641" y="62" fill="#C98A12"/>
+    <text x="709" y="92" font-size="26" font-weight="700" fill="#10302B">Demandas Projetos</text>
+    <text x="641" y="138" font-size="20" font-weight="700" fill="#8A5D06">PAE XXXXX VERSÃO XXXX · UMA POR DEMANDA</text>
+    <g font-size="22" fill="#3D4A46">
+      <path d="M657 160v206M657 178h24M657 224h24M657 270h24M657 316h24M657 362h24" stroke="#D9B98A" stroke-width="3" fill="none"/>
+      <text x="691" y="186">Formalização</text><text x="921" y="186">Protótipo</text>
+      <text x="691" y="232">Lista de Requisitos</text><text x="921" y="232">Teste</text>
+      <text x="691" y="278">Gerência do projeto</text><text x="921" y="278">Homologação</text>
+      <text x="691" y="324">Comunicação</text><text x="921" y="324">Implantação</text>
+      <text x="691" y="370">Material de Apoio</text><text x="921" y="370">checklist</text>
+    </g>
+    <rect x="30" y="430" width="555" height="100" rx="16" fill="#F5F4EE"/>
+    <use href="#f" x="56" y="460" fill="#2F8A68"/>
+    <text x="124" y="478" font-family="Courier New, monospace" font-size="19" font-weight="700" fill="#10302B">00_ACESSO_RAPIDO_ATALHOS_...</text>
+    <text x="124" y="508" font-size="21" fill="#3D4A46">Atalhos do dia a dia, nunca cópias</text>
+    <rect x="615" y="430" width="555" height="100" rx="16" fill="#F5F4EE"/>
+    <use href="#f" x="641" y="460" fill="#9DB5AC"/>
+    <text x="709" y="478" font-family="Courier New, monospace" font-size="19" font-weight="700" fill="#10302B">NAO_CLASSIFICADOS</text>
+    <text x="709" y="508" font-size="21" fill="#3D4A46">Área temporária: esvaziar sempre</text>
+  </g>
+</svg>

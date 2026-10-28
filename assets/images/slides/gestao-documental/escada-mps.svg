@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="t d">
+  <title id="t">A SEMAS na escala de maturidade do MPS.BR</title>
+  <desc id="d">Sete níveis, de G (parcialmente gerenciado) a A (em otimização). Os níveis G e F estão alcançados; a SEMAS está no nível F, Gerenciado, do MPS.BR Serviços, desde janeiro de 2026. O nível E, parcialmente definido, é o próximo degrau.</desc>
+  <rect width="1200" height="600" rx="24" fill="#F5F4EE"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="26">
+    <rect x="40" y="40" width="1000" height="60" rx="8" fill="#DDE4DF"/>
+    <text x="64" y="79" fill="#3D4A46"><tspan font-weight="700">A</tspan> · Em otimização</text>
+    <rect x="40" y="114" width="920" height="60" rx="8" fill="#DDE4DF"/>
+    <text x="64" y="153" fill="#3D4A46"><tspan font-weight="700">B</tspan> · Gerenciado quantitativamente</text>
+    <rect x="40" y="188" width="840" height="60" rx="8" fill="#DDE4DF"/>
+    <text x="64" y="227" fill="#3D4A46"><tspan font-weight="700">C</tspan> · Definido</text>
+    <rect x="40" y="262" width="760" height="60" rx="8" fill="#DDE4DF"/>
+    <text x="64" y="301" fill="#3D4A46"><tspan font-weight="700">D</tspan> · Largamente definido</text>
+    <rect x="41.5" y="337.5" width="677" height="57" rx="8" fill="#FBFBF7" stroke="#1E6B52" stroke-width="3" stroke-dasharray="12 8"/>
+    <text x="64" y="375" fill="#10302B"><tspan font-weight="700">E</tspan> · Parcialmente definido</text>
+    <rect x="740" y="344" width="210" height="44" rx="22" fill="none" stroke="#1E6B52" stroke-width="2"/>
+    <text x="845" y="374" font-size="22" font-weight="700" fill="#1E6B52" text-anchor="middle">próximo degrau</text>
+    <rect x="40" y="410" width="600" height="60" rx="8" fill="#1E6B52"/>
+    <text x="64" y="449" fill="#F5F4EE"><tspan font-weight="700">F</tspan> · Gerenciado</text>
+    <path d="M660 440l34-20v12h30v16h-30v12z" fill="#C98A12"/>
+    <rect x="736" y="412" width="420" height="56" rx="28" fill="#E2B33C"/>
+    <text x="946" y="448" font-weight="700" fill="#10302B" text-anchor="middle">SEMAS · Nível F · jan/2026</text>
+    <rect x="40" y="484" width="520" height="60" rx="8" fill="#1E6B52"/>
+    <text x="64" y="523" fill="#F5F4EE"><tspan font-weight="700">G</tspan> · Parcialmente gerenciado</text>
+  </g>
+  <text x="40" y="580" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#5E6B67">Em verde, os níveis alcançados (cumulativos) · MPS.BR Serviços · Fonte: Portal TI Pará, 09/01/2026</text>
+</svg>

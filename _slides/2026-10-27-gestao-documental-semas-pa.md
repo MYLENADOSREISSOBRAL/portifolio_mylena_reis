@@ -15,11 +15,13 @@ logos:
     alt: "Brasão da Universidade Federal do Pará"
     altura: 5.5em
 ---
+{%- assign img = '/assets/images/slides/gestao-documental/' | relative_url -%}
+{%- assign anexos_onboard = '/assets/apresentacoes/2026-10-16-onboard-semas-pa/' | relative_url -%}
 
 ## Roteiro
 
 1. Contexto: o problema e o objetivo
-2. Por que padronizar: base normativa e MPS.BR
+2. Por que padronizar: normas, MPS.BR e a posição da SEMAS na escala
 3. O padrão: estrutura, ciclo da demanda, nomenclatura, regras e busca
 4. Governança: papéis, implantação, indicadores e cuidados
 5. Encaminhamento
@@ -33,11 +35,9 @@ Guia de orientação para **gestores e usuários** do Google Drive corporativo d
 Hoje, encontrar um documento depende de quem sabe onde ele está.
 {: .destaque}
 
-| Sintoma | Como aparece |
-|---|---|
-| **Dispersão** | Arquivos espalhados, duplicados e em versões divergentes |
-| **Falta de contexto** | Nomes que não dizem a que sistema, demanda ou etapa o arquivo pertence |
-| **Dependência de pessoas** | Quando alguém sai ou muda de equipe, o conhecimento vai junto |
+![Antes: documentos soltos, inclinados e duplicados. Depois: três pastas organizadas e conferidas]({{ img }}antes-depois.svg)
+
+**Dispersão** (arquivos duplicados e em versões divergentes) · **falta de contexto** (nomes que não dizem a que sistema pertencem) · **dependência de pessoas** (o conhecimento sai com quem sai).
 
 <!-- slide -->
 
@@ -66,78 +66,69 @@ Mais do que criar pastas, a meta é uma forma compartilhada de organizar e recup
 
 <!-- slide -->
 
-## MPS.BR: qualidade de processo
+## O MPS.BR: qualidade comprovada por evidências
 
-- O **MPS.BR** (Melhoria de Processo do Software Brasileiro) é coordenado pela **Softex**; o modelo de referência para software, **MR-MPS-SW**, foi atualizado em 2024.
-- São **7 níveis de maturidade**, de **G** (parcialmente gerenciado) a **A** (em otimização), sequenciais e cumulativos.
-- Cada nível exige processos com **resultados esperados comprovados por evidências**.
+- O **MPS.BR** (Melhoria de Processo do Software Brasileiro) é um programa coordenado pela **Softex** que avalia a maturidade dos processos de uma organização.
+- A maturidade é medida em **7 níveis, de G a A**, sequenciais e cumulativos; cada nível exige resultados **comprovados por evidências** em avaliação oficial.
+- Três modelos de referência:
 
-Sem documentação organizada não há evidência e, sem evidência, não há maturidade demonstrável.
+| Modelo | Foco |
+|---|---|
+| MPS.BR Software | Desenvolvimento, manutenção e evolução de software |
+| **MPS.BR Serviços** | Gestão, entrega e melhoria contínua de serviços de TI: **modelo em que a SEMAS foi avaliada** |
+| MPS.BR Gestão de Pessoas | Gestão de pessoas e desenvolvimento de competências |
+
+<!-- slide -->
+
+## Onde a SEMAS está na escala MPS.BR
+
+![Escala de G a A: G e F alcançados; a SEMAS está no nível F, Gerenciado, do MPS.BR Serviços desde janeiro de 2026; o nível E é o próximo degrau]({{ img }}escada-mps.svg)
+
+**Nível F — Gerenciado:** processos formalmente planejados, acompanhados e comprovados por evidências. **Manter:** a certificação é renovada periodicamente. **Avançar:** no nível E, os processos passam a ser padronizados para toda a organização.
+
+<!-- slide -->
+
+## Sem documento organizado, não há evidência
+
+![Processo executado, documento no lugar certo, evidência localizável e nível mantido na avaliação do MPS.BR]({{ img }}evidencia.svg)
+
+A organização do Drive transforma o trabalho diário da DTI em evidência: é o que sustenta o Nível F e prepara o próximo degrau.
 {: .destaque}
 
 <!-- slide -->
 
-## Cada processo pede evidências, e elas têm endereço
+## Cada prática pede evidências, e elas têm endereço
 
-| Processo do MR-MPS-SW | Evidência esperada | Onde fica no nosso Drive |
+| Prática do MPS.BR | Evidência esperada | Onde fica no nosso Drive |
 |---|---|---|
-| Gerência de Projetos | Planos, cronogramas, atas e acompanhamento | PAE › Gerência do projeto · Comunicação |
-| Engenharia de Requisitos | Requisitos aprovados, rastreáveis e com mudanças registradas | PAE › Lista de Requisitos · Sistema › Requisitos e HU |
-| Gerência de Configuração | Itens identificados, versões controladas e linhas de base | Nomenclatura com versão · Documentação do Sistema |
-| Verificação e Validação | Planos e evidências de teste, aceite do cliente | PAE › Teste · Homologação · checklist |
-| Garantia da Qualidade | Aderência de produtos e processos ao padrão | checklist de entrega · revisão periódica das pastas |
+| Gerência de projetos e serviços | Planos, cronogramas, atas e acompanhamento | PAE › Gerência do projeto · Comunicação |
+| Requisitos | Requisitos aprovados, rastreáveis e com mudanças registradas | PAE › Lista de Requisitos · Sistema › Requisitos e HU |
+| Gerência de configuração | Itens identificados, versões controladas e linhas de base | Nomenclatura com versão · Documentação do Sistema |
+| Verificação e validação | Planos e evidências de teste, aceite do cliente | PAE › Teste · Homologação · checklist |
+| Garantia da qualidade | Aderência de produtos e processos ao padrão | checklist de entrega · revisão periódica das pastas |
 
 <!-- slide -->
 
 ## A estrutura padrão do Drive da DTI
 
-```text
-Sistemas
-└── Documentação do Sistema ........ base permanente de cada sistema
-    ├── Requisitos e HU
-    ├── Dados de Teste
-    ├── Manuais e Treinamentos
-    ├── Documentação de Implantação
-    └── Documentação de Arquitetura – Integração
-Demandas Projetos
-└── PAE XXXXX Versão XXXX .......... uma pasta por demanda ativa
-    ├── Formalização da Demanda · Lista de Requisitos · Gerência do projeto
-    ├── Comunicação · Material de Apoio · Protótipo
-    └── Teste · Homologação · Implantação · checklist
-00_ACESSO_RAPIDO_ATALHOS_MAIS_UTILIZADOS ... atalhos, nunca cópias
-NAO_CLASSIFICADOS ........................... área temporária: esvaziar sempre
-```
+![Sistemas › Documentação do Sistema com cinco subpastas; Demandas Projetos com uma pasta PAE por demanda e dez subpastas; pastas de acesso rápido e de não classificados]({{ img }}estrutura-drive.svg)
+
+Estrutura validada pela Qualidade de TI e pela Diretoria em 16/04/2026, com piloto no Sistema Central de Postagens: [ver o e-mail de validação]({{ anexos_onboard }}anexo1.png){:target="_blank" rel="noopener noreferrer"}.
 
 <!-- slide -->
 
 ## Uma demanda, do início ao fim, em um só lugar
 
-1. **Formalização da Demanda**: documentos oficiais de abertura
-2. **Lista de Requisitos**: escopo e regras acordados
-3. **Gerência do projeto**: cronograma, atas e escopo
-4. **Protótipo**: Figma, wireframes e mockups
-5. **Teste**: bugs, evidências e relatórios de QA
-6. **Homologação**: termos de aceite e validações
-7. **Implantação**: roteiro de subida do projeto
-8. **checklist**: critérios de pronto da entrega
-{: .colunas}
-
-Durante todo o ciclo: **Comunicação** (alinhamentos e e-mails formais) e **Material de Apoio** (pesquisas e referências).
-{: .destaque}
+![Oito etapas da pasta PAE: Formalização, Requisitos, Gerência, Protótipo, Teste, Homologação, Implantação e checklist; Comunicação e Material de Apoio acompanham todo o ciclo]({{ img }}ciclo-demanda.svg)
 
 <!-- slide -->
 
-## O nome do arquivo é o primeiro filtro de busca
+## Anatomia de um nome de arquivo
 
-```text
-Arquivo:            Tipo_Sistema_Assunto_Ano_vN
-Exemplo:            API_SistemaX_IntegracaoY_2026_v1
-Pasta de demanda:   PAE XXXXX Versão XXXX
-```
+![O nome API_SistemaX_IntegracaoY_2026_v1 dividido em tipo, sistema, assunto, ano e versão]({{ img }}nomenclatura.svg)
 
 - **Diga o que é, de onde e de quando**: tipo, sistema ou serviço, assunto e ano.
-- **Versione no nome**: v1, v2… sempre que houver revisão.
-- **Use termos padronizados**: os mesmos nomes de sistema em todo o Drive.
+- **Versione no nome** (v1, v2…) e **use termos padronizados** em todo o Drive.
 - **Preserve o que é oficial**: não renomeie documentos formais nem seus identificadores.
 
 <!-- slide -->
@@ -220,9 +211,16 @@ Um serviço-piloto, o padrão aplicado, um índice com links e testes de localiz
 
 ## Referências
 
-- SOFTEX. Programa MPS.BR e Comunicado 01/2024: novas versões MPS-SW:2024, MPS-SV:2024 e Guia de Avaliação 2024. [softex.br/mpsbr](https://softex.br/mpsbr/){:target="_blank" rel="noopener noreferrer"}
-- SOFTEX. MPS.BR – Guia de Implementação, Parte 1: nível G do MR-MPS-SW. 2013.
-- BRASIL. Lei nº 8.159/1991 (arquivos); Lei nº 12.527/2011 (LAI); Lei nº 13.709/2018 (LGPD).
-- CONARQ. e-ARQ Brasil, 2ª versão, adotada pela Resolução nº 50/2022. [gov.br/conarq](https://www.gov.br/conarq){:target="_blank" rel="noopener noreferrer"}
-- DTI/SEMAS-PA. Guia de Orientação DTI (18/06/2026) e Mapa mental da gestão documental (14/07/2026).
-- SEMAS-PA. Gestão documental e gestão do conhecimento: organização e recuperação de informações no Google Drive. Síntese executiva, 2026.
+**MPS.BR e SEMAS**
+
+- SOFTEX. MPS.BR: modelos de referência (Software, Serviços e Gestão de Pessoas). [mpsbr.softex.br/modelos](https://mpsbr.softex.br/modelos/){:target="_blank" rel="noopener noreferrer"}
+- SOFTEX. Comunicado 01/2024: novas versões dos modelos de Software e de Serviços e Guia de Avaliação 2024. [softex.br](https://softex.br/comunicado-01-2024-novas-versoes-mps-sw2024-mps-sv-2024-e-guia-de-avaliacao-2024-2/){:target="_blank" rel="noopener noreferrer"}
+- SOFTEX. MPS.BR – Guia de Implementação, Parte 11. 2016.
+- TI PARÁ. Semas conquista certificação nacional em Gestão de Tecnologia da Informação. 09/01/2026. [tipara.com.br](https://tipara.com.br/semas-conquista-certificacao-nacional-em-gestao-de-tecnologia-da-informacao/){:target="_blank" rel="noopener noreferrer"}
+
+**Normas e documentos internos**
+
+- BRASIL. [Lei nº 8.159/1991](https://www.planalto.gov.br/ccivil_03/leis/l8159.htm){:target="_blank" rel="noopener noreferrer"}; [Lei nº 12.527/2011 (LAI)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm){:target="_blank" rel="noopener noreferrer"}; [Lei nº 13.709/2018 (LGPD)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm){:target="_blank" rel="noopener noreferrer"}.
+- CONARQ. [Resolução nº 50, de 6 de maio de 2022](https://www.gov.br/conarq/pt-br/legislacao-arquivistica/resolucoes-do-conarq/resolucao-no-50-de-06-de-maio-de-2022){:target="_blank" rel="noopener noreferrer"}: e-ARQ Brasil, versão 2.
+- DTI/SEMAS-PA. Guia de Orientação DTI (18/06/2026) e validação da estrutura de pastas (16/04/2026).
+- SEMAS-PA. Organização e recuperação de informações no Google Drive. Síntese executiva, 2026.

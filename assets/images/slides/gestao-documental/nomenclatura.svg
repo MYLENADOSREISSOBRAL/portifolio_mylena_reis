@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" role="img" aria-labelledby="t d">
+  <title id="t">Anatomia de um nome de arquivo</title>
+  <desc id="d">O nome API_SistemaX_IntegracaoY_2026_v1 dividido em partes: API é o tipo, SistemaX o sistema, IntegracaoY o assunto, 2026 o ano e v1 a versão. Pasta de demanda: PAE XXXXX Versão XXXX.</desc>
+  <rect width="1200" height="280" rx="24" fill="#10302B"/>
+  <g font-family="Courier New, monospace" font-size="40" font-weight="700" fill="#10302B" text-anchor="middle">
+    <rect x="74" y="50" width="120" height="66" rx="8" fill="#E2B33C"/><text x="134" y="96">API</text>
+    <text x="218" y="96" fill="#9DB5AC">_</text>
+    <rect x="242" y="50" width="236" height="66" rx="8" fill="#9DD3BE"/><text x="360" y="96">SistemaX</text>
+    <text x="502" y="96" fill="#9DB5AC">_</text>
+    <rect x="526" y="50" width="308" height="66" rx="8" fill="#F5F4EE"/><text x="680" y="96">IntegracaoY</text>
+    <text x="858" y="96" fill="#9DB5AC">_</text>
+    <rect x="882" y="50" width="132" height="66" rx="8" fill="#BFD8CD"/><text x="948" y="96">2026</text>
+    <text x="1038" y="96" fill="#9DB5AC">_</text>
+    <rect x="1062" y="50" width="84" height="66" rx="8" fill="#F2CF6B"/><text x="1104" y="96">v1</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#DCE7E2" text-anchor="middle">
+    <text x="134" y="152">Tipo</text><text x="360" y="152">Sistema</text><text x="680" y="152">Assunto</text><text x="948" y="152">Ano</text><text x="1104" y="152">Versão</text>
+  </g>
+  <text x="600" y="228" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#DCE7E2" text-anchor="middle">Pasta de demanda: <tspan font-family="Courier New, monospace" font-weight="700" fill="#F2CF6B">PAE XXXXX Versão XXXX</tspan></text>
+</svg>
